@@ -50,5 +50,24 @@ git commit -m "make README.md changes"
 -- Push Your New Branch to the Remote Repository
 git push -u origin feature/my-new-branch
 
+# After I push the new changes (2 commits) to "feature/my-new-branch" and make pull request, then I select "squash and merge", which cause the following problems:
 
+-- "Squash" merge 2 commits into 1 commit, and them merge 1 commit into "main" repository, which make the difference of commits (2 commits in "feature/my-new-branch"; 1 commit in "main");
+-- In the my-new-branch has 1 behind and 2 ahead in github, and it needs to syn local "feature/my-new-branch" with remote "main" repository by using the following scripting;
+   
+   --- Ensure Local Main Is Up to Date
+   ## git checkout feature/my-new-branch
+   ## git merge main
 
+   --- Update my-new-branch
+   ## git checkout feature/my-new-branch
+   ## git merge main
+   ## git push
+
+   --- Then above scripts are committed, "1 behind" was no longer existing. But 3 ahead is still existing. It needs the following script actions - Rebase "feature/my-new-branch" on Main:
+   ## git checkout main
+   ## git merge feature/my-new-branch
+   ##  git merge feature/my-new-branch
+   ## git push origin main
+
+   --- Rebasing rewrites your branch so it sits on top of main’s latest commit. This can make the commit history cleaner, but it changes commit hashes (thus push --force is often needed if the branch was already on the remote).

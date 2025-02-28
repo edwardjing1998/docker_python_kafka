@@ -1,13 +1,12 @@
-I have requirement:
+1) the process to set up repository - docker_python_kafka in github and commit the source codes.
 
-1. Using python application and deployed in docker; 
-2. Python application provides kafka producer as rest api and consumer;
-3. In my local from 9080 to 9092, from 2170 to 2090, from 5000 from 5100 have been used by other application.
-4. Can you give me all the files for this python application.
-5. I use macOS and I already create python project - docker_python_kafka
-6. I need python files - init, main, kafka producer and consumer put into the folder -app.
+1.1 git init (.git folder is created in the local in the root folder of application)
+1.2 git add . (stage the current changes for next commit in the local git repository)
+1.3 git commit -m "Initial commit of docker_python_kafka application" (This snapshots your current state in your local Git repo.)
+1.4 git remote add origin https://github.com/edwardjing1998/docker_python_kafka.git (Link Your Local Repo to GitHub)
+1.5 git push -u origin main (git push -u origin main)
 
-please show me all the files.
+
 
 
 docker-compose up --build -d  

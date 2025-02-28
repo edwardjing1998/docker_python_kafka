@@ -45,6 +45,10 @@ git checkout -b feature/my-new-branch
 
 -- push the new changes into feature/my-new-branch
 git add .
-git commit -m "Describe the changes you made"
+git commit -m "make README.md changes"
+
+-- Push Your New Branch to the Remote Repository
+git push -u origin feature/my-new-branch
+
 
 

@@ -90,6 +90,16 @@ git push -u origin feature/my-new-branch
           -- git merge origin/main
           -- git push origin feature/my-feature-branch
 
+   --- After I push the new changes (1 commits) to "feature/my-new-branch" and make pull request, then I select "squash and merge", which cause the following problems "1 behind and 1 ahead". how to resolve this issue ?
+
+          -- If you want to keep your feature branch for further work, you can rebase it onto the updated remote main so that its commit history becomes linear:
+              
+              --- git fetch origin
+              --- git rebase origin/main
+              --- git push --force-with-lease origin feature/my-new-branch
+
+              the above scripts will resolve all the issues.
+          
 
 
        

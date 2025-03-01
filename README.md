@@ -94,6 +94,7 @@ git push -u origin feature/my-new-branch
 
           -- If you want to keep your feature branch for further work, you can rebase it onto the updated remote main so that its commit history becomes linear:
               
+              --- git checkout feature/my-new-branch
               --- git fetch origin
               --- git rebase origin/main
               --- git push --force-with-lease origin feature/my-new-branch

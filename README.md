@@ -70,3 +70,28 @@ git push -u origin feature/my-new-branch
    ## git push origin main
 
    --- Rebasing rewrites your branch so it sits on top of main’s latest commit. This can make the commit history cleaner, but it changes commit hashes (thus push --force is often needed if the branch was already on the remote).
+   
+   --- have feature branch -
+   ## my-new-branch has some changes and push the remote  my-new-branch. the remote feature branch has been squash/merge into remote main;
+   ## in the local, i merge feature branch into main. 
+   ## in the local main, i have these message - Your branch and 'origin/main' have diverged, and have 1 and 1 different commits each, respectively. can you give me the solution, how to resolve it ?
+
+      Solution: running "git checkout main" and "git reset --hard origin/main"
+      Explain: This command forces your local main to exactly match the remote main (which now contains the squashed commit), effectively discarding the local commit that’s causing the divergence. 
+
+   --- In Github side, my feature branch has "1 behind ahead and 1 commit ahead" after it was squash/merge,
+   --- After resolving "Your branch and 'origin/main' have diverged, and have 1 and 1 different commits each, respectively" in local main branch, running the following script to resolve "ahead 1" issue:
+      
+      ### git merge feature/my-new-branch (merge local main and my-new-branch). afther this script, "1 ahead commit" is resolved.
+      ### but the remote feature branch has "2 behinds" issue. the following scripts will resolve this issues:
+    
+          -- git checkout feature/my-feature-branch
+          -- git fetch origin
+          -- git merge origin/main
+          -- git push origin feature/my-feature-branch
+
+
+
+       
+
+   

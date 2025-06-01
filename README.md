@@ -1,108 +1,785 @@
-# the process to set up repository - docker_python_kafka in github and commit the source codes.
--- git init (.git folder is created in the local in the root folder of application) 
--- git add . (stage the current changes for next commit in the local git repository) 
--- git commit -m "Initial commit of docker_python_kafka application" (This snapshots your current state in your local Git repo.) 
--- git remote add origin https://github.com/edwardjing1998/docker_python_kafka.git (Link Your Local Repo to GitHub) 
--- git push -u origin main (git push -u origin main)
+react-dom_client.js?v=6aa48ad9:17987 Download the React DevTools for a better development experience: https://react.dev/link/react-devtools
+PreviewClientSysPrinList.js:15 [
+  {
+    "client": "0010",
+    "clientIds": null,
+    "sysPrin": "58801000",
+    "custType": "0",
+    "undeliverable": "2",
+    "statA": "0",
+    "statB": "0",
+    "statC": "0",
+    "statD": "0",
+    "statE": "0",
+    "statF": "0",
+    "statI": "0",
+    "statL": "0",
+    "statO": "0",
+    "statU": "0",
+    "statX": "0",
+    "statZ": "0",
+    "poBox": "0",
+    "addrFlag": "0",
+    "tempAway": 30,
+    "rps": "0",
+    "session": "A",
+    "badState": "0",
+    "nm13": "0",
+    "tempAwayAtts": 2,
+    "reportMethod": 0,
+    "active": true,
+    "notes": " 972 653 4109",
+    "returnStatus": " ",
+    "destroyStatus": " ",
+    "nonUS": "0",
+    "special": "0",
+    "pinMailer": "0",
+    "holdDays": 30,
+    "forwardingAddress": "0",
+    "contact": null,
+    "phone": null,
+    "entityCode": "0",
+    "invalidDelivAreas": [],
+    "vendorSentTo": [
+      {
+        "sysPrin": "58801000",
+        "vendorId": "v03",
+        "queForMail": true,
+        "vendorName": "Solutions                                         "
+      }
+    ],
+    "vendorReceivedFrom": [],
+    "astatRch": "0"
+  },
+  {
+    "client": "0010",
+    "clientIds": null,
+    "sysPrin": "58801000",
+    "custType": "0",
+    "undeliverable": "2",
+    "statA": "0",
+    "statB": "0",
+    "statC": "0",
+    "statD": "0",
+    "statE": "0",
+    "statF": "0",
+    "statI": "0",
+    "statL": "0",
+    "statO": "0",
+    "statU": "0",
+    "statX": "0",
+    "statZ": "0",
+    "poBox": "0",
+    "addrFlag": "0",
+    "tempAway": 30,
+    "rps": "0",
+    "session": "A",
+    "badState": "0",
+    "nm13": "0",
+    "tempAwayAtts": 2,
+    "reportMethod": 0,
+    "active": true,
+    "notes": " 972 653 4109",
+    "returnStatus": " ",
+    "destroyStatus": " ",
+    "nonUS": "0",
+    "special": "0",
+    "pinMailer": "0",
+    "holdDays": 30,
+    "forwardingAddress": "0",
+    "contact": null,
+    "phone": null,
+    "entityCode": "0",
+    "invalidDelivAreas": [],
+    "vendorSentTo": [
+      {
+        "sysPrin": "58801000",
+        "vendorId": "v03",
+        "queForMail": true,
+        "vendorName": "Solutions                                         "
+      }
+    ],
+    "vendorReceivedFrom": [],
+    "astatRch": "0"
+  },
+  {
+    "client": "0010",
+    "clientIds": null,
+    "sysPrin": "58801100",
+    "custType": "0",
+    "undeliverable": "2",
+    "statA": "0",
+    "statB": "0",
+    "statC": "0",
+    "statD": "0",
+    "statE": "0",
+    "statF": "0",
+    "statI": "0",
+    "statL": "0",
+    "statO": "0",
+    "statU": "0",
+    "statX": "0",
+    "statZ": "0",
+    "poBox": "0",
+    "addrFlag": "0",
+    "tempAway": 30,
+    "rps": "0",
+    "session": "A",
+    "badState": "0",
+    "nm13": "0",
+    "tempAwayAtts": 2,
+    "reportMethod": null,
+    "active": true,
+    "notes": " ",
+    "returnStatus": " ",
+    "destroyStatus": " ",
+    "nonUS": "0",
+    "special": null,
+    "pinMailer": "0",
+    "holdDays": 30,
+    "forwardingAddress": "0",
+    "contact": null,
+    "phone": null,
+    "entityCode": "0",
+    "invalidDelivAreas": [],
+    "vendorSentTo": [
+      {
+        "sysPrin": "58801100",
+        "vendorId": "v03",
+        "queForMail": true,
+        "vendorName": "Solutions                                         "
+      }
+    ],
+    "vendorReceivedFrom": [],
+    "astatRch": "0"
+  },
+  {
+    "client": "0010",
+    "clientIds": null,
+    "sysPrin": "58801100",
+    "custType": "0",
+    "undeliverable": "2",
+    "statA": "0",
+    "statB": "0",
+    "statC": "0",
+    "statD": "0",
+    "statE": "0",
+    "statF": "0",
+    "statI": "0",
+    "statL": "0",
+    "statO": "0",
+    "statU": "0",
+    "statX": "0",
+    "statZ": "0",
+    "poBox": "0",
+    "addrFlag": "0",
+    "tempAway": 30,
+    "rps": "0",
+    "session": "A",
+    "badState": "0",
+    "nm13": "0",
+    "tempAwayAtts": 2,
+    "reportMethod": null,
+    "active": true,
+    "notes": " ",
+    "returnStatus": " ",
+    "destroyStatus": " ",
+    "nonUS": "0",
+    "special": null,
+    "pinMailer": "0",
+    "holdDays": 30,
+    "forwardingAddress": "0",
+    "contact": null,
+    "phone": null,
+    "entityCode": "0",
+    "invalidDelivAreas": [],
+    "vendorSentTo": [
+      {
+        "sysPrin": "58801100",
+        "vendorId": "v03",
+        "queForMail": true,
+        "vendorName": "Solutions                                         "
+      }
+    ],
+    "vendorReceivedFrom": [],
+    "astatRch": "0"
+  },
+  {
+    "client": "0010",
+    "clientIds": null,
+    "sysPrin": "58803200",
+    "custType": "0",
+    "undeliverable": "2",
+    "statA": "0",
+    "statB": "0",
+    "statC": "0",
+    "statD": "0",
+    "statE": "0",
+    "statF": "0",
+    "statI": "0",
+    "statL": "0",
+    "statO": "0",
+    "statU": "0",
+    "statX": "0",
+    "statZ": "0",
+    "poBox": "0",
+    "addrFlag": "0",
+    "tempAway": 30,
+    "rps": "0",
+    "session": "A",
+    "badState": "0",
+    "nm13": "0",
+    "tempAwayAtts": 2,
+    "reportMethod": null,
+    "active": true,
+    "notes": " ",
+    "returnStatus": " ",
+    "destroyStatus": " ",
+    "nonUS": "0",
+    "special": null,
+    "pinMailer": "0",
+    "holdDays":
+PreviewClientReports.js:15 [
+  {
+    "clientId": "0010",
+    "reportId": -1,
+    "receiveFlag": true,
+    "outputTypeCd": 2,
+    "fileTypeCd": 0,
+    "emailFlag": 0,
+    "reportPasswordTx": null,
+    "emailBodyTx": "",
+    "reportDetails": null
+  },
+  {
+    "clientId": "0010",
+    "reportId": 184,
+    "receiveFlag": true,
+    "outputTypeCd": 1,
+    "fileTypeCd": 1,
+    "emailFlag": 2,
+    "reportPasswordTx": null,
+    "emailBodyTx": "11859167FED5ABA5",
+    "reportDetails": {
+      "reportId": 184,
+      "queryName": "Rapid Daily Activity - AAID                       ",
+      "query": "Exec USP_ClientDailyActivity_AAID '<Client>'",
+      "inputDataFields": "Client                                                                                                                                                                                                                                                         ",
+      "fileExt": "XLS",
+      "dbDriverType": "{SQL SERVER}                  ",
+      "fileHeaderInd": 1,
+      "defaultFileNm": "A%CLIENT%yyyyMMdd%",
+      "reportDbServer": "W3DVDS1051",
+      "reportDb": "Rapid3",
+      "reportDbUserid": "svc-fdpd-tag",
+      "reportDbPasswrd": "D9EE541990967B8D12753C8CD5A6E946",
+      "fileTransferType": 2,
+      "reportDbIpAndPort": "",
+      "reportByClientFlag": true,
+      "rerunDateRangeStart": null,
+      "rerunDateRangeEnd": null,
+      "rerunClientId": null,
+      "emailFromAddress": "Rapid.Reports@FirstData.com",
+      "emailEventId": "                                                  ",
+      "tabDelimitedFlag": false,
+      "inputFileTx": "",
+      "inputFileKeyStartPos": 0,
+      "inputFileKeyLength": 0,
+      "accessLevel": 6,
+      "isActive": true,
+      "isVisible": true,
+      "numSheets": 0
+    }
+  },
+  {
+    "clientId": "0010",
+    "reportId": 194,
+    "receiveFlag": false,
+    "outputTypeCd": 0,
+    "fileTypeCd": 0,
+    "emailFlag": 0,
+    "reportPasswordTx": null,
+    "emailBodyTx": "",
+    "reportDetails": null
+  },
+  {
+    "clientId": "0010",
+    "reportId": 36,
+    "receiveFlag": false,
+    "outputTypeCd": 0,
+    "fileTypeCd": 0,
+    "emailFlag": 0,
+    "reportPasswordTx": null,
+    "emailBodyTx": "",
+    "reportDetails": null
+  },
+  {
+    "clientId": "0010",
+    "reportId": 33,
+    "receiveFlag": false,
+    "outputTypeCd": 0,
+    "fileTypeCd": 0,
+    "emailFlag": 0,
+    "reportPasswordTx": null,
+    "emailBodyTx": "",
+    "reportDetails": {
+      "reportId": 33,
+      "queryName": "First Data Rapid Daily Activity Report            ",
+      "query": "Exec USP_ClientDailyActivity '<Client>'",
+      "inputDataFields": "Client                                                                                                                                                                                                                                                         ",
+      "fileExt": "TXT",
+      "dbDriverType": "{SQL Server}                  ",
+      "fileHeaderInd": 1,
+      "defaultFileNm": "%Client%yyyyMMdd%",
+      "reportDbServer": "W3DVDS1051",
+      "reportDb": "RAPID3",
+      "reportDbUserid": "svc-fdpd-tag",
+      "reportDbPasswrd": "D9EE541990967B8D12753C8CD5A6E946",
+      "fileTransferType": 0,
+      "reportDbIpAndPort": "",
+      "reportByClientFlag": true,
+      "rerunDateRangeStart": null,
+      "rerunDateRangeEnd": null,
+      "rerunClientId": null,
+      "emailFromAddress": "rapid.reports@firstdatacorp.com",
+      "emailEventId": "                                                  ",
+      "tabDelimitedFlag": false,
+      "inputFileTx": "",
+      "inputFileKeyStartPos": 0,
+      "inputFileKeyLength": 0,
+      "accessLevel": 6,
+      "isActive": true,
+      "isVisible": true,
+      "numSheets": 0
+    }
+  },
+  {
+    "clientId": "0010",
+    "reportId": 37,
+    "receiveFlag": false,
+    "outputTypeCd": 0,
+    "fileTypeCd": 0,
+    "emailFlag": 0,
+    "reportPasswordTx": null,
+    "emailBodyTx": "",
+    "reportDetails": {
+      "reportId": 37,
+      "queryName": "Binary -  Rapid Daily Activity Report - NDM       ",
+      "query": "Exec USP_ClientDailyActivityCAP1",
+      "inputDataFields": "                                                                                                                                                                                                                                                               ",
+      "fileExt": "TXT",
+      "dbDriverType": "{SQL Server}                  ",
+      "fileHeaderInd": 1,
+      "defaultFileNm": "CAP1%yyyyMMdd%",
+      "reportDbServer": "W3DVDS1051",
+      "reportDb": "Rapid3",
+      "reportDbUserid": "svc-fdpd-tag",
+      "reportDbPasswrd": "D9EE541990967B8D12753C8CD5A6E946",
+      "fileTransferType": 6,
+      "reportDbIpAndPort": "",
+      "reportByClientFlag": true,
+      "rerunDateRangeStart": null,
+      "rerunDateRangeEnd": null,
+      "rerunClientId": null,
+      "emailFromAddress": "rapid.reports@firstdatacorp.com",
+      "emailEventId": "                                  
+PreviewAtmAndCashPrefixes.js:15 [
+  {
+    "billingSp": "85081000",
+    "prefix": "123456",
+    "atmCashRule": "0"
+  },
+  {
+    "billingSp": "85081000",
+    "prefix": "345677",
+    "atmCashRule": "1"
+  }
+]
+PreviewClientSysPrinList.js:15 [
+  {
+    "client": "0007",
+    "clientIds": null,
+    "sysPrin": "80100100",
+    "custType": "0",
+    "undeliverable": "1",
+    "statA": "1",
+    "statB": "1",
+    "statC": "1",
+    "statD": "1",
+    "statE": "1",
+    "statF": "1",
+    "statI": "1",
+    "statL": "1",
+    "statO": "1",
+    "statU": "1",
+    "statX": "1",
+    "statZ": "1",
+    "poBox": "1",
+    "addrFlag": "0",
+    "tempAway": 30,
+    "rps": "0",
+    "session": "A",
+    "badState": "1",
+    "nm13": "0",
+    "tempAwayAtts": 2,
+    "reportMethod": null,
+    "active": true,
+    "notes": " 801 596 4121",
+    "returnStatus": " ",
+    "destroyStatus": " ",
+    "nonUS": "5",
+    "special": "0",
+    "pinMailer": "0",
+    "holdDays": 30,
+    "forwardingAddress": "0",
+    "contact": null,
+    "phone": null,
+    "entityCode": "0",
+    "invalidDelivAreas": [],
+    "vendorSentTo": [
+      {
+        "sysPrin": "80100100",
+        "vendorId": "v03",
+        "queForMail": true,
+        "vendorName": "Solutions                                         "
+      }
+    ],
+    "vendorReceivedFrom": [],
+    "astatRch": "0"
+  },
+  {
+    "client": "0007",
+    "clientIds": null,
+    "sysPrin": "80100100",
+    "custType": "0",
+    "undeliverable": "1",
+    "statA": "1",
+    "statB": "1",
+    "statC": "1",
+    "statD": "1",
+    "statE": "1",
+    "statF": "1",
+    "statI": "1",
+    "statL": "1",
+    "statO": "1",
+    "statU": "1",
+    "statX": "1",
+    "statZ": "1",
+    "poBox": "1",
+    "addrFlag": "0",
+    "tempAway": 30,
+    "rps": "0",
+    "session": "A",
+    "badState": "1",
+    "nm13": "0",
+    "tempAwayAtts": 2,
+    "reportMethod": null,
+    "active": true,
+    "notes": " 801 596 4121",
+    "returnStatus": " ",
+    "destroyStatus": " ",
+    "nonUS": "5",
+    "special": "0",
+    "pinMailer": "0",
+    "holdDays": 30,
+    "forwardingAddress": "0",
+    "contact": null,
+    "phone": null,
+    "entityCode": "0",
+    "invalidDelivAreas": [],
+    "vendorSentTo": [
+      {
+        "sysPrin": "80100100",
+        "vendorId": "v03",
+        "queForMail": true,
+        "vendorName": "Solutions                                         "
+      }
+    ],
+    "vendorReceivedFrom": [],
+    "astatRch": "0"
+  },
+  {
+    "client": "0007",
+    "clientIds": null,
+    "sysPrin": "80100200",
+    "custType": "0",
+    "undeliverable": "1",
+    "statA": "1",
+    "statB": "1",
+    "statC": "1",
+    "statD": "1",
+    "statE": "1",
+    "statF": "1",
+    "statI": "1",
+    "statL": "1",
+    "statO": "1",
+    "statU": "1",
+    "statX": "1",
+    "statZ": "1",
+    "poBox": "1",
+    "addrFlag": "0",
+    "tempAway": 30,
+    "rps": "0",
+    "session": "A",
+    "badState": "1",
+    "nm13": "0",
+    "tempAwayAtts": 2,
+    "reportMethod": null,
+    "active": true,
+    "notes": " ",
+    "returnStatus": " ",
+    "destroyStatus": " ",
+    "nonUS": "5",
+    "special": null,
+    "pinMailer": "0",
+    "holdDays": 30,
+    "forwardingAddress": "0",
+    "contact": null,
+    "phone": null,
+    "entityCode": "0",
+    "invalidDelivAreas": [],
+    "vendorSentTo": [
+      {
+        "sysPrin": "80100200",
+        "vendorId": "v03",
+        "queForMail": true,
+        "vendorName": "Solutions                                         "
+      }
+    ],
+    "vendorReceivedFrom": [],
+    "astatRch": "0"
+  },
+  {
+    "client": "0007",
+    "clientIds": null,
+    "sysPrin": "80100200",
+    "custType": "0",
+    "undeliverable": "1",
+    "statA": "1",
+    "statB": "1",
+    "statC": "1",
+    "statD": "1",
+    "statE": "1",
+    "statF": "1",
+    "statI": "1",
+    "statL": "1",
+    "statO": "1",
+    "statU": "1",
+    "statX": "1",
+    "statZ": "1",
+    "poBox": "1",
+    "addrFlag": "0",
+    "tempAway": 30,
+    "rps": "0",
+    "session": "A",
+    "badState": "1",
+    "nm13": "0",
+    "tempAwayAtts": 2,
+    "reportMethod": null,
+    "active": true,
+    "notes": " ",
+    "returnStatus": " ",
+    "destroyStatus": " ",
+    "nonUS": "5",
+    "special": null,
+    "pinMailer": "0",
+    "holdDays": 30,
+    "forwardingAddress": "0",
+    "contact": null,
+    "phone": null,
+    "entityCode": "0",
+    "invalidDelivAreas": [],
+    "vendorSentTo": [
+      {
+        "sysPrin": "80100200",
+        "vendorId": "v03",
+        "queForMail": true,
+        "vendorName": "Solutions                                         "
+      }
+    ],
+    "vendorReceivedFrom": [],
+    "astatRch": "0"
+  },
+  {
+    "client": "0007",
+    "clientIds": null,
+    "sysPrin": "80100300",
+    "custType": "0",
+    "undeliverable": "1",
+    "statA": "1",
+    "statB": "1",
+    "statC": "1",
+    "statD": "1",
+    "statE": "1",
+    "statF": "1",
+    "statI": "1",
+    "statL": "1",
+    "statO": "1",
+    "statU": "1",
+    "statX": "1",
+    "statZ": "1",
+    "poBox": "1",
+    "addrFlag": "0",
+    "tempAway": 30,
+    "rps": "0",
+    "session": "A",
+    "badState": "1",
+    "nm13": "0",
+    "tempAwayAtts": 2,
+    "reportMethod": null,
+    "active": true,
+    "notes": " ",
+    "returnStatus": " ",
+    "destroyStatus": " ",
+    "nonUS": "5",
+    "special": null,
+    "pinMailer": "0",
+    "hold
+PreviewAtmAndCashPrefixes.js:15 [
+  {
+    "billingSp": "80100100",
+    "prefix": "123456",
+    "atmCashRule": "0"
+  },
+  {
+    "billingSp": "80100100",
+    "prefix": "24567",
+    "atmCashRule": "1"
+  }
+]
+PreviewClientEmails.js:15 [
+  {
+    "clientId": "0007",
+    "emailAddressTx": "lingxin.wang@yahoo.com",
+    "reportId": 0,
+    "emailNameTx": "lingxin wang",
+    "carbonCopyFlag": true,
+    "activeFlag": true,
+    "mailServerId": 0
+  }
+]
+PreviewClientSysPrinList.js:15 [
+  {
+    "client": "0039",
+    "clientIds": null,
+    "sysPrin": "10606720",
+    "custType": "0",
+    "undeliverable": "2",
+    "statA": "2",
+    "statB": "0",
+    "statC": "0",
+    "statD": "2",
+    "statE": "0",
+    "statF": "0",
+    "statI": "1",
+    "statL": "0",
+    "statO": "2",
+    "statU": "0",
+    "statX": "2",
+    "statZ": "0",
+    "poBox": "1",
+    "addrFlag": "0",
+    "tempAway": 30,
+    "rps": "0",
+    "session": "A",
+    "badState": "0",
+    "nm13": "0",
+    "tempAwayAtts": 2,
+    "reportMethod": null,
+    "active": true,
+    "notes": " ",
+    "returnStatus": " ",
+    "destroyStatus": " ",
+    "nonUS": "1",
+    "special": null,
+    "pinMailer": "0",
+    "holdDays": 30,
+    "forwardingAddress": "0",
+    "contact": null,
+    "phone": null,
+    "entityCode": "0",
+    "invalidDelivAreas": [],
+    "vendorSentTo": [
+      {
+        "sysPrin": "10606720",
+        "vendorId": "v03",
+        "queForMail": true,
+        "vendorName": "Solutions                                         "
+      }
+    ],
+    "vendorReceivedFrom": [],
+    "astatRch": "0"
+  },
+  {
+    "client": "0039",
+    "clientIds": null,
+    "sysPrin": "10606720",
+    "custType": "0",
+    "undeliverable": "2",
+    "statA": "2",
+    "statB": "0",
+    "statC": "0",
+    "statD": "2",
+    "statE": "0",
+    "statF": "0",
+    "statI": "1",
+    "statL": "0",
+    "statO": "2",
+    "statU": "0",
+    "statX": "2",
+    "statZ": "0",
+    "poBox": "1",
+    "addrFlag": "0",
+    "tempAway": 30,
+    "rps": "0",
+    "session": "A",
+    "badState": "0",
+    "nm13": "0",
+    "tempAwayAtts": 2,
+    "reportMethod": null,
+    "active": true,
+    "notes": " ",
+    "returnStatus": " ",
+    "destroyStatus": " ",
+    "nonUS": "1",
+    "special": null,
+    "pinMailer": "0",
+    "holdDays": 30,
+    "forwardingAddress": "0",
+    "contact": null,
+    "phone": null,
+    "entityCode": "0",
+    "invalidDelivAreas": [],
+    "vendorSentTo": [
+      {
+        "sysPrin": "10606720",
+        "vendorId": "v03",
+        "queForMail": true,
+        "vendorName": "Solutions                                         "
+      }
+    ],
+    "vendorReceivedFrom": [],
+    "astatRch": "0"
+  }
+]
+chunk-MWBV3TKB.js?v=ee5459a7:30871 Uncaught Error: error #252 cannot get grid to draw rows when it is in the middle of drawing rows. 
+Your code probably called a grid API method while the grid was in the render stage. 
+To overcome this, put the API call into a timeout, e.g. instead of api.redrawRows(), call setTimeout(function() { api.redrawRows(); }, 0). 
+To see what part of your code that caused the refresh check this stacktrace. 
+See https://www.ag-grid.com/react-data-grid/errors/252?_version_=33.2.2
+    at RowRenderer.getLockOnRefresh (chunk-MWBV3TKB.js?v=ee5459a7:30871:13)
+    at RowRenderer.redraw (chunk-MWBV3TKB.js?v=ee5459a7:31124:10)
+    at RowRenderer.onCellFocusChanged (chunk-MWBV3TKB.js?v=ee5459a7:30579:14)
+    at cellFocused (chunk-MWBV3TKB.js?v=ee5459a7:30595:14)
+    at callback (chunk-MWBV3TKB.js?v=ee5459a7:70:124)
+    at chunk-MWBV3TKB.js?v=ee5459a7:74:9
+    at Set.forEach (<anonymous>)
+    at processEventListeners (chunk-MWBV3TKB.js?v=ee5459a7:66:82)
+    at LocalEventService.dispatchToListeners (chunk-MWBV3TKB.js?v=ee5459a7:80:7)
+    at LocalEventService.dispatchEvent (chunk-MWBV3TKB.js?v=ee5459a7:50:10)
+react-dom_client.js?v=6aa48ad9:6229 An error occurred in the <AgGridReactUi> component.
 
-# the process to clone the repository:
--- git clone https://github.com/edwardjing1998/docker_python_kafka.git
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
 
-# File structure 
-
-docker_python_kafka/
-├── app/
-│   ├── __init__.py
-│   ├── main.py            # (Provided above)
-│   ├── kafka-producer.py
-│   ├── kafka-consumer.py
-├── Dockerfile             # (For building the python-app image)
-├── docker-compose.yaml    # (Coordinates Zookeeper, Kafka, Python App)
-├── requirements.txt       # (At least flask, kafka-python, etc.)
-└── README.md              # (Optional documentation)
-
-# Build and start application containers:
-
--- docker-compose build (build images i.e. python-app image)
--- docker-compose up (pull images i.e. Kafka and Zookeeper from registries; create and start containers i.e. kafka, zookeeper and kafka-python)
--- docker-compose up --build -d (it will include the 2 process as the above 2 process)
-
-# Stopping & Cleanup:
-
--- docker-compose down (stop all containers)
--- docker-compose down --rmi all (This stop containers and removes images)
-
-# the process to create branch to push the changes into new branch
-
--- Make sure you are on the main (or master) branch
-git checkout main
-
--- Pull the latest changes from remote main branch (optional but recommended)
-git pull origin main
-
--- Create and switch to a new branch for your changes
-git checkout -b feature/my-new-branch
-
--- push the new changes into feature/my-new-branch
-git add .
-git commit -m "make README.md changes"
-
--- Push Your New Branch to the Remote Repository
-git push -u origin feature/my-new-branch
-
-# After I push the new changes (2 commits) to "feature/my-new-branch" and make pull request, then I select "squash and merge", which cause the following problems:
-
--- "Squash" merge 2 commits into 1 commit, and then merge 1 commit into "main" repository, which make the difference of commits (2 commits in "feature/my-new-branch"; 1 commit in "main");
--- In the my-new-branch has 1 behind and 2 ahead in github, and it needs to syn local "feature/my-new-branch" with remote "main" repository by using the following scripting;
-   
-   --- Ensure Local Main Is Up to Date
-   ## git checkout feature/my-new-branch
-   ## git merge main
-
-   --- Update my-new-branch
-   ## git checkout feature/my-new-branch
-   ## git merge main
-   ## git push
-
-   --- Then above scripts are committed, "1 behind" was no longer existing. But 3 ahead is still existing. It needs the following script actions - Rebase "feature/my-new-branch" on Main:
-   ## git checkout main
-   ## git merge feature/my-new-branch
-   ## git push origin main
-
-   --- Rebasing rewrites your branch so it sits on top of main’s latest commit. This can make the commit history cleaner, but it changes commit hashes (thus push --force is often needed if the branch was already on the remote).
-   
-   --- have feature branch -
-   ## my-new-branch has some changes and push the remote  my-new-branch. the remote feature branch has been squash/merge into remote main;
-   ## in the local, i merge feature branch into main. 
-   ## in the local main, i have these message - Your branch and 'origin/main' have diverged, and have 1 and 1 different commits each, respectively. can you give me the solution, how to resolve it ?
-
-      Solution: running "git checkout main" and "git reset --hard origin/main"
-      Explain: This command forces your local main to exactly match the remote main (which now contains the squashed commit), effectively discarding the local commit that’s causing the divergence. 
-
-   --- In Github side, my feature branch has "1 behind ahead and 1 commit ahead" after it was squash/merge,
-   --- After resolving "Your branch and 'origin/main' have diverged, and have 1 and 1 different commits each, respectively" in local main branch, running the following script to resolve "ahead 1" issue:
-      
-      ### git merge feature/my-new-branch (merge local main and my-new-branch). afther this script, "1 ahead commit" is resolved.
-      ### but the remote feature branch has "2 behinds" issue. the following scripts will resolve this issues:
-    
-          -- git checkout feature/my-feature-branch
-          -- git fetch origin
-          -- git merge origin/main
-          -- git push origin feature/my-feature-branch
-
-   --- After I push the new changes (1 commits) to "feature/my-new-branch" and make pull request, then I select "squash and merge", which cause the following problems "1 behind and 1 ahead". how to resolve this issue ?
-
-          -- If you want to keep your feature branch for further work, you can rebase it onto the updated remote main so that its commit history becomes linear:
-              
-              --- git checkout feature/my-new-branch
-              --- git fetch origin
-              --- git rebase origin/main
-              --- git push --force-with-lease origin feature/my-new-branch
-
-              the above scripts will resolve all the issues.
-          
-
-
-       
-
-   
+defaultOnUncaughtError @ react-dom_client.js?v=6aa48ad9:6229

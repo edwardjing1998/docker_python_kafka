@@ -1,772 +1,3 @@
-react-dom_client.js?v=6aa48ad9:17987 Download the React DevTools for a better development experience: https://react.dev/link/react-devtools
-PreviewClientSysPrinList.js:15 [
-  {
-    "client": "0010",
-    "clientIds": null,
-    "sysPrin": "58801000",
-    "custType": "0",
-    "undeliverable": "2",
-    "statA": "0",
-    "statB": "0",
-    "statC": "0",
-    "statD": "0",
-    "statE": "0",
-    "statF": "0",
-    "statI": "0",
-    "statL": "0",
-    "statO": "0",
-    "statU": "0",
-    "statX": "0",
-    "statZ": "0",
-    "poBox": "0",
-    "addrFlag": "0",
-    "tempAway": 30,
-    "rps": "0",
-    "session": "A",
-    "badState": "0",
-    "nm13": "0",
-    "tempAwayAtts": 2,
-    "reportMethod": 0,
-    "active": true,
-    "notes": " 972 653 4109",
-    "returnStatus": " ",
-    "destroyStatus": " ",
-    "nonUS": "0",
-    "special": "0",
-    "pinMailer": "0",
-    "holdDays": 30,
-    "forwardingAddress": "0",
-    "contact": null,
-    "phone": null,
-    "entityCode": "0",
-    "invalidDelivAreas": [],
-    "vendorSentTo": [
-      {
-        "sysPrin": "58801000",
-        "vendorId": "v03",
-        "queForMail": true,
-        "vendorName": "Solutions                                         "
-      }
-    ],
-    "vendorReceivedFrom": [],
-    "astatRch": "0"
-  },
-  {
-    "client": "0010",
-    "clientIds": null,
-    "sysPrin": "58801000",
-    "custType": "0",
-    "undeliverable": "2",
-    "statA": "0",
-    "statB": "0",
-    "statC": "0",
-    "statD": "0",
-    "statE": "0",
-    "statF": "0",
-    "statI": "0",
-    "statL": "0",
-    "statO": "0",
-    "statU": "0",
-    "statX": "0",
-    "statZ": "0",
-    "poBox": "0",
-    "addrFlag": "0",
-    "tempAway": 30,
-    "rps": "0",
-    "session": "A",
-    "badState": "0",
-    "nm13": "0",
-    "tempAwayAtts": 2,
-    "reportMethod": 0,
-    "active": true,
-    "notes": " 972 653 4109",
-    "returnStatus": " ",
-    "destroyStatus": " ",
-    "nonUS": "0",
-    "special": "0",
-    "pinMailer": "0",
-    "holdDays": 30,
-    "forwardingAddress": "0",
-    "contact": null,
-    "phone": null,
-    "entityCode": "0",
-    "invalidDelivAreas": [],
-    "vendorSentTo": [
-      {
-        "sysPrin": "58801000",
-        "vendorId": "v03",
-        "queForMail": true,
-        "vendorName": "Solutions                                         "
-      }
-    ],
-    "vendorReceivedFrom": [],
-    "astatRch": "0"
-  },
-  {
-    "client": "0010",
-    "clientIds": null,
-    "sysPrin": "58801100",
-    "custType": "0",
-    "undeliverable": "2",
-    "statA": "0",
-    "statB": "0",
-    "statC": "0",
-    "statD": "0",
-    "statE": "0",
-    "statF": "0",
-    "statI": "0",
-    "statL": "0",
-    "statO": "0",
-    "statU": "0",
-    "statX": "0",
-    "statZ": "0",
-    "poBox": "0",
-    "addrFlag": "0",
-    "tempAway": 30,
-    "rps": "0",
-    "session": "A",
-    "badState": "0",
-    "nm13": "0",
-    "tempAwayAtts": 2,
-    "reportMethod": null,
-    "active": true,
-    "notes": " ",
-    "returnStatus": " ",
-    "destroyStatus": " ",
-    "nonUS": "0",
-    "special": null,
-    "pinMailer": "0",
-    "holdDays": 30,
-    "forwardingAddress": "0",
-    "contact": null,
-    "phone": null,
-    "entityCode": "0",
-    "invalidDelivAreas": [],
-    "vendorSentTo": [
-      {
-        "sysPrin": "58801100",
-        "vendorId": "v03",
-        "queForMail": true,
-        "vendorName": "Solutions                                         "
-      }
-    ],
-    "vendorReceivedFrom": [],
-    "astatRch": "0"
-  },
-  {
-    "client": "0010",
-    "clientIds": null,
-    "sysPrin": "58801100",
-    "custType": "0",
-    "undeliverable": "2",
-    "statA": "0",
-    "statB": "0",
-    "statC": "0",
-    "statD": "0",
-    "statE": "0",
-    "statF": "0",
-    "statI": "0",
-    "statL": "0",
-    "statO": "0",
-    "statU": "0",
-    "statX": "0",
-    "statZ": "0",
-    "poBox": "0",
-    "addrFlag": "0",
-    "tempAway": 30,
-    "rps": "0",
-    "session": "A",
-    "badState": "0",
-    "nm13": "0",
-    "tempAwayAtts": 2,
-    "reportMethod": null,
-    "active": true,
-    "notes": " ",
-    "returnStatus": " ",
-    "destroyStatus": " ",
-    "nonUS": "0",
-    "special": null,
-    "pinMailer": "0",
-    "holdDays": 30,
-    "forwardingAddress": "0",
-    "contact": null,
-    "phone": null,
-    "entityCode": "0",
-    "invalidDelivAreas": [],
-    "vendorSentTo": [
-      {
-        "sysPrin": "58801100",
-        "vendorId": "v03",
-        "queForMail": true,
-        "vendorName": "Solutions                                         "
-      }
-    ],
-    "vendorReceivedFrom": [],
-    "astatRch": "0"
-  },
-  {
-    "client": "0010",
-    "clientIds": null,
-    "sysPrin": "58803200",
-    "custType": "0",
-    "undeliverable": "2",
-    "statA": "0",
-    "statB": "0",
-    "statC": "0",
-    "statD": "0",
-    "statE": "0",
-    "statF": "0",
-    "statI": "0",
-    "statL": "0",
-    "statO": "0",
-    "statU": "0",
-    "statX": "0",
-    "statZ": "0",
-    "poBox": "0",
-    "addrFlag": "0",
-    "tempAway": 30,
-    "rps": "0",
-    "session": "A",
-    "badState": "0",
-    "nm13": "0",
-    "tempAwayAtts": 2,
-    "reportMethod": null,
-    "active": true,
-    "notes": " ",
-    "returnStatus": " ",
-    "destroyStatus": " ",
-    "nonUS": "0",
-    "special": null,
-    "pinMailer": "0",
-    "holdDays":
-PreviewClientReports.js:15 [
-  {
-    "clientId": "0010",
-    "reportId": -1,
-    "receiveFlag": true,
-    "outputTypeCd": 2,
-    "fileTypeCd": 0,
-    "emailFlag": 0,
-    "reportPasswordTx": null,
-    "emailBodyTx": "",
-    "reportDetails": null
-  },
-  {
-    "clientId": "0010",
-    "reportId": 184,
-    "receiveFlag": true,
-    "outputTypeCd": 1,
-    "fileTypeCd": 1,
-    "emailFlag": 2,
-    "reportPasswordTx": null,
-    "emailBodyTx": "11859167FED5ABA5",
-    "reportDetails": {
-      "reportId": 184,
-      "queryName": "Rapid Daily Activity - AAID                       ",
-      "query": "Exec USP_ClientDailyActivity_AAID '<Client>'",
-      "inputDataFields": "Client                                                                                                                                                                                                                                                         ",
-      "fileExt": "XLS",
-      "dbDriverType": "{SQL SERVER}                  ",
-      "fileHeaderInd": 1,
-      "defaultFileNm": "A%CLIENT%yyyyMMdd%",
-      "reportDbServer": "W3DVDS1051",
-      "reportDb": "Rapid3",
-      "reportDbUserid": "svc-fdpd-tag",
-      "reportDbPasswrd": "D9EE541990967B8D12753C8CD5A6E946",
-      "fileTransferType": 2,
-      "reportDbIpAndPort": "",
-      "reportByClientFlag": true,
-      "rerunDateRangeStart": null,
-      "rerunDateRangeEnd": null,
-      "rerunClientId": null,
-      "emailFromAddress": "Rapid.Reports@FirstData.com",
-      "emailEventId": "                                                  ",
-      "tabDelimitedFlag": false,
-      "inputFileTx": "",
-      "inputFileKeyStartPos": 0,
-      "inputFileKeyLength": 0,
-      "accessLevel": 6,
-      "isActive": true,
-      "isVisible": true,
-      "numSheets": 0
-    }
-  },
-  {
-    "clientId": "0010",
-    "reportId": 194,
-    "receiveFlag": false,
-    "outputTypeCd": 0,
-    "fileTypeCd": 0,
-    "emailFlag": 0,
-    "reportPasswordTx": null,
-    "emailBodyTx": "",
-    "reportDetails": null
-  },
-  {
-    "clientId": "0010",
-    "reportId": 36,
-    "receiveFlag": false,
-    "outputTypeCd": 0,
-    "fileTypeCd": 0,
-    "emailFlag": 0,
-    "reportPasswordTx": null,
-    "emailBodyTx": "",
-    "reportDetails": null
-  },
-  {
-    "clientId": "0010",
-    "reportId": 33,
-    "receiveFlag": false,
-    "outputTypeCd": 0,
-    "fileTypeCd": 0,
-    "emailFlag": 0,
-    "reportPasswordTx": null,
-    "emailBodyTx": "",
-    "reportDetails": {
-      "reportId": 33,
-      "queryName": "First Data Rapid Daily Activity Report            ",
-      "query": "Exec USP_ClientDailyActivity '<Client>'",
-      "inputDataFields": "Client                                                                                                                                                                                                                                                         ",
-      "fileExt": "TXT",
-      "dbDriverType": "{SQL Server}                  ",
-      "fileHeaderInd": 1,
-      "defaultFileNm": "%Client%yyyyMMdd%",
-      "reportDbServer": "W3DVDS1051",
-      "reportDb": "RAPID3",
-      "reportDbUserid": "svc-fdpd-tag",
-      "reportDbPasswrd": "D9EE541990967B8D12753C8CD5A6E946",
-      "fileTransferType": 0,
-      "reportDbIpAndPort": "",
-      "reportByClientFlag": true,
-      "rerunDateRangeStart": null,
-      "rerunDateRangeEnd": null,
-      "rerunClientId": null,
-      "emailFromAddress": "rapid.reports@firstdatacorp.com",
-      "emailEventId": "                                                  ",
-      "tabDelimitedFlag": false,
-      "inputFileTx": "",
-      "inputFileKeyStartPos": 0,
-      "inputFileKeyLength": 0,
-      "accessLevel": 6,
-      "isActive": true,
-      "isVisible": true,
-      "numSheets": 0
-    }
-  },
-  {
-    "clientId": "0010",
-    "reportId": 37,
-    "receiveFlag": false,
-    "outputTypeCd": 0,
-    "fileTypeCd": 0,
-    "emailFlag": 0,
-    "reportPasswordTx": null,
-    "emailBodyTx": "",
-    "reportDetails": {
-      "reportId": 37,
-      "queryName": "Binary -  Rapid Daily Activity Report - NDM       ",
-      "query": "Exec USP_ClientDailyActivityCAP1",
-      "inputDataFields": "                                                                                                                                                                                                                                                               ",
-      "fileExt": "TXT",
-      "dbDriverType": "{SQL Server}                  ",
-      "fileHeaderInd": 1,
-      "defaultFileNm": "CAP1%yyyyMMdd%",
-      "reportDbServer": "W3DVDS1051",
-      "reportDb": "Rapid3",
-      "reportDbUserid": "svc-fdpd-tag",
-      "reportDbPasswrd": "D9EE541990967B8D12753C8CD5A6E946",
-      "fileTransferType": 6,
-      "reportDbIpAndPort": "",
-      "reportByClientFlag": true,
-      "rerunDateRangeStart": null,
-      "rerunDateRangeEnd": null,
-      "rerunClientId": null,
-      "emailFromAddress": "rapid.reports@firstdatacorp.com",
-      "emailEventId": "                                  
-PreviewAtmAndCashPrefixes.js:15 [
-  {
-    "billingSp": "85081000",
-    "prefix": "123456",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "85081000",
-    "prefix": "345677",
-    "atmCashRule": "1"
-  }
-]
-PreviewClientSysPrinList.js:15 [
-  {
-    "client": "0007",
-    "clientIds": null,
-    "sysPrin": "80100100",
-    "custType": "0",
-    "undeliverable": "1",
-    "statA": "1",
-    "statB": "1",
-    "statC": "1",
-    "statD": "1",
-    "statE": "1",
-    "statF": "1",
-    "statI": "1",
-    "statL": "1",
-    "statO": "1",
-    "statU": "1",
-    "statX": "1",
-    "statZ": "1",
-    "poBox": "1",
-    "addrFlag": "0",
-    "tempAway": 30,
-    "rps": "0",
-    "session": "A",
-    "badState": "1",
-    "nm13": "0",
-    "tempAwayAtts": 2,
-    "reportMethod": null,
-    "active": true,
-    "notes": " 801 596 4121",
-    "returnStatus": " ",
-    "destroyStatus": " ",
-    "nonUS": "5",
-    "special": "0",
-    "pinMailer": "0",
-    "holdDays": 30,
-    "forwardingAddress": "0",
-    "contact": null,
-    "phone": null,
-    "entityCode": "0",
-    "invalidDelivAreas": [],
-    "vendorSentTo": [
-      {
-        "sysPrin": "80100100",
-        "vendorId": "v03",
-        "queForMail": true,
-        "vendorName": "Solutions                                         "
-      }
-    ],
-    "vendorReceivedFrom": [],
-    "astatRch": "0"
-  },
-  {
-    "client": "0007",
-    "clientIds": null,
-    "sysPrin": "80100100",
-    "custType": "0",
-    "undeliverable": "1",
-    "statA": "1",
-    "statB": "1",
-    "statC": "1",
-    "statD": "1",
-    "statE": "1",
-    "statF": "1",
-    "statI": "1",
-    "statL": "1",
-    "statO": "1",
-    "statU": "1",
-    "statX": "1",
-    "statZ": "1",
-    "poBox": "1",
-    "addrFlag": "0",
-    "tempAway": 30,
-    "rps": "0",
-    "session": "A",
-    "badState": "1",
-    "nm13": "0",
-    "tempAwayAtts": 2,
-    "reportMethod": null,
-    "active": true,
-    "notes": " 801 596 4121",
-    "returnStatus": " ",
-    "destroyStatus": " ",
-    "nonUS": "5",
-    "special": "0",
-    "pinMailer": "0",
-    "holdDays": 30,
-    "forwardingAddress": "0",
-    "contact": null,
-    "phone": null,
-    "entityCode": "0",
-    "invalidDelivAreas": [],
-    "vendorSentTo": [
-      {
-        "sysPrin": "80100100",
-        "vendorId": "v03",
-        "queForMail": true,
-        "vendorName": "Solutions                                         "
-      }
-    ],
-    "vendorReceivedFrom": [],
-    "astatRch": "0"
-  },
-  {
-    "client": "0007",
-    "clientIds": null,
-    "sysPrin": "80100200",
-    "custType": "0",
-    "undeliverable": "1",
-    "statA": "1",
-    "statB": "1",
-    "statC": "1",
-    "statD": "1",
-    "statE": "1",
-    "statF": "1",
-    "statI": "1",
-    "statL": "1",
-    "statO": "1",
-    "statU": "1",
-    "statX": "1",
-    "statZ": "1",
-    "poBox": "1",
-    "addrFlag": "0",
-    "tempAway": 30,
-    "rps": "0",
-    "session": "A",
-    "badState": "1",
-    "nm13": "0",
-    "tempAwayAtts": 2,
-    "reportMethod": null,
-    "active": true,
-    "notes": " ",
-    "returnStatus": " ",
-    "destroyStatus": " ",
-    "nonUS": "5",
-    "special": null,
-    "pinMailer": "0",
-    "holdDays": 30,
-    "forwardingAddress": "0",
-    "contact": null,
-    "phone": null,
-    "entityCode": "0",
-    "invalidDelivAreas": [],
-    "vendorSentTo": [
-      {
-        "sysPrin": "80100200",
-        "vendorId": "v03",
-        "queForMail": true,
-        "vendorName": "Solutions                                         "
-      }
-    ],
-    "vendorReceivedFrom": [],
-    "astatRch": "0"
-  },
-  {
-    "client": "0007",
-    "clientIds": null,
-    "sysPrin": "80100200",
-    "custType": "0",
-    "undeliverable": "1",
-    "statA": "1",
-    "statB": "1",
-    "statC": "1",
-    "statD": "1",
-    "statE": "1",
-    "statF": "1",
-    "statI": "1",
-    "statL": "1",
-    "statO": "1",
-    "statU": "1",
-    "statX": "1",
-    "statZ": "1",
-    "poBox": "1",
-    "addrFlag": "0",
-    "tempAway": 30,
-    "rps": "0",
-    "session": "A",
-    "badState": "1",
-    "nm13": "0",
-    "tempAwayAtts": 2,
-    "reportMethod": null,
-    "active": true,
-    "notes": " ",
-    "returnStatus": " ",
-    "destroyStatus": " ",
-    "nonUS": "5",
-    "special": null,
-    "pinMailer": "0",
-    "holdDays": 30,
-    "forwardingAddress": "0",
-    "contact": null,
-    "phone": null,
-    "entityCode": "0",
-    "invalidDelivAreas": [],
-    "vendorSentTo": [
-      {
-        "sysPrin": "80100200",
-        "vendorId": "v03",
-        "queForMail": true,
-        "vendorName": "Solutions                                         "
-      }
-    ],
-    "vendorReceivedFrom": [],
-    "astatRch": "0"
-  },
-  {
-    "client": "0007",
-    "clientIds": null,
-    "sysPrin": "80100300",
-    "custType": "0",
-    "undeliverable": "1",
-    "statA": "1",
-    "statB": "1",
-    "statC": "1",
-    "statD": "1",
-    "statE": "1",
-    "statF": "1",
-    "statI": "1",
-    "statL": "1",
-    "statO": "1",
-    "statU": "1",
-    "statX": "1",
-    "statZ": "1",
-    "poBox": "1",
-    "addrFlag": "0",
-    "tempAway": 30,
-    "rps": "0",
-    "session": "A",
-    "badState": "1",
-    "nm13": "0",
-    "tempAwayAtts": 2,
-    "reportMethod": null,
-    "active": true,
-    "notes": " ",
-    "returnStatus": " ",
-    "destroyStatus": " ",
-    "nonUS": "5",
-    "special": null,
-    "pinMailer": "0",
-    "hold
-PreviewAtmAndCashPrefixes.js:15 [
-  {
-    "billingSp": "80100100",
-    "prefix": "123456",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "80100100",
-    "prefix": "24567",
-    "atmCashRule": "1"
-  }
-]
-PreviewClientEmails.js:15 [
-  {
-    "clientId": "0007",
-    "emailAddressTx": "lingxin.wang@yahoo.com",
-    "reportId": 0,
-    "emailNameTx": "lingxin wang",
-    "carbonCopyFlag": true,
-    "activeFlag": true,
-    "mailServerId": 0
-  }
-]
-PreviewClientSysPrinList.js:15 [
-  {
-    "client": "0039",
-    "clientIds": null,
-    "sysPrin": "10606720",
-    "custType": "0",
-    "undeliverable": "2",
-    "statA": "2",
-    "statB": "0",
-    "statC": "0",
-    "statD": "2",
-    "statE": "0",
-    "statF": "0",
-    "statI": "1",
-    "statL": "0",
-    "statO": "2",
-    "statU": "0",
-    "statX": "2",
-    "statZ": "0",
-    "poBox": "1",
-    "addrFlag": "0",
-    "tempAway": 30,
-    "rps": "0",
-    "session": "A",
-    "badState": "0",
-    "nm13": "0",
-    "tempAwayAtts": 2,
-    "reportMethod": null,
-    "active": true,
-    "notes": " ",
-    "returnStatus": " ",
-    "destroyStatus": " ",
-    "nonUS": "1",
-    "special": null,
-    "pinMailer": "0",
-    "holdDays": 30,
-    "forwardingAddress": "0",
-    "contact": null,
-    "phone": null,
-    "entityCode": "0",
-    "invalidDelivAreas": [],
-    "vendorSentTo": [
-      {
-        "sysPrin": "10606720",
-        "vendorId": "v03",
-        "queForMail": true,
-        "vendorName": "Solutions                                         "
-      }
-    ],
-    "vendorReceivedFrom": [],
-    "astatRch": "0"
-  },
-  {
-    "client": "0039",
-    "clientIds": null,
-    "sysPrin": "10606720",
-    "custType": "0",
-    "undeliverable": "2",
-    "statA": "2",
-    "statB": "0",
-    "statC": "0",
-    "statD": "2",
-    "statE": "0",
-    "statF": "0",
-    "statI": "1",
-    "statL": "0",
-    "statO": "2",
-    "statU": "0",
-    "statX": "2",
-    "statZ": "0",
-    "poBox": "1",
-    "addrFlag": "0",
-    "tempAway": 30,
-    "rps": "0",
-    "session": "A",
-    "badState": "0",
-    "nm13": "0",
-    "tempAwayAtts": 2,
-    "reportMethod": null,
-    "active": true,
-    "notes": " ",
-    "returnStatus": " ",
-    "destroyStatus": " ",
-    "nonUS": "1",
-    "special": null,
-    "pinMailer": "0",
-    "holdDays": 30,
-    "forwardingAddress": "0",
-    "contact": null,
-    "phone": null,
-    "entityCode": "0",
-    "invalidDelivAreas": [],
-    "vendorSentTo": [
-      {
-        "sysPrin": "10606720",
-        "vendorId": "v03",
-        "queForMail": true,
-        "vendorName": "Solutions                                         "
-      }
-    ],
-    "vendorReceivedFrom": [],
-    "astatRch": "0"
-  }
-]
-
-
-
-
-
 react-dom_client.js?v=91213c66:17987 Download the React DevTools for a better development experience: https://react.dev/link/react-devtools
 PreviewClientSysPrinList.js:15 [
   {
@@ -1340,42 +571,44 @@ PreviewClientEmails.js:15 [
 ]
 ClientInformationPage.js:48 Error fetching client detail: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
 fetchGroupDetail @ ClientInformationPage.js:48
+ClientInformationPage.js:48 Error fetching client detail: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+fetchGroupDetail @ ClientInformationPage.js:48
 PreviewClientSysPrinList.js:15 [
   {
-    "client": "111p",
+    "client": "1115",
     "clientIds": null,
     "sysPrin": "SP0000000002",
-    "custType": "3",
+    "custType": "1",
     "undeliverable": "4",
-    "statA": "3",
-    "statB": "1",
+    "statA": "0",
+    "statB": "0",
     "statC": "3",
-    "statD": "3",
-    "statE": "2",
-    "statF": "3",
-    "statI": "3",
-    "statL": "1",
-    "statO": "4",
+    "statD": "2",
+    "statE": "0",
+    "statF": "1",
+    "statI": "4",
+    "statL": "0",
+    "statO": "0",
     "statU": "1",
-    "statX": "3",
-    "statZ": "1",
+    "statX": "0",
+    "statZ": "0",
     "poBox": "0",
     "addrFlag": "Y",
     "tempAway": 101,
     "rps": "N",
     "session": "A",
-    "badState": "0",
+    "badState": "1",
     "nm13": "0",
     "tempAwayAtts": 201,
     "reportMethod": 0,
-    "active": false,
-    "notes": "Client:SysPrin 111p:SP0000000002 => Apply standard font size regardless of account type.",
-    "returnStatus": "F",
-    "destroyStatus": "0",
-    "nonUS": "2",
-    "special": "1",
+    "active": true,
+    "notes": "Client:SysPrin 1115:SP0000000002 => Urgent handling: notify client if delivery fails.",
+    "returnStatus": "C",
+    "destroyStatus": "1",
+    "nonUS": "3",
+    "special": "0",
     "pinMailer": "0",
-    "holdDays": 78,
+    "holdDays": 86,
     "forwardingAddress": "1",
     "contact": "Contact",
     "phone": "Phone",
@@ -1597,16 +830,16 @@ PreviewClientSysPrinList.js:15 [
       },
       {
         "sysPrin": "SP0000000002",
-  
+      
 PreviewClientReports.js:15 [
   {
-    "clientId": "111p",
+    "clientId": "1115",
     "reportId": 1,
     "receiveFlag": false,
     "outputTypeCd": 2,
     "fileTypeCd": 0,
     "emailFlag": 1,
-    "reportPasswordTx": "Email body for 111p item 1",
+    "reportPasswordTx": "Email body for 1115 item 1",
     "emailBodyTx": "pass1",
     "reportDetails": {
       "reportId": 1,
@@ -1640,13 +873,13 @@ PreviewClientReports.js:15 [
     }
   },
   {
-    "clientId": "111p",
+    "clientId": "1115",
     "reportId": 2,
     "receiveFlag": true,
-    "outputTypeCd": 1,
+    "outputTypeCd": 0,
     "fileTypeCd": 0,
-    "emailFlag": 2,
-    "reportPasswordTx": "Email body for 111p item 2",
+    "emailFlag": 1,
+    "reportPasswordTx": "Email body for 1115 item 2",
     "emailBodyTx": "pass2",
     "reportDetails": {
       "reportId": 2,
@@ -1680,13 +913,13 @@ PreviewClientReports.js:15 [
     }
   },
   {
-    "clientId": "111p",
+    "clientId": "1115",
     "reportId": 3,
     "receiveFlag": false,
-    "outputTypeCd": 2,
-    "fileTypeCd": 2,
+    "outputTypeCd": 1,
+    "fileTypeCd": 0,
     "emailFlag": 2,
-    "reportPasswordTx": "Email body for 111p item 3",
+    "reportPasswordTx": "Email body for 1115 item 3",
     "emailBodyTx": "pass3",
     "reportDetails": {
       "reportId": 3,
@@ -1720,13 +953,13 @@ PreviewClientReports.js:15 [
     }
   },
   {
-    "clientId": "111p",
+    "clientId": "1115",
     "reportId": 4,
     "receiveFlag": true,
-    "outputTypeCd": 1,
-    "fileTypeCd": 2,
-    "emailFlag": 0,
-    "reportPasswordTx": "Email body for 111p item 4",
+    "outputTypeCd": 0,
+    "fileTypeCd": 1,
+    "emailFlag": 1,
+    "reportPasswordTx": "Email body for 1115 item 4",
     "emailBodyTx": "pass4",
     "reportDetails": {
       "reportId": 4,
@@ -1738,192 +971,778 @@ PreviewClientReports.js:15 [
 
 PreviewAtmAndCashPrefixes.js:15 [
   {
-    "billingSp": "B25",
-    "prefix": "111112ym",
+    "billingSp": "B5",
+    "prefix": "111111ch",
+    "atmCashRule": "1"
+  },
+  {
+    "billingSp": "B5",
+    "prefix": "111111ci",
     "atmCashRule": "0"
   },
   {
-    "billingSp": "B25",
-    "prefix": "111112yn",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B25",
-    "prefix": "111112yo",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B25",
-    "prefix": "111112yp",
+    "billingSp": "B5",
+    "prefix": "111111cj",
     "atmCashRule": "0"
   },
   {
-    "billingSp": "B25",
-    "prefix": "111112yq",
+    "billingSp": "B5",
+    "prefix": "111111ck",
     "atmCashRule": "1"
   },
   {
-    "billingSp": "B25",
-    "prefix": "111112yr",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B25",
-    "prefix": "111112ys",
+    "billingSp": "B5",
+    "prefix": "111111cl",
     "atmCashRule": "0"
   },
   {
-    "billingSp": "B25",
-    "prefix": "111112yt",
+    "billingSp": "B5",
+    "prefix": "111111cm",
+    "atmCashRule": "1"
+  },
+  {
+    "billingSp": "B5",
+    "prefix": "111111cn",
     "atmCashRule": "0"
   },
   {
-    "billingSp": "B25",
-    "prefix": "111112yu",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B25",
-    "prefix": "111112yv",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B25",
-    "prefix": "111112yw",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B25",
-    "prefix": "111112yx",
+    "billingSp": "B5",
+    "prefix": "111111co",
     "atmCashRule": "0"
   },
   {
-    "billingSp": "B25",
-    "prefix": "111112yy",
+    "billingSp": "B5",
+    "prefix": "111111cp",
     "atmCashRule": "1"
   },
   {
-    "billingSp": "B25",
-    "prefix": "111112yz",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B25",
-    "prefix": "111112z1",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B25",
-    "prefix": "111112z2",
+    "billingSp": "B5",
+    "prefix": "111111cq",
     "atmCashRule": "1"
   },
   {
-    "billingSp": "B25",
-    "prefix": "111112z3",
+    "billingSp": "B5",
+    "prefix": "111111cr",
+    "atmCashRule": "1"
+  },
+  {
+    "billingSp": "B5",
+    "prefix": "111111cs",
+    "atmCashRule": "0"
+  },
+  {
+    "billingSp": "B5",
+    "prefix": "111111ct",
+    "atmCashRule": "1"
+  },
+  {
+    "billingSp": "B5",
+    "prefix": "111111cu",
+    "atmCashRule": "0"
+  },
+  {
+    "billingSp": "B5",
+    "prefix": "111111cv",
+    "atmCashRule": "0"
+  },
+  {
+    "billingSp": "B5",
+    "prefix": "111111cw",
+    "atmCashRule": "1"
+  },
+  {
+    "billingSp": "B5",
+    "prefix": "111111cx",
     "atmCashRule": "1"
   }
 ]
 PreviewClientEmails.js:15 [
   {
-    "clientId": "111p",
+    "clientId": "1115",
     "emailAddressTx": "user1@example.com",
-    "reportId": 5,
+    "reportId": 1,
     "emailNameTx": "User1",
     "carbonCopyFlag": false,
-    "activeFlag": false,
-    "mailServerId": 1
-  },
-  {
-    "clientId": "111p",
-    "emailAddressTx": "user2@example.com",
-    "reportId": 1,
-    "emailNameTx": "User2",
-    "carbonCopyFlag": true,
     "activeFlag": true,
     "mailServerId": 0
   },
   {
-    "clientId": "111p",
+    "clientId": "1115",
+    "emailAddressTx": "user2@example.com",
+    "reportId": 3,
+    "emailNameTx": "User2",
+    "carbonCopyFlag": true,
+    "activeFlag": false,
+    "mailServerId": 0
+  },
+  {
+    "clientId": "1115",
     "emailAddressTx": "user3@example.com",
     "reportId": 5,
     "emailNameTx": "User3",
     "carbonCopyFlag": false,
-    "activeFlag": true,
+    "activeFlag": false,
     "mailServerId": 0
   },
   {
-    "clientId": "111p",
+    "clientId": "1115",
     "emailAddressTx": "user4@example.com",
-    "reportId": 5,
+    "reportId": 1,
     "emailNameTx": "User4",
     "carbonCopyFlag": true,
     "activeFlag": false,
     "mailServerId": 1
   },
   {
-    "clientId": "111p",
+    "clientId": "1115",
     "emailAddressTx": "user5@example.com",
-    "reportId": 3,
+    "reportId": 4,
     "emailNameTx": "User5",
     "carbonCopyFlag": false,
     "activeFlag": true,
     "mailServerId": 1
   },
   {
-    "clientId": "111p",
+    "clientId": "1115",
     "emailAddressTx": "user6@example.com",
-    "reportId": 5,
+    "reportId": 4,
     "emailNameTx": "User6",
     "carbonCopyFlag": true,
     "activeFlag": false,
-    "mailServerId": 1
+    "mailServerId": 0
   },
   {
-    "clientId": "111p",
+    "clientId": "1115",
     "emailAddressTx": "user7@example.com",
-    "reportId": 5,
+    "reportId": 1,
     "emailNameTx": "User7",
     "carbonCopyFlag": false,
-    "activeFlag": false,
+    "activeFlag": true,
     "mailServerId": 1
   },
   {
-    "clientId": "111p",
+    "clientId": "1115",
     "emailAddressTx": "user8@example.com",
-    "reportId": 2,
+    "reportId": 4,
     "emailNameTx": "User8",
     "carbonCopyFlag": true,
-    "activeFlag": false,
-    "mailServerId": 1
+    "activeFlag": true,
+    "mailServerId": 0
   },
   {
-    "clientId": "111p",
+    "clientId": "1115",
     "emailAddressTx": "user9@example.com",
-    "reportId": 4,
+    "reportId": 5,
     "emailNameTx": "User9",
     "carbonCopyFlag": false,
     "activeFlag": true,
     "mailServerId": 1
   },
   {
-    "clientId": "111p",
+    "clientId": "1115",
     "emailAddressTx": "user10@example.com",
+    "reportId": 2,
+    "emailNameTx": "User10",
+    "carbonCopyFlag": true,
+    "activeFlag": true,
+    "mailServerId": 0
+  }
+]
+ClientInformationPage.js:48 Error fetching client detail: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+fetchGroupDetail @ ClientInformationPage.js:48
+ClientInformationPage.js:48 Error fetching client detail: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+fetchGroupDetail @ ClientInformationPage.js:48
+PreviewClientSysPrinList.js:15 [
+  {
+    "client": "1117",
+    "clientIds": null,
+    "sysPrin": "SP0000000002",
+    "custType": "0",
+    "undeliverable": "3",
+    "statA": "4",
+    "statB": "1",
+    "statC": "3",
+    "statD": "4",
+    "statE": "1",
+    "statF": "3",
+    "statI": "4",
+    "statL": "1",
+    "statO": "2",
+    "statU": "0",
+    "statX": "3",
+    "statZ": "1",
+    "poBox": "1",
+    "addrFlag": "Y",
+    "tempAway": 101,
+    "rps": "Y",
+    "session": "A",
+    "badState": "1",
+    "nm13": "0",
+    "tempAwayAtts": 201,
+    "reportMethod": 0,
+    "active": true,
+    "notes": "Client:SysPrin 1117:SP0000000002 => Ensure all statements are printed on recycled paper.",
+    "returnStatus": "E",
+    "destroyStatus": "1",
+    "nonUS": "3",
+    "special": "1",
+    "pinMailer": "0",
+    "holdDays": 23,
+    "forwardingAddress": "1",
+    "contact": "Contact",
+    "phone": "Phone",
+    "entityCode": "0",
+    "invalidDelivAreas": [
+      {
+        "area": "AK",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "AL",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "AR",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "AZ",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "CA",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "CO",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "CT",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "DE",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "FL",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "GA",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "HI",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "IA",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "ID",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "IL",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "IN",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "KS",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "KY",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "LA",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "MA",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "MD",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "ME",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "MI",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "MN",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "MO",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "MS",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "MT",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "NC",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "ND",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "NE",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "NH",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "NJ",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "NM",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "NV",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "NY",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "OH",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "OK",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "OR",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "PA",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "RI",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "SC",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "SD",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "TN",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "TX",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "UT",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "VA",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "VT",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "WA",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "WI",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "WV",
+        "sysPrin": "SP0000000002"
+      },
+      {
+        "area": "WY",
+        "sysPrin": "SP0000000002"
+      }
+    ],
+    "vendorSentTo": [
+      {
+        "sysPrin": "SP0000000002",
+        "vendorId": "v02",
+        "queForMail": false,
+        "vendorName": "Letters                                           "
+      },
+      {
+        "sysPrin": "SP0000000002",
+        "vendorId": "v08",
+        "queForMail": true,
+        "vendorName": "Solutions Rec                                     "
+      },
+      {
+        "sysPrin": "SP0000000002",
+   
+PreviewClientReports.js:15 [
+  {
+    "clientId": "1117",
     "reportId": 1,
+    "receiveFlag": false,
+    "outputTypeCd": 2,
+    "fileTypeCd": 2,
+    "emailFlag": 2,
+    "reportPasswordTx": "Email body for 1117 item 1",
+    "emailBodyTx": "pass1",
+    "reportDetails": {
+      "reportId": 1,
+      "queryName": "ZipCode Step 2                                    ",
+      "query": null,
+      "inputDataFields": "Field1, Field2                                                                                                                                                                                                                                                 ",
+      "fileExt": "TXT",
+      "dbDriverType": "SQL Server                    ",
+      "fileHeaderInd": 1,
+      "defaultFileNm": "Report 1",
+      "reportDbServer": "localhost",
+      "reportDb": "demoDb",
+      "reportDbUserid": "admin",
+      "reportDbPasswrd": "adminpass",
+      "fileTransferType": null,
+      "reportDbIpAndPort": "127.0.0.1:1433",
+      "reportByClientFlag": false,
+      "rerunDateRangeStart": null,
+      "rerunDateRangeEnd": null,
+      "rerunClientId": null,
+      "emailFromAddress": null,
+      "emailEventId": null,
+      "tabDelimitedFlag": null,
+      "inputFileTx": null,
+      "inputFileKeyStartPos": null,
+      "inputFileKeyLength": null,
+      "accessLevel": null,
+      "isActive": null,
+      "isVisible": null,
+      "numSheets": null
+    }
+  },
+  {
+    "clientId": "1117",
+    "reportId": 2,
+    "receiveFlag": true,
+    "outputTypeCd": 2,
+    "fileTypeCd": 0,
+    "emailFlag": 2,
+    "reportPasswordTx": "Email body for 1117 item 2",
+    "emailBodyTx": "pass2",
+    "reportDetails": {
+      "reportId": 2,
+      "queryName": "Mailing SysPrin - T                               ",
+      "query": null,
+      "inputDataFields": "Field1, Field2                                                                                                                                                                                                                                                 ",
+      "fileExt": "TXT",
+      "dbDriverType": "SQL Server                    ",
+      "fileHeaderInd": 1,
+      "defaultFileNm": "Report 2",
+      "reportDbServer": "localhost",
+      "reportDb": "demoDb",
+      "reportDbUserid": "admin",
+      "reportDbPasswrd": "adminpass",
+      "fileTransferType": null,
+      "reportDbIpAndPort": "127.0.0.1:1433",
+      "reportByClientFlag": true,
+      "rerunDateRangeStart": null,
+      "rerunDateRangeEnd": null,
+      "rerunClientId": null,
+      "emailFromAddress": null,
+      "emailEventId": null,
+      "tabDelimitedFlag": null,
+      "inputFileTx": null,
+      "inputFileKeyStartPos": null,
+      "inputFileKeyLength": null,
+      "accessLevel": null,
+      "isActive": null,
+      "isVisible": null,
+      "numSheets": null
+    }
+  },
+  {
+    "clientId": "1117",
+    "reportId": 3,
+    "receiveFlag": false,
+    "outputTypeCd": 0,
+    "fileTypeCd": 1,
+    "emailFlag": 1,
+    "reportPasswordTx": "Email body for 1117 item 3",
+    "emailBodyTx": "pass3",
+    "reportDetails": {
+      "reportId": 3,
+      "queryName": "Binary - Rapid Daily Activity Report 6056 - NDM   ",
+      "query": null,
+      "inputDataFields": "Field1, Field2                                                                                                                                                                                                                                                 ",
+      "fileExt": "XLT",
+      "dbDriverType": "SQL Server                    ",
+      "fileHeaderInd": 1,
+      "defaultFileNm": "Report 3",
+      "reportDbServer": "localhost",
+      "reportDb": "demoDb",
+      "reportDbUserid": "admin",
+      "reportDbPasswrd": "adminpass",
+      "fileTransferType": null,
+      "reportDbIpAndPort": "127.0.0.1:1433",
+      "reportByClientFlag": true,
+      "rerunDateRangeStart": null,
+      "rerunDateRangeEnd": null,
+      "rerunClientId": null,
+      "emailFromAddress": null,
+      "emailEventId": null,
+      "tabDelimitedFlag": null,
+      "inputFileTx": null,
+      "inputFileKeyStartPos": null,
+      "inputFileKeyLength": null,
+      "accessLevel": null,
+      "isActive": null,
+      "isVisible": null,
+      "numSheets": null
+    }
+  },
+  {
+    "clientId": "1117",
+    "reportId": 4,
+    "receiveFlag": true,
+    "outputTypeCd": 1,
+    "fileTypeCd": 1,
+    "emailFlag": 1,
+    "reportPasswordTx": "Email body for 1117 item 4",
+    "emailBodyTx": "pass4",
+    "reportDetails": {
+      "reportId": 4,
+      "queryName": "Rapid Daily Activity - AAID                       ",
+      "query": null,
+      "inputDataFields": "Field1, Field2                                                                                                                                                                                                                                                 ",
+      "fileExt": "XLT",
+      "dbDriverType": "SQL Server                    ",
+
+PreviewAtmAndCashPrefixes.js:15 [
+  {
+    "billingSp": "B7",
+    "prefix": "111111i7",
+    "atmCashRule": "0"
+  },
+  {
+    "billingSp": "B7",
+    "prefix": "111111i8",
+    "atmCashRule": "1"
+  },
+  {
+    "billingSp": "B7",
+    "prefix": "111111i9",
+    "atmCashRule": "1"
+  },
+  {
+    "billingSp": "B7",
+    "prefix": "111111ia",
+    "atmCashRule": "1"
+  },
+  {
+    "billingSp": "B7",
+    "prefix": "111111ib",
+    "atmCashRule": "1"
+  },
+  {
+    "billingSp": "B7",
+    "prefix": "111111ic",
+    "atmCashRule": "1"
+  },
+  {
+    "billingSp": "B7",
+    "prefix": "111111id",
+    "atmCashRule": "1"
+  },
+  {
+    "billingSp": "B7",
+    "prefix": "111111ie",
+    "atmCashRule": "0"
+  },
+  {
+    "billingSp": "B7",
+    "prefix": "111111if",
+    "atmCashRule": "1"
+  },
+  {
+    "billingSp": "B7",
+    "prefix": "111111ig",
+    "atmCashRule": "0"
+  },
+  {
+    "billingSp": "B7",
+    "prefix": "111111ih",
+    "atmCashRule": "0"
+  },
+  {
+    "billingSp": "B7",
+    "prefix": "111111ii",
+    "atmCashRule": "0"
+  },
+  {
+    "billingSp": "B7",
+    "prefix": "111111ij",
+    "atmCashRule": "0"
+  },
+  {
+    "billingSp": "B7",
+    "prefix": "111111ik",
+    "atmCashRule": "0"
+  },
+  {
+    "billingSp": "B7",
+    "prefix": "111111il",
+    "atmCashRule": "1"
+  },
+  {
+    "billingSp": "B7",
+    "prefix": "111111im",
+    "atmCashRule": "0"
+  },
+  {
+    "billingSp": "B7",
+    "prefix": "111111in",
+    "atmCashRule": "0"
+  },
+  {
+    "billingSp": "B7",
+    "prefix": "111111io",
+    "atmCashRule": "0"
+  }
+]
+PreviewClientEmails.js:15 [
+  {
+    "clientId": "1117",
+    "emailAddressTx": "user1@example.com",
+    "reportId": 5,
+    "emailNameTx": "User1",
+    "carbonCopyFlag": false,
+    "activeFlag": true,
+    "mailServerId": 1
+  },
+  {
+    "clientId": "1117",
+    "emailAddressTx": "user2@example.com",
+    "reportId": 5,
+    "emailNameTx": "User2",
+    "carbonCopyFlag": true,
+    "activeFlag": true,
+    "mailServerId": 1
+  },
+  {
+    "clientId": "1117",
+    "emailAddressTx": "user3@example.com",
+    "reportId": 2,
+    "emailNameTx": "User3",
+    "carbonCopyFlag": false,
+    "activeFlag": true,
+    "mailServerId": 1
+  },
+  {
+    "clientId": "1117",
+    "emailAddressTx": "user4@example.com",
+    "reportId": 4,
+    "emailNameTx": "User4",
+    "carbonCopyFlag": true,
+    "activeFlag": false,
+    "mailServerId": 1
+  },
+  {
+    "clientId": "1117",
+    "emailAddressTx": "user5@example.com",
+    "reportId": 1,
+    "emailNameTx": "User5",
+    "carbonCopyFlag": false,
+    "activeFlag": false,
+    "mailServerId": 1
+  },
+  {
+    "clientId": "1117",
+    "emailAddressTx": "user6@example.com",
+    "reportId": 4,
+    "emailNameTx": "User6",
+    "carbonCopyFlag": true,
+    "activeFlag": false,
+    "mailServerId": 0
+  },
+  {
+    "clientId": "1117",
+    "emailAddressTx": "user7@example.com",
+    "reportId": 2,
+    "emailNameTx": "User7",
+    "carbonCopyFlag": false,
+    "activeFlag": false,
+    "mailServerId": 0
+  },
+  {
+    "clientId": "1117",
+    "emailAddressTx": "user8@example.com",
+    "reportId": 1,
+    "emailNameTx": "User8",
+    "carbonCopyFlag": true,
+    "activeFlag": false,
+    "mailServerId": 1
+  },
+  {
+    "clientId": "1117",
+    "emailAddressTx": "user9@example.com",
+    "reportId": 3,
+    "emailNameTx": "User9",
+    "carbonCopyFlag": false,
+    "activeFlag": true,
+    "mailServerId": 0
+  },
+  {
+    "clientId": "1117",
+    "emailAddressTx": "user10@example.com",
+    "reportId": 4,
     "emailNameTx": "User10",
     "carbonCopyFlag": true,
     "activeFlag": true,
     "mailServerId": 0
   },
   {
-    "clientId": "111p",
+    "clientId": "1117",
     "emailAddressTx": "user11@example.com",
-    "reportId": 1,
+    "reportId": 2,
     "emailNameTx": "User11",
     "carbonCopyFlag": false,
     "activeFlag": true,
-    "mailServerId": 1
+    "mailServerId": 0
   }
 ]
+ClientInformationPage.js:48 Error fetching client detail: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+fetchGroupDetail @ ClientInformationPage.js:48
 ClientInformationPage.js:48 Error fetching client detail: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
 fetchGroupDetail @ ClientInformationPage.js:48
 PreviewClientSysPrinList.js:15 [
@@ -2493,1184 +2312,6 @@ PreviewClientEmails.js:15 [
     "emailNameTx": "User10",
     "carbonCopyFlag": true,
     "activeFlag": false,
-    "mailServerId": 1
-  }
-]
-ClientInformationPage.js:48 Error fetching client detail: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
-fetchGroupDetail @ ClientInformationPage.js:48
-ClientInformationPage.js:48 Error fetching client detail: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
-fetchGroupDetail @ ClientInformationPage.js:48
-PreviewClientSysPrinList.js:15 [
-  {
-    "client": "1114",
-    "clientIds": null,
-    "sysPrin": "SP0000000002",
-    "custType": "2",
-    "undeliverable": "0",
-    "statA": "2",
-    "statB": "1",
-    "statC": "4",
-    "statD": "2",
-    "statE": "1",
-    "statF": "3",
-    "statI": "2",
-    "statL": "1",
-    "statO": "1",
-    "statU": "0",
-    "statX": "0",
-    "statZ": "1",
-    "poBox": "0",
-    "addrFlag": "N",
-    "tempAway": 101,
-    "rps": "Y",
-    "session": "A",
-    "badState": "1",
-    "nm13": "1",
-    "tempAwayAtts": 201,
-    "reportMethod": 0,
-    "active": false,
-    "notes": "Client:SysPrin 1114:SP0000000002 => Urgent handling: notify client if delivery fails.",
-    "returnStatus": "E",
-    "destroyStatus": "0",
-    "nonUS": "1",
-    "special": "0",
-    "pinMailer": "0",
-    "holdDays": 76,
-    "forwardingAddress": "1",
-    "contact": "Contact",
-    "phone": "Phone",
-    "entityCode": "0",
-    "invalidDelivAreas": [
-      {
-        "area": "AK",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "AL",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "AR",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "AZ",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "CA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "CO",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "CT",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "DE",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "FL",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "GA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "HI",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "IA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "ID",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "IL",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "IN",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "KS",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "KY",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "LA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "MA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "MD",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "ME",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "MI",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "MN",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "MO",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "MS",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "MT",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "NC",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "ND",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "NE",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "NH",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "NJ",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "NM",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "NV",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "NY",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "OH",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "OK",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "OR",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "PA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "RI",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "SC",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "SD",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "TN",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "TX",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "UT",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "VA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "VT",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "WA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "WI",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "WV",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "WY",
-        "sysPrin": "SP0000000002"
-      }
-    ],
-    "vendorSentTo": [
-      {
-        "sysPrin": "SP0000000002",
-        "vendorId": "v02",
-        "queForMail": false,
-        "vendorName": "Letters                                           "
-      },
-      {
-        "sysPrin": "SP0000000002",
-        "vendorId": "v08",
-        "queForMail": true,
-        "vendorName": "Solutions Rec                                     "
-      },
-      {
-        "sysPrin": "SP0000000002",
-     
-PreviewClientReports.js:15 [
-  {
-    "clientId": "1114",
-    "reportId": 1,
-    "receiveFlag": false,
-    "outputTypeCd": 2,
-    "fileTypeCd": 2,
-    "emailFlag": 0,
-    "reportPasswordTx": "Email body for 1114 item 1",
-    "emailBodyTx": "pass1",
-    "reportDetails": {
-      "reportId": 1,
-      "queryName": "ZipCode Step 2                                    ",
-      "query": null,
-      "inputDataFields": "Field1, Field2                                                                                                                                                                                                                                                 ",
-      "fileExt": "TXT",
-      "dbDriverType": "SQL Server                    ",
-      "fileHeaderInd": 1,
-      "defaultFileNm": "Report 1",
-      "reportDbServer": "localhost",
-      "reportDb": "demoDb",
-      "reportDbUserid": "admin",
-      "reportDbPasswrd": "adminpass",
-      "fileTransferType": null,
-      "reportDbIpAndPort": "127.0.0.1:1433",
-      "reportByClientFlag": false,
-      "rerunDateRangeStart": null,
-      "rerunDateRangeEnd": null,
-      "rerunClientId": null,
-      "emailFromAddress": null,
-      "emailEventId": null,
-      "tabDelimitedFlag": null,
-      "inputFileTx": null,
-      "inputFileKeyStartPos": null,
-      "inputFileKeyLength": null,
-      "accessLevel": null,
-      "isActive": null,
-      "isVisible": null,
-      "numSheets": null
-    }
-  },
-  {
-    "clientId": "1114",
-    "reportId": 2,
-    "receiveFlag": true,
-    "outputTypeCd": 2,
-    "fileTypeCd": 0,
-    "emailFlag": 0,
-    "reportPasswordTx": "Email body for 1114 item 2",
-    "emailBodyTx": "pass2",
-    "reportDetails": {
-      "reportId": 2,
-      "queryName": "Mailing SysPrin - T                               ",
-      "query": null,
-      "inputDataFields": "Field1, Field2                                                                                                                                                                                                                                                 ",
-      "fileExt": "TXT",
-      "dbDriverType": "SQL Server                    ",
-      "fileHeaderInd": 1,
-      "defaultFileNm": "Report 2",
-      "reportDbServer": "localhost",
-      "reportDb": "demoDb",
-      "reportDbUserid": "admin",
-      "reportDbPasswrd": "adminpass",
-      "fileTransferType": null,
-      "reportDbIpAndPort": "127.0.0.1:1433",
-      "reportByClientFlag": true,
-      "rerunDateRangeStart": null,
-      "rerunDateRangeEnd": null,
-      "rerunClientId": null,
-      "emailFromAddress": null,
-      "emailEventId": null,
-      "tabDelimitedFlag": null,
-      "inputFileTx": null,
-      "inputFileKeyStartPos": null,
-      "inputFileKeyLength": null,
-      "accessLevel": null,
-      "isActive": null,
-      "isVisible": null,
-      "numSheets": null
-    }
-  },
-  {
-    "clientId": "1114",
-    "reportId": 3,
-    "receiveFlag": false,
-    "outputTypeCd": 2,
-    "fileTypeCd": 0,
-    "emailFlag": 1,
-    "reportPasswordTx": "Email body for 1114 item 3",
-    "emailBodyTx": "pass3",
-    "reportDetails": {
-      "reportId": 3,
-      "queryName": "Binary - Rapid Daily Activity Report 6056 - NDM   ",
-      "query": null,
-      "inputDataFields": "Field1, Field2                                                                                                                                                                                                                                                 ",
-      "fileExt": "XLT",
-      "dbDriverType": "SQL Server                    ",
-      "fileHeaderInd": 1,
-      "defaultFileNm": "Report 3",
-      "reportDbServer": "localhost",
-      "reportDb": "demoDb",
-      "reportDbUserid": "admin",
-      "reportDbPasswrd": "adminpass",
-      "fileTransferType": null,
-      "reportDbIpAndPort": "127.0.0.1:1433",
-      "reportByClientFlag": true,
-      "rerunDateRangeStart": null,
-      "rerunDateRangeEnd": null,
-      "rerunClientId": null,
-      "emailFromAddress": null,
-      "emailEventId": null,
-      "tabDelimitedFlag": null,
-      "inputFileTx": null,
-      "inputFileKeyStartPos": null,
-      "inputFileKeyLength": null,
-      "accessLevel": null,
-      "isActive": null,
-      "isVisible": null,
-      "numSheets": null
-    }
-  },
-  {
-    "clientId": "1114",
-    "reportId": 4,
-    "receiveFlag": true,
-    "outputTypeCd": 0,
-    "fileTypeCd": 1,
-    "emailFlag": 1,
-    "reportPasswordTx": "Email body for 1114 item 4",
-    "emailBodyTx": "pass4",
-    "reportDetails": {
-      "reportId": 4,
-      "queryName": "Rapid Daily Activity - AAID                       ",
-      "query": null,
-      "inputDataFields": "Field1, Field2                                                                                                                                                                                                                                                 ",
-      "fileExt": "XLT",
-      "dbDriverType": "SQL Server                    ",
-
-PreviewAtmAndCashPrefixes.js:15 [
-  {
-    "billingSp": "B4",
-    "prefix": "1111119m",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "1111119n",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "1111119o",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "1111119p",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "1111119q",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "1111119r",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "1111119s",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "1111119t",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "1111119u",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "1111119v",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "1111119w",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "1111119x",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "1111119y",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "1111119z",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "111111a1",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "111111a2",
-    "atmCashRule": "0"
-  }
-]
-PreviewClientEmails.js:15 [
-  {
-    "clientId": "1114",
-    "emailAddressTx": "user1@example.com",
-    "reportId": 3,
-    "emailNameTx": "User1",
-    "carbonCopyFlag": false,
-    "activeFlag": true,
-    "mailServerId": 1
-  },
-  {
-    "clientId": "1114",
-    "emailAddressTx": "user2@example.com",
-    "reportId": 3,
-    "emailNameTx": "User2",
-    "carbonCopyFlag": true,
-    "activeFlag": false,
-    "mailServerId": 1
-  },
-  {
-    "clientId": "1114",
-    "emailAddressTx": "user3@example.com",
-    "reportId": 1,
-    "emailNameTx": "User3",
-    "carbonCopyFlag": false,
-    "activeFlag": false,
-    "mailServerId": 0
-  },
-  {
-    "clientId": "1114",
-    "emailAddressTx": "user4@example.com",
-    "reportId": 4,
-    "emailNameTx": "User4",
-    "carbonCopyFlag": true,
-    "activeFlag": false,
-    "mailServerId": 0
-  },
-  {
-    "clientId": "1114",
-    "emailAddressTx": "user5@example.com",
-    "reportId": 1,
-    "emailNameTx": "User5",
-    "carbonCopyFlag": false,
-    "activeFlag": true,
-    "mailServerId": 1
-  },
-  {
-    "clientId": "1114",
-    "emailAddressTx": "user6@example.com",
-    "reportId": 5,
-    "emailNameTx": "User6",
-    "carbonCopyFlag": true,
-    "activeFlag": false,
-    "mailServerId": 0
-  },
-  {
-    "clientId": "1114",
-    "emailAddressTx": "user7@example.com",
-    "reportId": 2,
-    "emailNameTx": "User7",
-    "carbonCopyFlag": false,
-    "activeFlag": true,
-    "mailServerId": 1
-  },
-  {
-    "clientId": "1114",
-    "emailAddressTx": "user8@example.com",
-    "reportId": 1,
-    "emailNameTx": "User8",
-    "carbonCopyFlag": true,
-    "activeFlag": false,
-    "mailServerId": 1
-  },
-  {
-    "clientId": "1114",
-    "emailAddressTx": "user9@example.com",
-    "reportId": 1,
-    "emailNameTx": "User9",
-    "carbonCopyFlag": false,
-    "activeFlag": true,
-    "mailServerId": 1
-  },
-  {
-    "clientId": "1114",
-    "emailAddressTx": "user10@example.com",
-    "reportId": 5,
-    "emailNameTx": "User10",
-    "carbonCopyFlag": true,
-    "activeFlag": true,
-    "mailServerId": 1
-  },
-  {
-    "clientId": "1114",
-    "emailAddressTx": "user11@example.com",
-    "reportId": 4,
-    "emailNameTx": "User11",
-    "carbonCopyFlag": false,
-    "activeFlag": false,
-    "mailServerId": 0
-  },
-  {
-    "clientId": "1114",
-    "emailAddressTx": "user12@example.com",
-    "reportId": 1,
-    "emailNameTx": "User12",
-    "carbonCopyFlag": true,
-    "activeFlag": false,
-    "mailServerId": 1
-  }
-]
-ClientInformationPage.js:48 Error fetching client detail: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
-fetchGroupDetail @ ClientInformationPage.js:48
-PreviewClientSysPrinList.js:15 [
-  {
-    "client": "111p",
-    "clientIds": null,
-    "sysPrin": "SP0000000002",
-    "custType": "3",
-    "undeliverable": "4",
-    "statA": "3",
-    "statB": "1",
-    "statC": "3",
-    "statD": "3",
-    "statE": "2",
-    "statF": "3",
-    "statI": "3",
-    "statL": "1",
-    "statO": "4",
-    "statU": "1",
-    "statX": "3",
-    "statZ": "1",
-    "poBox": "0",
-    "addrFlag": "Y",
-    "tempAway": 101,
-    "rps": "N",
-    "session": "A",
-    "badState": "0",
-    "nm13": "0",
-    "tempAwayAtts": 201,
-    "reportMethod": 0,
-    "active": false,
-    "notes": "Client:SysPrin 111p:SP0000000002 => Apply standard font size regardless of account type.",
-    "returnStatus": "F",
-    "destroyStatus": "0",
-    "nonUS": "2",
-    "special": "1",
-    "pinMailer": "0",
-    "holdDays": 78,
-    "forwardingAddress": "1",
-    "contact": "Contact",
-    "phone": "Phone",
-    "entityCode": "0",
-    "invalidDelivAreas": [
-      {
-        "area": "AK",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "AL",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "AR",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "AZ",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "CA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "CO",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "CT",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "DE",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "FL",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "GA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "HI",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "IA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "ID",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "IL",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "IN",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "KS",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "KY",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "LA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "MA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "MD",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "ME",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "MI",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "MN",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "MO",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "MS",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "MT",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "NC",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "ND",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "NE",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "NH",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "NJ",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "NM",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "NV",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "NY",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "OH",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "OK",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "OR",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "PA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "RI",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "SC",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "SD",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "TN",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "TX",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "UT",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "VA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "VT",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "WA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "WI",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "WV",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "WY",
-        "sysPrin": "SP0000000002"
-      }
-    ],
-    "vendorSentTo": [
-      {
-        "sysPrin": "SP0000000002",
-        "vendorId": "v02",
-        "queForMail": false,
-        "vendorName": "Letters                                           "
-      },
-      {
-        "sysPrin": "SP0000000002",
-        "vendorId": "v08",
-        "queForMail": true,
-        "vendorName": "Solutions Rec                                     "
-      },
-      {
-        "sysPrin": "SP0000000002",
-  
-PreviewClientReports.js:15 [
-  {
-    "clientId": "111p",
-    "reportId": 1,
-    "receiveFlag": false,
-    "outputTypeCd": 2,
-    "fileTypeCd": 0,
-    "emailFlag": 1,
-    "reportPasswordTx": "Email body for 111p item 1",
-    "emailBodyTx": "pass1",
-    "reportDetails": {
-      "reportId": 1,
-      "queryName": "ZipCode Step 2                                    ",
-      "query": null,
-      "inputDataFields": "Field1, Field2                                                                                                                                                                                                                                                 ",
-      "fileExt": "TXT",
-      "dbDriverType": "SQL Server                    ",
-      "fileHeaderInd": 1,
-      "defaultFileNm": "Report 1",
-      "reportDbServer": "localhost",
-      "reportDb": "demoDb",
-      "reportDbUserid": "admin",
-      "reportDbPasswrd": "adminpass",
-      "fileTransferType": null,
-      "reportDbIpAndPort": "127.0.0.1:1433",
-      "reportByClientFlag": false,
-      "rerunDateRangeStart": null,
-      "rerunDateRangeEnd": null,
-      "rerunClientId": null,
-      "emailFromAddress": null,
-      "emailEventId": null,
-      "tabDelimitedFlag": null,
-      "inputFileTx": null,
-      "inputFileKeyStartPos": null,
-      "inputFileKeyLength": null,
-      "accessLevel": null,
-      "isActive": null,
-      "isVisible": null,
-      "numSheets": null
-    }
-  },
-  {
-    "clientId": "111p",
-    "reportId": 2,
-    "receiveFlag": true,
-    "outputTypeCd": 1,
-    "fileTypeCd": 0,
-    "emailFlag": 2,
-    "reportPasswordTx": "Email body for 111p item 2",
-    "emailBodyTx": "pass2",
-    "reportDetails": {
-      "reportId": 2,
-      "queryName": "Mailing SysPrin - T                               ",
-      "query": null,
-      "inputDataFields": "Field1, Field2                                                                                                                                                                                                                                                 ",
-      "fileExt": "TXT",
-      "dbDriverType": "SQL Server                    ",
-      "fileHeaderInd": 1,
-      "defaultFileNm": "Report 2",
-      "reportDbServer": "localhost",
-      "reportDb": "demoDb",
-      "reportDbUserid": "admin",
-      "reportDbPasswrd": "adminpass",
-      "fileTransferType": null,
-      "reportDbIpAndPort": "127.0.0.1:1433",
-      "reportByClientFlag": true,
-      "rerunDateRangeStart": null,
-      "rerunDateRangeEnd": null,
-      "rerunClientId": null,
-      "emailFromAddress": null,
-      "emailEventId": null,
-      "tabDelimitedFlag": null,
-      "inputFileTx": null,
-      "inputFileKeyStartPos": null,
-      "inputFileKeyLength": null,
-      "accessLevel": null,
-      "isActive": null,
-      "isVisible": null,
-      "numSheets": null
-    }
-  },
-  {
-    "clientId": "111p",
-    "reportId": 3,
-    "receiveFlag": false,
-    "outputTypeCd": 2,
-    "fileTypeCd": 2,
-    "emailFlag": 2,
-    "reportPasswordTx": "Email body for 111p item 3",
-    "emailBodyTx": "pass3",
-    "reportDetails": {
-      "reportId": 3,
-      "queryName": "Binary - Rapid Daily Activity Report 6056 - NDM   ",
-      "query": null,
-      "inputDataFields": "Field1, Field2                                                                                                                                                                                                                                                 ",
-      "fileExt": "XLT",
-      "dbDriverType": "SQL Server                    ",
-      "fileHeaderInd": 1,
-      "defaultFileNm": "Report 3",
-      "reportDbServer": "localhost",
-      "reportDb": "demoDb",
-      "reportDbUserid": "admin",
-      "reportDbPasswrd": "adminpass",
-      "fileTransferType": null,
-      "reportDbIpAndPort": "127.0.0.1:1433",
-      "reportByClientFlag": true,
-      "rerunDateRangeStart": null,
-      "rerunDateRangeEnd": null,
-      "rerunClientId": null,
-      "emailFromAddress": null,
-      "emailEventId": null,
-      "tabDelimitedFlag": null,
-      "inputFileTx": null,
-      "inputFileKeyStartPos": null,
-      "inputFileKeyLength": null,
-      "accessLevel": null,
-      "isActive": null,
-      "isVisible": null,
-      "numSheets": null
-    }
-  },
-  {
-    "clientId": "111p",
-    "reportId": 4,
-    "receiveFlag": true,
-    "outputTypeCd": 1,
-    "fileTypeCd": 2,
-    "emailFlag": 0,
-    "reportPasswordTx": "Email body for 111p item 4",
-    "emailBodyTx": "pass4",
-    "reportDetails": {
-      "reportId": 4,
-      "queryName": "Rapid Daily Activity - AAID                       ",
-      "query": null,
-      "inputDataFields": "Field1, Field2                                                                                                                                                                                                                                                 ",
-      "fileExt": "XLT",
-      "dbDriverType": "SQL Server                    ",
-
-PreviewAtmAndCashPrefixes.js:15 [
-  {
-    "billingSp": "B25",
-    "prefix": "111112ym",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B25",
-    "prefix": "111112yn",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B25",
-    "prefix": "111112yo",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B25",
-    "prefix": "111112yp",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B25",
-    "prefix": "111112yq",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B25",
-    "prefix": "111112yr",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B25",
-    "prefix": "111112ys",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B25",
-    "prefix": "111112yt",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B25",
-    "prefix": "111112yu",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B25",
-    "prefix": "111112yv",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B25",
-    "prefix": "111112yw",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B25",
-    "prefix": "111112yx",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B25",
-    "prefix": "111112yy",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B25",
-    "prefix": "111112yz",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B25",
-    "prefix": "111112z1",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B25",
-    "prefix": "111112z2",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B25",
-    "prefix": "111112z3",
-    "atmCashRule": "1"
-  }
-]
-PreviewClientEmails.js:15 [
-  {
-    "clientId": "111p",
-    "emailAddressTx": "user1@example.com",
-    "reportId": 5,
-    "emailNameTx": "User1",
-    "carbonCopyFlag": false,
-    "activeFlag": false,
-    "mailServerId": 1
-  },
-  {
-    "clientId": "111p",
-    "emailAddressTx": "user2@example.com",
-    "reportId": 1,
-    "emailNameTx": "User2",
-    "carbonCopyFlag": true,
-    "activeFlag": true,
-    "mailServerId": 0
-  },
-  {
-    "clientId": "111p",
-    "emailAddressTx": "user3@example.com",
-    "reportId": 5,
-    "emailNameTx": "User3",
-    "carbonCopyFlag": false,
-    "activeFlag": true,
-    "mailServerId": 0
-  },
-  {
-    "clientId": "111p",
-    "emailAddressTx": "user4@example.com",
-    "reportId": 5,
-    "emailNameTx": "User4",
-    "carbonCopyFlag": true,
-    "activeFlag": false,
-    "mailServerId": 1
-  },
-  {
-    "clientId": "111p",
-    "emailAddressTx": "user5@example.com",
-    "reportId": 3,
-    "emailNameTx": "User5",
-    "carbonCopyFlag": false,
-    "activeFlag": true,
-    "mailServerId": 1
-  },
-  {
-    "clientId": "111p",
-    "emailAddressTx": "user6@example.com",
-    "reportId": 5,
-    "emailNameTx": "User6",
-    "carbonCopyFlag": true,
-    "activeFlag": false,
-    "mailServerId": 1
-  },
-  {
-    "clientId": "111p",
-    "emailAddressTx": "user7@example.com",
-    "reportId": 5,
-    "emailNameTx": "User7",
-    "carbonCopyFlag": false,
-    "activeFlag": false,
-    "mailServerId": 1
-  },
-  {
-    "clientId": "111p",
-    "emailAddressTx": "user8@example.com",
-    "reportId": 2,
-    "emailNameTx": "User8",
-    "carbonCopyFlag": true,
-    "activeFlag": false,
-    "mailServerId": 1
-  },
-  {
-    "clientId": "111p",
-    "emailAddressTx": "user9@example.com",
-    "reportId": 4,
-    "emailNameTx": "User9",
-    "carbonCopyFlag": false,
-    "activeFlag": true,
-    "mailServerId": 1
-  },
-  {
-    "clientId": "111p",
-    "emailAddressTx": "user10@example.com",
-    "reportId": 1,
-    "emailNameTx": "User10",
-    "carbonCopyFlag": true,
-    "activeFlag": true,
-    "mailServerId": 0
-  },
-  {
-    "clientId": "111p",
-    "emailAddressTx": "user11@example.com",
-    "reportId": 1,
-    "emailNameTx": "User11",
-    "carbonCopyFlag": false,
-    "activeFlag": true,
     "mailServerId": 1
   }
 ]
@@ -4264,1177 +2905,6 @@ ClientInformationPage.js:48 Error fetching client detail: SyntaxError: Unexpecte
 fetchGroupDetail @ ClientInformationPage.js:48
 PreviewClientSysPrinList.js:15 [
   {
-    "client": "1114",
-    "clientIds": null,
-    "sysPrin": "SP0000000002",
-    "custType": "2",
-    "undeliverable": "0",
-    "statA": "2",
-    "statB": "1",
-    "statC": "4",
-    "statD": "2",
-    "statE": "1",
-    "statF": "3",
-    "statI": "2",
-    "statL": "1",
-    "statO": "1",
-    "statU": "0",
-    "statX": "0",
-    "statZ": "1",
-    "poBox": "0",
-    "addrFlag": "N",
-    "tempAway": 101,
-    "rps": "Y",
-    "session": "A",
-    "badState": "1",
-    "nm13": "1",
-    "tempAwayAtts": 201,
-    "reportMethod": 0,
-    "active": false,
-    "notes": "Client:SysPrin 1114:SP0000000002 => Urgent handling: notify client if delivery fails.",
-    "returnStatus": "E",
-    "destroyStatus": "0",
-    "nonUS": "1",
-    "special": "0",
-    "pinMailer": "0",
-    "holdDays": 76,
-    "forwardingAddress": "1",
-    "contact": "Contact",
-    "phone": "Phone",
-    "entityCode": "0",
-    "invalidDelivAreas": [
-      {
-        "area": "AK",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "AL",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "AR",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "AZ",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "CA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "CO",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "CT",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "DE",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "FL",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "GA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "HI",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "IA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "ID",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "IL",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "IN",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "KS",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "KY",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "LA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "MA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "MD",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "ME",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "MI",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "MN",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "MO",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "MS",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "MT",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "NC",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "ND",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "NE",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "NH",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "NJ",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "NM",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "NV",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "NY",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "OH",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "OK",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "OR",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "PA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "RI",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "SC",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "SD",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "TN",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "TX",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "UT",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "VA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "VT",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "WA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "WI",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "WV",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "WY",
-        "sysPrin": "SP0000000002"
-      }
-    ],
-    "vendorSentTo": [
-      {
-        "sysPrin": "SP0000000002",
-        "vendorId": "v02",
-        "queForMail": false,
-        "vendorName": "Letters                                           "
-      },
-      {
-        "sysPrin": "SP0000000002",
-        "vendorId": "v08",
-        "queForMail": true,
-        "vendorName": "Solutions Rec                                     "
-      },
-      {
-        "sysPrin": "SP0000000002",
-     
-PreviewClientReports.js:15 [
-  {
-    "clientId": "1114",
-    "reportId": 1,
-    "receiveFlag": false,
-    "outputTypeCd": 2,
-    "fileTypeCd": 2,
-    "emailFlag": 0,
-    "reportPasswordTx": "Email body for 1114 item 1",
-    "emailBodyTx": "pass1",
-    "reportDetails": {
-      "reportId": 1,
-      "queryName": "ZipCode Step 2                                    ",
-      "query": null,
-      "inputDataFields": "Field1, Field2                                                                                                                                                                                                                                                 ",
-      "fileExt": "TXT",
-      "dbDriverType": "SQL Server                    ",
-      "fileHeaderInd": 1,
-      "defaultFileNm": "Report 1",
-      "reportDbServer": "localhost",
-      "reportDb": "demoDb",
-      "reportDbUserid": "admin",
-      "reportDbPasswrd": "adminpass",
-      "fileTransferType": null,
-      "reportDbIpAndPort": "127.0.0.1:1433",
-      "reportByClientFlag": false,
-      "rerunDateRangeStart": null,
-      "rerunDateRangeEnd": null,
-      "rerunClientId": null,
-      "emailFromAddress": null,
-      "emailEventId": null,
-      "tabDelimitedFlag": null,
-      "inputFileTx": null,
-      "inputFileKeyStartPos": null,
-      "inputFileKeyLength": null,
-      "accessLevel": null,
-      "isActive": null,
-      "isVisible": null,
-      "numSheets": null
-    }
-  },
-  {
-    "clientId": "1114",
-    "reportId": 2,
-    "receiveFlag": true,
-    "outputTypeCd": 2,
-    "fileTypeCd": 0,
-    "emailFlag": 0,
-    "reportPasswordTx": "Email body for 1114 item 2",
-    "emailBodyTx": "pass2",
-    "reportDetails": {
-      "reportId": 2,
-      "queryName": "Mailing SysPrin - T                               ",
-      "query": null,
-      "inputDataFields": "Field1, Field2                                                                                                                                                                                                                                                 ",
-      "fileExt": "TXT",
-      "dbDriverType": "SQL Server                    ",
-      "fileHeaderInd": 1,
-      "defaultFileNm": "Report 2",
-      "reportDbServer": "localhost",
-      "reportDb": "demoDb",
-      "reportDbUserid": "admin",
-      "reportDbPasswrd": "adminpass",
-      "fileTransferType": null,
-      "reportDbIpAndPort": "127.0.0.1:1433",
-      "reportByClientFlag": true,
-      "rerunDateRangeStart": null,
-      "rerunDateRangeEnd": null,
-      "rerunClientId": null,
-      "emailFromAddress": null,
-      "emailEventId": null,
-      "tabDelimitedFlag": null,
-      "inputFileTx": null,
-      "inputFileKeyStartPos": null,
-      "inputFileKeyLength": null,
-      "accessLevel": null,
-      "isActive": null,
-      "isVisible": null,
-      "numSheets": null
-    }
-  },
-  {
-    "clientId": "1114",
-    "reportId": 3,
-    "receiveFlag": false,
-    "outputTypeCd": 2,
-    "fileTypeCd": 0,
-    "emailFlag": 1,
-    "reportPasswordTx": "Email body for 1114 item 3",
-    "emailBodyTx": "pass3",
-    "reportDetails": {
-      "reportId": 3,
-      "queryName": "Binary - Rapid Daily Activity Report 6056 - NDM   ",
-      "query": null,
-      "inputDataFields": "Field1, Field2                                                                                                                                                                                                                                                 ",
-      "fileExt": "XLT",
-      "dbDriverType": "SQL Server                    ",
-      "fileHeaderInd": 1,
-      "defaultFileNm": "Report 3",
-      "reportDbServer": "localhost",
-      "reportDb": "demoDb",
-      "reportDbUserid": "admin",
-      "reportDbPasswrd": "adminpass",
-      "fileTransferType": null,
-      "reportDbIpAndPort": "127.0.0.1:1433",
-      "reportByClientFlag": true,
-      "rerunDateRangeStart": null,
-      "rerunDateRangeEnd": null,
-      "rerunClientId": null,
-      "emailFromAddress": null,
-      "emailEventId": null,
-      "tabDelimitedFlag": null,
-      "inputFileTx": null,
-      "inputFileKeyStartPos": null,
-      "inputFileKeyLength": null,
-      "accessLevel": null,
-      "isActive": null,
-      "isVisible": null,
-      "numSheets": null
-    }
-  },
-  {
-    "clientId": "1114",
-    "reportId": 4,
-    "receiveFlag": true,
-    "outputTypeCd": 0,
-    "fileTypeCd": 1,
-    "emailFlag": 1,
-    "reportPasswordTx": "Email body for 1114 item 4",
-    "emailBodyTx": "pass4",
-    "reportDetails": {
-      "reportId": 4,
-      "queryName": "Rapid Daily Activity - AAID                       ",
-      "query": null,
-      "inputDataFields": "Field1, Field2                                                                                                                                                                                                                                                 ",
-      "fileExt": "XLT",
-      "dbDriverType": "SQL Server                    ",
-
-PreviewAtmAndCashPrefixes.js:15 [
-  {
-    "billingSp": "B4",
-    "prefix": "1111119m",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "1111119n",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "1111119o",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "1111119p",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "1111119q",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "1111119r",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "1111119s",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "1111119t",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "1111119u",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "1111119v",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "1111119w",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "1111119x",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "1111119y",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "1111119z",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "111111a1",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B4",
-    "prefix": "111111a2",
-    "atmCashRule": "0"
-  }
-]
-PreviewClientEmails.js:15 [
-  {
-    "clientId": "1114",
-    "emailAddressTx": "user1@example.com",
-    "reportId": 3,
-    "emailNameTx": "User1",
-    "carbonCopyFlag": false,
-    "activeFlag": true,
-    "mailServerId": 1
-  },
-  {
-    "clientId": "1114",
-    "emailAddressTx": "user2@example.com",
-    "reportId": 3,
-    "emailNameTx": "User2",
-    "carbonCopyFlag": true,
-    "activeFlag": false,
-    "mailServerId": 1
-  },
-  {
-    "clientId": "1114",
-    "emailAddressTx": "user3@example.com",
-    "reportId": 1,
-    "emailNameTx": "User3",
-    "carbonCopyFlag": false,
-    "activeFlag": false,
-    "mailServerId": 0
-  },
-  {
-    "clientId": "1114",
-    "emailAddressTx": "user4@example.com",
-    "reportId": 4,
-    "emailNameTx": "User4",
-    "carbonCopyFlag": true,
-    "activeFlag": false,
-    "mailServerId": 0
-  },
-  {
-    "clientId": "1114",
-    "emailAddressTx": "user5@example.com",
-    "reportId": 1,
-    "emailNameTx": "User5",
-    "carbonCopyFlag": false,
-    "activeFlag": true,
-    "mailServerId": 1
-  },
-  {
-    "clientId": "1114",
-    "emailAddressTx": "user6@example.com",
-    "reportId": 5,
-    "emailNameTx": "User6",
-    "carbonCopyFlag": true,
-    "activeFlag": false,
-    "mailServerId": 0
-  },
-  {
-    "clientId": "1114",
-    "emailAddressTx": "user7@example.com",
-    "reportId": 2,
-    "emailNameTx": "User7",
-    "carbonCopyFlag": false,
-    "activeFlag": true,
-    "mailServerId": 1
-  },
-  {
-    "clientId": "1114",
-    "emailAddressTx": "user8@example.com",
-    "reportId": 1,
-    "emailNameTx": "User8",
-    "carbonCopyFlag": true,
-    "activeFlag": false,
-    "mailServerId": 1
-  },
-  {
-    "clientId": "1114",
-    "emailAddressTx": "user9@example.com",
-    "reportId": 1,
-    "emailNameTx": "User9",
-    "carbonCopyFlag": false,
-    "activeFlag": true,
-    "mailServerId": 1
-  },
-  {
-    "clientId": "1114",
-    "emailAddressTx": "user10@example.com",
-    "reportId": 5,
-    "emailNameTx": "User10",
-    "carbonCopyFlag": true,
-    "activeFlag": true,
-    "mailServerId": 1
-  },
-  {
-    "clientId": "1114",
-    "emailAddressTx": "user11@example.com",
-    "reportId": 4,
-    "emailNameTx": "User11",
-    "carbonCopyFlag": false,
-    "activeFlag": false,
-    "mailServerId": 0
-  },
-  {
-    "clientId": "1114",
-    "emailAddressTx": "user12@example.com",
-    "reportId": 1,
-    "emailNameTx": "User12",
-    "carbonCopyFlag": true,
-    "activeFlag": false,
-    "mailServerId": 1
-  }
-]
-ClientInformationPage.js:48 Error fetching client detail: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
-fetchGroupDetail @ ClientInformationPage.js:48
-PreviewClientSysPrinList.js:15 [
-  {
-    "client": "1112",
-    "clientIds": null,
-    "sysPrin": "SP0000000002",
-    "custType": "3",
-    "undeliverable": "0",
-    "statA": "1",
-    "statB": "0",
-    "statC": "1",
-    "statD": "0",
-    "statE": "3",
-    "statF": "1",
-    "statI": "2",
-    "statL": "0",
-    "statO": "4",
-    "statU": "0",
-    "statX": "3",
-    "statZ": "1",
-    "poBox": "0",
-    "addrFlag": "N",
-    "tempAway": 101,
-    "rps": "Y",
-    "session": "A",
-    "badState": "1",
-    "nm13": "1",
-    "tempAwayAtts": 201,
-    "reportMethod": 0,
-    "active": false,
-    "notes": "Client:SysPrin 1112:SP0000000002 => Use double envelopes for additional protection.",
-    "returnStatus": "F",
-    "destroyStatus": "1",
-    "nonUS": "2",
-    "special": "1",
-    "pinMailer": "0",
-    "holdDays": 6,
-    "forwardingAddress": "1",
-    "contact": "Contact",
-    "phone": "Phone",
-    "entityCode": "0",
-    "invalidDelivAreas": [
-      {
-        "area": "AK",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "AL",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "AR",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "AZ",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "CA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "CO",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "CT",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "DE",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "FL",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "GA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "HI",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "IA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "ID",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "IL",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "IN",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "KS",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "KY",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "LA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "MA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "MD",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "ME",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "MI",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "MN",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "MO",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "MS",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "MT",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "NC",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "ND",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "NE",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "NH",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "NJ",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "NM",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "NV",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "NY",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "OH",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "OK",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "OR",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "PA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "RI",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "SC",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "SD",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "TN",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "TX",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "UT",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "VA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "VT",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "WA",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "WI",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "WV",
-        "sysPrin": "SP0000000002"
-      },
-      {
-        "area": "WY",
-        "sysPrin": "SP0000000002"
-      }
-    ],
-    "vendorSentTo": [
-      {
-        "sysPrin": "SP0000000002",
-        "vendorId": "v02",
-        "queForMail": false,
-        "vendorName": "Letters                                           "
-      },
-      {
-        "sysPrin": "SP0000000002",
-        "vendorId": "v08",
-        "queForMail": true,
-        "vendorName": "Solutions Rec                                     "
-      },
-      {
-        "sysPrin": "SP0000000002",
-        
-PreviewClientReports.js:15 [
-  {
-    "clientId": "1112",
-    "reportId": 1,
-    "receiveFlag": false,
-    "outputTypeCd": 0,
-    "fileTypeCd": 0,
-    "emailFlag": 2,
-    "reportPasswordTx": "Email body for 1112 item 1",
-    "emailBodyTx": "pass1",
-    "reportDetails": {
-      "reportId": 1,
-      "queryName": "ZipCode Step 2                                    ",
-      "query": null,
-      "inputDataFields": "Field1, Field2                                                                                                                                                                                                                                                 ",
-      "fileExt": "TXT",
-      "dbDriverType": "SQL Server                    ",
-      "fileHeaderInd": 1,
-      "defaultFileNm": "Report 1",
-      "reportDbServer": "localhost",
-      "reportDb": "demoDb",
-      "reportDbUserid": "admin",
-      "reportDbPasswrd": "adminpass",
-      "fileTransferType": null,
-      "reportDbIpAndPort": "127.0.0.1:1433",
-      "reportByClientFlag": false,
-      "rerunDateRangeStart": null,
-      "rerunDateRangeEnd": null,
-      "rerunClientId": null,
-      "emailFromAddress": null,
-      "emailEventId": null,
-      "tabDelimitedFlag": null,
-      "inputFileTx": null,
-      "inputFileKeyStartPos": null,
-      "inputFileKeyLength": null,
-      "accessLevel": null,
-      "isActive": null,
-      "isVisible": null,
-      "numSheets": null
-    }
-  },
-  {
-    "clientId": "1112",
-    "reportId": 2,
-    "receiveFlag": true,
-    "outputTypeCd": 0,
-    "fileTypeCd": 1,
-    "emailFlag": 2,
-    "reportPasswordTx": "Email body for 1112 item 2",
-    "emailBodyTx": "pass2",
-    "reportDetails": {
-      "reportId": 2,
-      "queryName": "Mailing SysPrin - T                               ",
-      "query": null,
-      "inputDataFields": "Field1, Field2                                                                                                                                                                                                                                                 ",
-      "fileExt": "TXT",
-      "dbDriverType": "SQL Server                    ",
-      "fileHeaderInd": 1,
-      "defaultFileNm": "Report 2",
-      "reportDbServer": "localhost",
-      "reportDb": "demoDb",
-      "reportDbUserid": "admin",
-      "reportDbPasswrd": "adminpass",
-      "fileTransferType": null,
-      "reportDbIpAndPort": "127.0.0.1:1433",
-      "reportByClientFlag": true,
-      "rerunDateRangeStart": null,
-      "rerunDateRangeEnd": null,
-      "rerunClientId": null,
-      "emailFromAddress": null,
-      "emailEventId": null,
-      "tabDelimitedFlag": null,
-      "inputFileTx": null,
-      "inputFileKeyStartPos": null,
-      "inputFileKeyLength": null,
-      "accessLevel": null,
-      "isActive": null,
-      "isVisible": null,
-      "numSheets": null
-    }
-  },
-  {
-    "clientId": "1112",
-    "reportId": 3,
-    "receiveFlag": false,
-    "outputTypeCd": 0,
-    "fileTypeCd": 2,
-    "emailFlag": 1,
-    "reportPasswordTx": "Email body for 1112 item 3",
-    "emailBodyTx": "pass3",
-    "reportDetails": {
-      "reportId": 3,
-      "queryName": "Binary - Rapid Daily Activity Report 6056 - NDM   ",
-      "query": null,
-      "inputDataFields": "Field1, Field2                                                                                                                                                                                                                                                 ",
-      "fileExt": "XLT",
-      "dbDriverType": "SQL Server                    ",
-      "fileHeaderInd": 1,
-      "defaultFileNm": "Report 3",
-      "reportDbServer": "localhost",
-      "reportDb": "demoDb",
-      "reportDbUserid": "admin",
-      "reportDbPasswrd": "adminpass",
-      "fileTransferType": null,
-      "reportDbIpAndPort": "127.0.0.1:1433",
-      "reportByClientFlag": true,
-      "rerunDateRangeStart": null,
-      "rerunDateRangeEnd": null,
-      "rerunClientId": null,
-      "emailFromAddress": null,
-      "emailEventId": null,
-      "tabDelimitedFlag": null,
-      "inputFileTx": null,
-      "inputFileKeyStartPos": null,
-      "inputFileKeyLength": null,
-      "accessLevel": null,
-      "isActive": null,
-      "isVisible": null,
-      "numSheets": null
-    }
-  },
-  {
-    "clientId": "1112",
-    "reportId": 4,
-    "receiveFlag": true,
-    "outputTypeCd": 0,
-    "fileTypeCd": 1,
-    "emailFlag": 1,
-    "reportPasswordTx": "Email body for 1112 item 4",
-    "emailBodyTx": "pass4",
-    "reportDetails": {
-      "reportId": 4,
-      "queryName": "Rapid Daily Activity - AAID                       ",
-      "query": null,
-      "inputDataFields": "Field1, Field2                                                                                                                                                                                                                                                 ",
-      "fileExt": "XLT",
-      "dbDriverType": "SQL Server                    ",
-
-PreviewAtmAndCashPrefixes.js:15 [
-  {
-    "billingSp": "B2",
-    "prefix": "1111113w",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B2",
-    "prefix": "1111113x",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B2",
-    "prefix": "1111113y",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B2",
-    "prefix": "1111113z",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B2",
-    "prefix": "11111141",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B2",
-    "prefix": "11111142",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B2",
-    "prefix": "11111143",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B2",
-    "prefix": "11111144",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B2",
-    "prefix": "11111145",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B2",
-    "prefix": "11111146",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B2",
-    "prefix": "11111147",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B2",
-    "prefix": "11111148",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B2",
-    "prefix": "11111149",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B2",
-    "prefix": "1111114a",
-    "atmCashRule": "1"
-  },
-  {
-    "billingSp": "B2",
-    "prefix": "1111114b",
-    "atmCashRule": "0"
-  },
-  {
-    "billingSp": "B2",
-    "prefix": "1111114c",
-    "atmCashRule": "1"
-  }
-]
-PreviewClientEmails.js:15 [
-  {
-    "clientId": "1112",
-    "emailAddressTx": "user1@example.com",
-    "reportId": 3,
-    "emailNameTx": "User1",
-    "carbonCopyFlag": false,
-    "activeFlag": true,
-    "mailServerId": 0
-  },
-  {
-    "clientId": "1112",
-    "emailAddressTx": "user2@example.com",
-    "reportId": 1,
-    "emailNameTx": "User2",
-    "carbonCopyFlag": true,
-    "activeFlag": true,
-    "mailServerId": 0
-  },
-  {
-    "clientId": "1112",
-    "emailAddressTx": "user3@example.com",
-    "reportId": 3,
-    "emailNameTx": "User3",
-    "carbonCopyFlag": false,
-    "activeFlag": false,
-    "mailServerId": 0
-  },
-  {
-    "clientId": "1112",
-    "emailAddressTx": "user4@example.com",
-    "reportId": 5,
-    "emailNameTx": "User4",
-    "carbonCopyFlag": true,
-    "activeFlag": false,
-    "mailServerId": 0
-  },
-  {
-    "clientId": "1112",
-    "emailAddressTx": "user5@example.com",
-    "reportId": 2,
-    "emailNameTx": "User5",
-    "carbonCopyFlag": false,
-    "activeFlag": false,
-    "mailServerId": 0
-  },
-  {
-    "clientId": "1112",
-    "emailAddressTx": "user6@example.com",
-    "reportId": 5,
-    "emailNameTx": "User6",
-    "carbonCopyFlag": true,
-    "activeFlag": false,
-    "mailServerId": 0
-  },
-  {
-    "clientId": "1112",
-    "emailAddressTx": "user7@example.com",
-    "reportId": 3,
-    "emailNameTx": "User7",
-    "carbonCopyFlag": false,
-    "activeFlag": false,
-    "mailServerId": 1
-  },
-  {
-    "clientId": "1112",
-    "emailAddressTx": "user8@example.com",
-    "reportId": 1,
-    "emailNameTx": "User8",
-    "carbonCopyFlag": true,
-    "activeFlag": false,
-    "mailServerId": 1
-  },
-  {
-    "clientId": "1112",
-    "emailAddressTx": "user9@example.com",
-    "reportId": 1,
-    "emailNameTx": "User9",
-    "carbonCopyFlag": false,
-    "activeFlag": true,
-    "mailServerId": 1
-  },
-  {
-    "clientId": "1112",
-    "emailAddressTx": "user10@example.com",
-    "reportId": 2,
-    "emailNameTx": "User10",
-    "carbonCopyFlag": true,
-    "activeFlag": true,
-    "mailServerId": 1
-  },
-  {
-    "clientId": "1112",
-    "emailAddressTx": "user11@example.com",
-    "reportId": 5,
-    "emailNameTx": "User11",
-    "carbonCopyFlag": false,
-    "activeFlag": false,
-    "mailServerId": 1
-  }
-]
-ClientInformationPage.js:48 Error fetching client detail: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
-fetchGroupDetail @ ClientInformationPage.js:48
-PreviewClientSysPrinList.js:15 [
-  {
     "client": "111p",
     "clientIds": null,
     "sysPrin": "SP0000000002",
@@ -6017,6 +3487,8 @@ PreviewClientEmails.js:15 [
     "mailServerId": 1
   }
 ]
+ClientInformationPage.js:48 Error fetching client detail: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+fetchGroupDetail @ ClientInformationPage.js:48
 chunk-MWBV3TKB.js?v=eda1698d:30871 Uncaught Error: error #252 cannot get grid to draw rows when it is in the middle of drawing rows. 
 Your code probably called a grid API method while the grid was in the render stage. 
 To overcome this, put the API call into a timeout, e.g. instead of api.redrawRows(), call setTimeout(function() { api.redrawRows(); }, 0). 
@@ -6038,6 +3510,3 @@ Consider adding an error boundary to your tree to customize error handling behav
 Visit https://react.dev/link/error-boundaries to learn more about error boundaries.
 
 defaultOnUncaughtError @ react-dom_client.js?v=91213c66:6229
-ClientInformationPage.js:48 Error fetching client detail: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
-fetchGroupDetail @ ClientInformationPage.js:48
-

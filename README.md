@@ -1,45 +1,19 @@
-# This workflow will build each Maven module and optionally build a
-# Docker image for it, using the Flume reusable workflow.
+Prepare all required actions
+Run ./flume/actions/containerize
+Run import os
+Run from github import Github
+2025-06-14 04:40:44.874 | INFO     | __main__:<module>:35 - Not a github url. Skipping download.
+Run # if inputs.image_tag is not empty, use it
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+WARNING! Your password will be stored unencrypted in /home/runner/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credential-stores
 
-name: Build Maven Project (4 services via matrix)
+Login Succeeded
+#0 building with "default" instance using docker driver
 
-on:
-  push:
-    branches: [ deleted-case-j ]
-  pull_request: {}
-  workflow_dispatch: {}
-
-jobs:
-  ci-workflow:
-    # 👇 新增 —— 让同一个 job 在 4 个服务上并行运行
-    strategy:
-      matrix:
-        svc: [ gateway, review-deleted-case, service-b, service-c ]
-      fail-fast: false  # 任意一个失败，不取消其他 job
-
-    # 🔗 调用 Flume 可复用工作流（保持不变）
-    uses: fiserv/flume-reuseable-workflows/.github/workflows/maven.yml@main
-    secrets: inherit
-
-    with:
-      # --- REQUIRED PARAMETERS ---
-      apm: APM0001099
-
-      # 🔄 动态应用服务名
-      app_name: ${{ matrix.svc }}
-
-      # 版本号保持不变
-      app_version: 0.0.1-SNAPSHOT
-
-      # Java 版本
-      java_version: '21'
-
-      # --- OPTIONAL PARAMETERS (保持现有设置) ---
-      sonar_enable: true
-      sonar_sourcepath: src/main/java
-      sonar_args: '-Dsonar.java.binaries=target'
-
-      # --- CONTAINERIZE ---
-      # 为每个服务生成独立镜像：edwardjing/<service>:<git-sha>
-      image_name: edwardjing/${{ matrix.svc }}
-      image_tag:  ${{ github.sha }}
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 2B done
+#1 DONE 0.0s
+ERROR: failed to solve: failed to read dockerfile: open Dockerfile: no such file or directory
+Error: Process completed with exit code 1.

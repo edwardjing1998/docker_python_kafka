@@ -17,3 +17,6 @@ Login Succeeded
 #1 DONE 0.0s
 ERROR: failed to solve: failed to read dockerfile: open Dockerfile: no such file or directory
 Error: Process completed with exit code 1.
+
+
+npm install react-phone-input-2@^2.15.1

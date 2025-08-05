@@ -20,3 +20,6 @@ Error: Process completed with exit code 1.
 
 
 npm install react-phone-input-2@^2.15.1
+
+<img width="3024" height="1964" alt="image" src="https://github.com/user-attachments/assets/5ca8594a-9b5f-4ab9-8b4e-7321ace8e10d" />
+

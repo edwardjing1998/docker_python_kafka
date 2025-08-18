@@ -1,7 +1,6 @@
-2025-08-18T13:44:08.823-05:00  INFO 13544 --- [client-sysprin-writer] [           main] rapid.ClientSysPrinWriterApplication     : Starting ClientSysPrinWriterApplication using Java 24.0.2 with PID 13544 (C:\Users\F2LIPBX\spring_boot\trace-client-sysprin-service\client-sysprin-writer\target\classes started by F2LIPBX in C:\Users\F2LIPBX\spring_boot\trace-client-sysprin-service\client-sysprin-writer)
-2025-08-18T13:44:08.834-05:00  INFO 13544 --- [client-sysprin-writer] [           main] rapid.ClientSysPrinWriterApplication     : No active profile set, falling back to 1 default profile: "default"
-2025-08-18T13:44:09.645-05:00  WARN 13544 --- [client-sysprin-writer] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [rapid.ClientSysPrinWriterApplication]
-2025-08-18T13:44:10.244-05:00 ERROR 13544 --- [client-sysprin-writer] [           main] o.s.boot.SpringApplication               : Application run failed
+025-08-18T13:54:45.648-05:00  INFO 27776 --- [client-sysprin-writer] [           main] rapid.ClientSysPrinWriterApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-08-18T13:54:46.121-05:00  WARN 27776 --- [client-sysprin-writer] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [rapid.ClientSysPrinWriterApplication]
+2025-08-18T13:54:46.524-05:00 ERROR 27776 --- [client-sysprin-writer] [           main] o.s.boot.SpringApplication               : Application run failed
 
 org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [rapid.ClientSysPrinWriterApplication]
         at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:194) ~[spring-context-6.2.7.jar:6.2.7]
@@ -28,15 +27,4 @@ Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionExcep
 
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  19.248 s
-[INFO] Finished at: 2025-08-18T13:44:10-05:00
-[INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:3.4.2:run (default-cli) on project client-sysprin-writer: Process terminated with exit code: 1 -> [Help 1]
-[ERROR]
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR]
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
-PS C:\Users\F2LIPBX\spring_boot\trace-client-sysprin-service\client-sysprin-writer>
+[INFO]

@@ -1,12 +1,42 @@
-blinker==1.9.0
-click==8.1.8
-dnspython==2.7.0
-Flask==3.1.0
-importlib_metadata==8.6.1
-itsdangerous==2.2.0
-Jinja2==3.1.5
-kafka==1.3.5
-MarkupSafe==3.0.2
-pymongo==4.11.1
-Werkzeug==3.1.3
-zipp==3.21.0
+2025-08-18T13:44:08.823-05:00  INFO 13544 --- [client-sysprin-writer] [           main] rapid.ClientSysPrinWriterApplication     : Starting ClientSysPrinWriterApplication using Java 24.0.2 with PID 13544 (C:\Users\F2LIPBX\spring_boot\trace-client-sysprin-service\client-sysprin-writer\target\classes started by F2LIPBX in C:\Users\F2LIPBX\spring_boot\trace-client-sysprin-service\client-sysprin-writer)
+2025-08-18T13:44:08.834-05:00  INFO 13544 --- [client-sysprin-writer] [           main] rapid.ClientSysPrinWriterApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-08-18T13:44:09.645-05:00  WARN 13544 --- [client-sysprin-writer] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [rapid.ClientSysPrinWriterApplication]
+2025-08-18T13:44:10.244-05:00 ERROR 13544 --- [client-sysprin-writer] [           main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [rapid.ClientSysPrinWriterApplication]
+        at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:194) ~[spring-context-6.2.7.jar:6.2.7]
+        at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:418) ~[spring-context-6.2.7.jar:6.2.7]
+        at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.2.7.jar:6.2.7]
+        at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.2.7.jar:6.2.7]
+        at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.2.7.jar:6.2.7]
+        at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791) ~[spring-context-6.2.7.jar:6.2.7]
+        at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609) ~[spring-context-6.2.7.jar:6.2.7]
+        at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.0.jar:3.5.0]
+        at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.5.0.jar:3.5.0]
+        at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.0.jar:3.5.0]
+        at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.0.jar:3.5.0]
+        at rapid.ClientSysPrinWriterApplication.main(ClientSysPrinWriterApplication.java:21) ~[classes/:na]
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'clientDataFetcher' for bean class [rapid.service.client.ClientDataFetcher] conflicts with existing, non-compatible bean definition of same name and class [rapid.client.service.fetch.ClientDataFetcher]
+        at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:361) ~[spring-context-6.2.7.jar:6.2.7]
+        at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:288) ~[spring-context-6.2.7.jar:6.2.7]
+        at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128) ~[spring-context-6.2.7.jar:6.2.7]
+        at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:346) ~[spring-context-6.2.7.jar:6.2.7]
+        at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:281) ~[spring-context-6.2.7.jar:6.2.7]
+        at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:204) ~[spring-context-6.2.7.jar:6.2.7]
+        at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:172) ~[spring-context-6.2.7.jar:6.2.7]
+        ... 11 common frames omitted
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  19.248 s
+[INFO] Finished at: 2025-08-18T13:44:10-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:3.4.2:run (default-cli) on project client-sysprin-writer: Process terminated with exit code: 1 -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+PS C:\Users\F2LIPBX\spring_boot\trace-client-sysprin-service\client-sysprin-writer>

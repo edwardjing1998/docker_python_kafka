@@ -1,2 +1,5 @@
-Sending request to url: https://gitlab.onefiserv.net/api/v4/projects/issuers%2Ffos-modernization%2Fplastic%2Frapid%2FRAPID-Client-microservices-Java/statuses/e42da969d768e1a74ea1cd8dac3964be5c70b907
-Response Code: HTTP/1.1 405 Method Not Allowed
+ssl:
+   enabled:true
+   key-store : path to keystore.p12
+   key-store-password : password
+   key-store-type : PKCS12

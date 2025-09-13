@@ -1,5 +1,1 @@
-ssl:
-   enabled:true
-   key-store : path to keystore.p12
-   key-store-password : password
-   key-store-type : PKCS12
+ERROR] Failed to execute goal on project trace-gateway: Could not resolve dependencies for project trace-users-hub:trace-gateway:jar:1.0.0-SNAPSHOT: Failed to collect dependencies at trace-users-hub:trace-users-profile:jar:1.0.0-SNAPSHOT: Failed to read artifact descriptor for trace-users-hub:trace-users-profile:jar:1.0.0-SNAPSHOT: The following artifacts could not be resolved: trace-users-hub:trace-users-hub:pom:${revision} (absent): Could not transfer artifact trace-users-hub:trace-users-hub:pom:${revision} from/to Nexus (https://nexus-dev.onefiserv.net/repository/mvn-gl-flume-public-group/): status code: 400, reason phrase: Invalid repository path (400) -> [Help 1]

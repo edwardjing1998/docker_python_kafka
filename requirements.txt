@@ -1,225 +1,36 @@
-package rapid.service.client;
+INFO] Running rapid.client.service.ClientReportOptionServiceTest$ByClient
+[ERROR] Tests run: 4, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.136 s <<< FAILURE! -- in rapid.client.service.ClientReportOptionServiceTest$ByClient
+[ERROR] rapid.client.service.ClientReportOptionServiceTest.getAllWithDetails_flattens_and_maps -- Time elapsed: 8.158 s <<< ERROR!
+org.mockito.exceptions.misusing.UnnecessaryStubbingException:
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Answers;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
-import rapid.client.mapper.ClientReportOptionMapper;
-import rapid.client.mapper.fetch.ClientReportOptionDataBundle;
-import rapid.dto.client.ClientReportOptionDTO;
-import rapid.model.client.AdminQueryList;
-import rapid.model.client.C3FileTransfer;
-import rapid.model.client.ClientReportOption;
-import rapid.service.client.fetcher.ClientReportOptionDataFetcher;
+Unnecessary stubbings detected.
+Clean & maintainable test code requires zero unnecessary code.
+Following stubbings are unnecessary (click to navigate to relevant line of code):
+  1. -> at rapid.client.service.ClientReportOptionServiceTest.dtoWithClientId(ClientReportOptionServiceTest.java:44)
+  2. -> at rapid.client.service.ClientReportOptionServiceTest.dtoWithClientId(ClientReportOptionServiceTest.java:44)
+  3. -> at rapid.client.service.ClientReportOptionServiceTest.dtoWithClientId(ClientReportOptionServiceTest.java:44)
+Please remove unnecessary stubbings or use 'lenient' strictness. More info: javadoc for UnnecessaryStubbingException class.
+        at org.mockito.junit.jupiter.MockitoExtension.lambda$afterEach$2(MockitoExtension.java:200)
+        at java.base/java.util.Optional.ifPresent(Optional.java:178)
+        at org.mockito.junit.jupiter.MockitoExtension.afterEach(MockitoExtension.java:198)
+        at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+        at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 
-import java.util.*;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.*;
-
-@ExtendWith(MockitoExtension.class)
-class ClientReportOptionServiceTest {
-
-    // Deep stubs lets us do dataFetcher.getAdminRepo().findAllReportIds()
-    @Mock(answer = Answers.RETURNS_DEEP_STUBS)
-    ClientReportOptionDataFetcher dataFetcher;
-
-    @Mock
-    ClientReportOptionMapper optionMapper;
-
-    @InjectMocks
-    ClientReportOptionService service;
-
-    // ---------- helpers ----------
-
-    private ClientReportOptionDTO dtoWithClientId(String clientId) {
-        // If DTO is final/record and Mockito can't mock it in your setup,
-        // switch to a real DTO (builder/ctor) instead.
-        ClientReportOptionDTO dto = mock(ClientReportOptionDTO.class);
-        when(dto.getClientId()).thenReturn(clientId);
-        return dto;
-    }
-
-    private ClientReportOption option() {
-        return mock(ClientReportOption.class);
-    }
-
-    private static <T> Map<Integer, T> map(Object... kv) {
-        Map<Integer, T> m = new HashMap<>();
-        for (int i = 0; i < kv.length; i += 2) {
-            Integer k = (Integer) kv[i];
-            @SuppressWarnings("unchecked")
-            T v = (T) kv[i + 1];
-            m.put(k, v);
-        }
-        return m;
-    }
-
-    private static Map<Integer, List<ClientReportOption>> optionsMap(Object... kv) {
-        Map<Integer, List<ClientReportOption>> m = new HashMap<>();
-        for (int i = 0; i < kv.length; i += 2) {
-            Integer k = (Integer) kv[i];
-            @SuppressWarnings("unchecked")
-            List<ClientReportOption> v = (List<ClientReportOption>) kv[i + 1];
-            m.put(k, v);
-        }
-        return m;
-    }
-
-    // ---------- tests ----------
-
-    @Test
-    @DisplayName("getAllWithDetails: flattens per reportId, enriches option (admin+c3), maps to DTO, skips null option lists")
-    void getAllWithDetails_flattens_and_maps() {
-        // report IDs
-        List<Integer> reportIds = List.of(10, 20, 30);
-
-        // per-report details
-        AdminQueryList admin10 = mock(AdminQueryList.class);
-        AdminQueryList admin20 = mock(AdminQueryList.class);
-        AdminQueryList admin30 = mock(AdminQueryList.class);
-
-        C3FileTransfer c3_10 = mock(C3FileTransfer.class);
-        C3FileTransfer c3_20 = mock(C3FileTransfer.class);
-        C3FileTransfer c3_30 = mock(C3FileTransfer.class);
-
-        // options for each report (20 => null list to ensure it's skipped)
-        ClientReportOption optA = option(); // for 10
-        ClientReportOption optB = option(); // for 10
-        ClientReportOption optC = option(); // for 30
-
-        ClientReportOptionDataBundle bundle = new ClientReportOptionDataBundle(
-                map(10, admin10, 20, admin20, 30, admin30),
-                map(10, c3_10, 20, c3_20, 30, c3_30),
-                optionsMap(
-                        10, List.of(optA, optB),
-                        20, null,                 // should be skipped
-                        30, List.of(optC)
-                )
-        );
-
-        when(dataFetcher.getAdminRepo().findAllReportIds()).thenReturn(reportIds);
-        when(dataFetcher.fetchForReports(reportIds)).thenReturn(bundle);
-
-        // map each option to a DTO (we care about identity more than fields here)
-        ClientReportOptionDTO dtoA = dtoWithClientId("1234");
-        ClientReportOptionDTO dtoB = dtoWithClientId("5678");
-        ClientReportOptionDTO dtoC = dtoWithClientId("9999");
-        when(optionMapper.toDto(optA)).thenReturn(dtoA);
-        when(optionMapper.toDto(optB)).thenReturn(dtoB);
-        when(optionMapper.toDto(optC)).thenReturn(dtoC);
-
-        // act
-        List<ClientReportOptionDTO> result = service.getAllWithDetails();
-
-        // assert
-        assertThat(result).containsExactlyInAnyOrder(dtoA, dtoB, dtoC);
-
-        // verify fetch & mapping interactions
-        verify(dataFetcher.getAdminRepo()).findAllReportIds();
-        verify(dataFetcher).fetchForReports(reportIds);
-        verify(optionMapper).toDto(optA);
-        verify(optionMapper).toDto(optB);
-        verify(optionMapper).toDto(optC);
-
-        // admin should be linked with c3 for reports that actually had options
-        verify(admin10, atLeastOnce()).setC3FileTransfer(c3_10);
-        verify(admin30, atLeastOnce()).setC3FileTransfer(c3_30);
-        // for the null-options report, we shouldn't set c3 on its admin
-        verify(admin20, never()).setC3FileTransfer(any());
-        // ensure we didn't touch c3_20 via options path
-        verifyNoInteractions(c3_20);
-    }
-
-    @Nested
-    @DisplayName("getAllWithDetailsByClient(clientId)")
-    class ByClient {
-
-        @Test
-        @DisplayName("returns only DTOs whose clientId matches (clientId is trimmed)")
-        void filters_matching_clientId() {
-            // Build a small bundle: report 1 has two options, report 2 has one.
-            List<Integer> reportIds = List.of(1, 2);
-
-            AdminQueryList a1 = mock(AdminQueryList.class);
-            AdminQueryList a2 = mock(AdminQueryList.class);
-            C3FileTransfer c1 = mock(C3FileTransfer.class);
-            C3FileTransfer c2 = mock(C3FileTransfer.class);
-
-            ClientReportOption o1 = option(); // -> "1234"
-            ClientReportOption o2 = option(); // -> "5678"
-            ClientReportOption o3 = option(); // -> "1234"
-
-            ClientReportOptionDataBundle bundle = new ClientReportOptionDataBundle(
-                    map(1, a1, 2, a2),
-                    map(1, c1, 2, c2),
-                    optionsMap(
-                            1, List.of(o1, o2),
-                            2, List.of(o3)
-                    )
-            );
-
-            when(dataFetcher.getAdminRepo().findAllReportIds()).thenReturn(reportIds);
-            when(dataFetcher.fetchForReports(reportIds)).thenReturn(bundle);
-
-            ClientReportOptionDTO d1 = dtoWithClientId("1234");
-            ClientReportOptionDTO d2 = dtoWithClientId("5678");
-            ClientReportOptionDTO d3 = dtoWithClientId("1234");
-
-            when(optionMapper.toDto(o1)).thenReturn(d1);
-            when(optionMapper.toDto(o2)).thenReturn(d2);
-            when(optionMapper.toDto(o3)).thenReturn(d3);
-
-            // act
-            List<ClientReportOptionDTO> filtered = service.getAllWithDetailsByClient(" 1234 ");
-
-            // assert
-            assertThat(filtered).containsExactlyInAnyOrder(d1, d3);
-            assertThat(filtered).allMatch(x -> "1234".equals(x.getClientId()));
-        }
-
-        @Test
-        @DisplayName("fast path: returns empty when clientId is null/blank")
-        void returns_empty_on_null_or_blank() {
-            assertThat(service.getAllWithDetailsByClient(null)).isEmpty();
-            assertThat(service.getAllWithDetailsByClient("")).isEmpty();
-            assertThat(service.getAllWithDetailsByClient("   ")).isEmpty();
-
-            // no fetch or mapping should occur
-            verifyNoInteractions(dataFetcher, optionMapper);
-        }
-
-        @Test
-        @DisplayName("ignores DTOs with null clientId during filtering")
-        void ignores_null_clientId_in_dtos() {
-            List<Integer> reportIds = List.of(9);
-            AdminQueryList admin = mock(AdminQueryList.class);
-            C3FileTransfer c3 = mock(C3FileTransfer.class);
-            ClientReportOption o1 = option(); // -> "1234"
-            ClientReportOption o2 = option(); // -> null clientId
-
-            ClientReportOptionDataBundle bundle = new ClientReportOptionDataBundle(
-                    map(9, admin),
-                    map(9, c3),
-                    optionsMap(9, List.of(o1, o2))
-            );
-
-            when(dataFetcher.getAdminRepo().findAllReportIds()).thenReturn(reportIds);
-            when(dataFetcher.fetchForReports(reportIds)).thenReturn(bundle);
-
-            ClientReportOptionDTO d1 = dtoWithClientId("1234");
-            ClientReportOptionDTO dNull = dtoWithClientId(null);
-
-            when(optionMapper.toDto(o1)).thenReturn(d1);
-            when(optionMapper.toDto(o2)).thenReturn(dNull);
-
-            List<ClientReportOptionDTO> filtered = service.getAllWithDetailsByClient("1234");
-
-            assertThat(filtered).containsExactly(d1);
-        }
-    }
-}
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.464 s -- in rapid.client.service.ClientReportOptionServiceTest
+[INFO] 
+[INFO] Results:
+[INFO]
+[ERROR] Errors: 
+[ERROR]   ClientReportOptionServiceTest.getAllWithDetails_flattens_and_maps ┬╗ UnnecessaryStubbing 
+Unnecessary stubbings detected.
+Clean & maintainable test code requires zero unnecessary code.
+Following stubbings are unnecessary (click to navigate to relevant line of code):
+  1. -> at rapid.client.service.ClientReportOptionServiceTest.dtoWithClientId(ClientReportOptionServiceTest.java:44)
+  2. -> at rapid.client.service.ClientReportOptionServiceTest.dtoWithClientId(ClientReportOptionServiceTest.java:44)
+  3. -> at rapid.client.service.ClientReportOptionServiceTest.dtoWithClientId(ClientReportOptionServiceTest.java:44)
+Please remove unnecessary stubbings or use 'lenient' strictness. More info: javadoc for UnnecessaryStubbingException class.
+[INFO]
+[ERROR] Tests run: 4, Failures: 0, Errors: 1, Skipped: 0
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE

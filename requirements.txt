@@ -329,6 +329,27 @@ class ClientReportOptionControllerTest {
 }
 
 
+// --- 无效但可路由：进入方法 -> 抛 ClientBadRequestException -> GlobalExceptionHandler -> 400
+@ParameterizedTest(name = "Bad format (\"{0}\") should return 400 and not call service")
+@ValueSource(strings = {"123", "12345", "12a4", "ABCD", "12-4", "000"})
+void getReportsByClient_invalidFormat_badRequest(String badId) throws Exception {
+    mockMvc.perform(get("/api/client/report-option/{clientId}", badId)
+                    .accept(MediaType.APPLICATION_JSON))
+            .andExpect(status().isBadRequest());
+
+    verifyNoInteractions(service);
+}
+
+// --- 不可路由：URL 本身不匹配 -> 404（控制器与异常处理都不会触发）
+@ParameterizedTest(name = "Unroutable (\"{0}\") should return 404 and not call service")
+@ValueSource(strings = {"", "  "})
+void getReportsByClient_unroutable_notFound(String badId) throws Exception {
+    mockMvc.perform(get("/api/client/report-option/{clientId}", badId)
+                    .accept(MediaType.APPLICATION_JSON))
+            .andExpect(status().isNotFound());
+
+    verifyNoInteractions(service);
+}
 
 
 

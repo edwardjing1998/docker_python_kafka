@@ -257,8 +257,39 @@ class ClientControllerTest {
     }
 }
 
+class ClientControllerTest {
 
+    private MockMvc mockMvc;
+    private ClientService clientService;
 
+    private ClientDTO realClient(String id) {
+        ClientDTO dto = new ClientDTO();  // adapt if builder/record
+        dto.setClientId(id);
+        return dto;
+    }
 
+    @BeforeEach
+    void setup() {
+        clientService = Mockito.mock(ClientService.class);
+        ClientController controller = new ClientController(clientService);
+        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
+    }
 
-[ERROR]
+    @Test
+    @DisplayName("GET /api/allClients returns 200 and list")
+    void getAllClients_ok() throws Exception {
+        when(clientService.getAllClients()).thenReturn(List.of(realClient("CL001"), realClient("CL002")));
+
+        mockMvc.perform(get("/api/allClients").accept(MediaType.APPLICATION_JSON))
+              .andExpect(status().isOk())
+              .andExpect(jsonPath("$", hasSize(2)))
+              .andExpect(jsonPath("$[0].clientId").value("CL001"))
+              .andExpect(jsonPath("$[1].clientId").value("CL002"));
+
+        verify(clientService).getAllClients();
+        verifyNoMoreInteractions(clientService);
+    }
+
+    // ...same pattern for the other tests, using realClient(...)
+}
+

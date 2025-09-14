@@ -36,3 +36,13 @@ public class ClientReportOptionController {
     }
     
 }
+
+
+
+
+
+
+
+[INFO]
+[ERROR] Errors: 
+[ERROR]   ClientControllerTest ┬╗ IllegalState Found multiple @SpringBootConfiguration annotated classes [Generic bean: class=rapid.ClientSysPrinReaderApplication; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in file [C:\Users\F2LIPBX\spring_boot\trace-client-sysprin-service\client-sysprin-reader\target\classes\rapid\ClientSysPrinReaderApplication.class], Generic bean: class=rapid.CommonServiceApplication; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in URL [jar:file:/C:/Users/F2LIPBX/spring_boot/trace-client-sysprin-service/common-services/target/common-services-0.0.1-SNAPSHOT.jar!/rapid/CommonServiceApplication.class]]

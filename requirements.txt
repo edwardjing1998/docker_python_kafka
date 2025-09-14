@@ -237,6 +237,100 @@ class ClientControllerTest {
 
 
 
+    private MockMvc mockMvc;
+    private ClientService clientService;
+
+    private ClientDTO mockClient(String id) {
+        ClientDTO dto = Mockito.mock(ClientDTO.class);
+        // IMPORTANT: stub getClientId(), not getClient()
+        when(dto.getClientId()).thenReturn(id);
+        return dto;
+    }
+
+    @BeforeEach
+    void setup() {
+        clientService = Mockito.mock(ClientService.class);
+        ClientController controller = new ClientController(clientService);
+
+        // If you have a @ControllerAdvice for exceptions, add it here via setControllerAdvice(...)
+        mockMvc = MockMvcBuilders.standaloneSetup(controller)
+                //.setControllerAdvice(new GlobalExceptionHandler())
+                .build();
+    }
+
+    @Test
+    @DisplayName("GET /api/allClients returns 200 and list")
+    void getAllClients_ok() throws Exception {
+        when(clientService.getAllClients()).thenReturn(List.of(mockClient("CL001"), mockClient("CL002")));
+
+        mockMvc.perform(get("/api/allClients").accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(2)))
+                .andExpect(jsonPath("$[0].clientId").value("CL001"))
+                .andExpect(jsonPath("$[1].clientId").value("CL002"));
+
+        verify(clientService).getAllClients();
+        verifyNoMoreInteractions(clientService);
+    }
+
+    @Test
+    @DisplayName("GET /api/client/page returns 200 with defaults (page=0,size=10)")
+    void getClientsPaginated_defaults() throws Exception {
+        when(clientService.fetchClientsWithPagination(anyInt(), anyInt())).thenReturn(List.of());
+
+        mockMvc.perform(get("/api/client/page").accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+
+        verify(clientService).fetchClientsWithPagination(0, 10);
+        verifyNoMoreInteractions(clientService);
+    }
+
+    @Test
+    @DisplayName("GET /api/client/page with custom params")
+    void getClientsPaginated_ok() throws Exception {
+        when(clientService.fetchClientsWithPagination(2, 5))
+                .thenReturn(List.of(mockClient("CL010"), mockClient("CL011")));
+
+        mockMvc.perform(get("/api/client/page").queryParam("page", "2").queryParam("size", "5"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(2)))
+                .andExpect(jsonPath("$[0].clientId").value("CL010"))
+                .andExpect(jsonPath("$[1].clientId").value("CL011"));
+
+        verify(clientService).fetchClientsWithPagination(2, 5);
+        verifyNoMoreInteractions(clientService);
+    }
+
+    @Test
+    @DisplayName("GET /api/client/{id} returns 200 when found")
+    void getClientById_ok() throws Exception {
+        when(clientService.getClientDetails("CL123")).thenReturn(Optional.of(mockClient("CL123")));
+
+        mockMvc.perform(get("/api/client/{clientId}", "CL123"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.clientId").value("CL123"));
+
+        verify(clientService).getClientDetails("CL123");
+        verifyNoMoreInteractions(clientService);
+    }
+
+    @Test
+    @DisplayName("GET /api/client/{id} returns 404 when not found")
+    void getClientById_notFound() throws Exception {
+        when(clientService.getClientDetails("NO_SUCH")).thenReturn(Optional.empty());
+
+        mockMvc.perform(get("/api/client/{clientId}", "NO_SUCH"))
+                .andExpect(status().isNotFound()); // ensure exception maps to 404 in your controller/advice
+
+        verify(clientService).getClientDetails("NO_SUCH");
+        verifyNoMoreInteractions(clientService);
+    }
+
+
+
+
+
+
 
 
 

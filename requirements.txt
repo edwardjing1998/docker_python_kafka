@@ -43,127 +43,83 @@ public class ClientReportOptionController {
 
 
 
-@WebMvcTest(controllers = ClientController.class) // <-- pin to THIS controller only
-class ClientControllerTest {
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+import org.mockito.Mockito;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
+import rapid.dto.client.ClientReportOptionDTO;
+import rapid.service.client.ClientReportOptionService;
 
-    @Autowired MockMvc mockMvc;
-    @MockBean ClientService clientService; // <-- mock dependency
-    @Autowired ObjectMapper objectMapper;
+import java.util.List;
 
-    private ClientDTO mockClient(String id) {
-        ClientDTO dto = Mockito.mock(ClientDTO.class);
-        when(dto.getClientId()).thenReturn(id);
-        return dto;
+import static org.hamcrest.Matchers.hasSize;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+
+@WebMvcTest(ClientReportOptionController.class)
+class ClientReportOptionControllerTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @MockBean
+    private ClientReportOptionService service;
+
+    private ClientReportOptionDTO mockDto() {
+        // Keep it generic—no field assertions needed
+        return Mockito.mock(ClientReportOptionDTO.class);
     }
 
-    @Test @DisplayName("GET /api/allClients returns 200 and list")
-    void getAllClients_ok() throws Exception {
-        when(clientService.getAllClients()).thenReturn(List.of(mockClient("CL001"), mockClient("CL002")));
+    @Test
+    @DisplayName("GET /api/client/report-option returns 200 with list")
+    void getAllReports_ok() throws Exception {
+        when(service.getAllWithDetails()).thenReturn(List.of(mockDto(), mockDto()));
 
-        mockMvc.perform(get("/api/allClients").accept(MediaType.APPLICATION_JSON))
+        mockMvc.perform(get("/api/client/report-option").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(2)))
-                .andExpect(jsonPath("$[0].clientId").value("CL001"))
-                .andExpect(jsonPath("$[1].clientId").value("CL002"));
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$", hasSize(2)));
 
-        verify(clientService).getAllClients();
+        verify(service, times(1)).getAllWithDetails();
+        verifyNoMoreInteractions(service);
     }
 
-    @Test @DisplayName("GET /api/client/page returns 200 with defaults (page=0,size=10)")
-    void getClientsPaginated_defaults() throws Exception {
-        when(clientService.fetchClientsWithPagination(anyInt(), anyInt())).thenReturn(List.of());
+    @Test
+    @DisplayName("GET /api/client/{clientId}/report-option returns 200 for 4-digit id and calls service")
+    void getReportsByClient_validId_ok() throws Exception {
+        String clientId = "1234";
+        when(service.getAllWithDetailsByClient(clientId))
+                .thenReturn(List.of(mockDto()));
 
-        mockMvc.perform(get("/api/client/page").accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
-
-        verify(clientService).fetchClientsWithPagination(0, 10);
-    }
-
-    @Test @DisplayName("GET /api/client/page with custom params")
-    void getClientsPaginated_ok() throws Exception {
-        when(clientService.fetchClientsWithPagination(2, 5))
-                .thenReturn(List.of(mockClient("CL010"), mockClient("CL011")));
-
-        mockMvc.perform(get("/api/client/page").queryParam("page","2").queryParam("size","5"))
+        mockMvc.perform(get("/api/client/{clientId}/report-option", clientId)
+                        .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(2)))
-                .andExpect(jsonPath("$[0].clientId").value("CL010"))
-                .andExpect(jsonPath("$[1].clientId").value("CL011"));
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$", hasSize(1)));
 
-        verify(clientService).fetchClientsWithPagination(2, 5);
+        verify(service, times(1)).getAllWithDetailsByClient(eq(clientId));
+        verifyNoMoreInteractions(service);
     }
 
-    @Test @DisplayName("GET /api/client/{id} returns 200 when found")
-    void getClientById_ok() throws Exception {
-        when(clientService.getClientDetails("CL123")).thenReturn(Optional.of(mockClient("CL123")));
+    @ParameterizedTest(name = "Invalid clientId \"{0}\" should return 400")
+    @ValueSource(strings = {"123", "12345", "12a4", "ABCD", "", "  ", "000", "12-4"})
+    void getReportsByClient_invalidId_badRequest(String badId) throws Exception {
+        mockMvc.perform(get("/api/client/{clientId}/report-option", badId)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isBadRequest());
 
-        mockMvc.perform(get("/api/client/{clientId}", "CL123"))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.clientId").value("CL123"));
-
-        verify(clientService).getClientDetails("CL123");
-    }
-
-    @Test @DisplayName("GET /api/client/{id} returns 404 when not found")
-    void getClientById_notFound() throws Exception {
-        when(clientService.getClientDetails("NO_SUCH")).thenReturn(Optional.empty());
-
-        mockMvc.perform(get("/api/client/{clientId}", "NO_SUCH"))
-                .andExpect(status().isNotFound()); // ensure your exception maps to 404
-
-        verify(clientService).getClientDetails("NO_SUCH");
+        // Ensure service not called when validation fails
+        verifyNoInteractions(service);
     }
 }
 
-
-
-
-
-
-
-[ERROR] Errors: 
-[ERROR]   ClientControllerTest ┬╗ IllegalState Found multiple @SpringBootConfiguration annotated classes [Generic bean: class=rapid.ClientSysPrinReaderApplication; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in file [C:\Users\F2LIPBX\spring_boot\trace-client-sysprin-service\client-sysprin-reader\target\classes\rapid\ClientSysPrinReaderApplication.class], Generic bean: class=rapid.CommonServiceApplication; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in URL [jar:file:/C:/Users/F2LIPBX/spring_boot/trace-client-sysprin-service/common-services/target/common-services-0.0.1-SNAPSHOT.jar!/rapid/CommonServiceApplication.class]]
-[INFO]
-[ERROR] Tests run: 10, Failures: 0, Errors: 1, Skipped: 0
-[INFO]
-[INFO] ------------------------------------------------------------------------
-[INFO] Reactor Summary for trace-client-sysprin-service 0.0.1-SNAPSHOT:
-[INFO]
-[INFO] trace-client-sysprin-service ....................... SUCCESS [  0.993 s]
-[INFO] common-model ....................................... SUCCESS [02:10 min]
-[INFO] common-api-dto ..................................... SUCCESS [ 18.108 s]
-[INFO] common-mapper ...................................... SUCCESS [ 23.205 s]
-[INFO] common-services .................................... SUCCESS [ 53.027 s]
-[INFO] client-sysprin-writer .............................. SUCCESS [01:29 min]
-[INFO] client-sysprin-reader .............................. FAILURE [ 58.813 s]
-[INFO] gateway ............................................ SKIPPED
-[INFO] search-integration ................................. SKIPPED
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD FAILURE
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  06:16 min
-[INFO] Finished at: 2025-09-14T10:24:12-05:00
-[INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.2.2:test (default-test) on project client-sysprin-reader: 
-[ERROR]
-[ERROR] Please refer to C:\Users\F2LIPBX\spring_boot\trace-client-sysprin-service\client-sysprin-reader\target\surefire-reports for the individual test results. 
-[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
-[ERROR] -> [Help 1]
-[ERROR]
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven us
-
-
-@WebMvcTest(controllers = ClientController.class)
-@AutoConfigureMockMvc(addFilters = false)
-//@Import(GlobalExceptionHandler.class) // uncomment if you have it
-class ClientControllerTest {
-    @Autowired MockMvc mockMvc;
-    @MockBean ClientService clientService;
-    // rest of the tests unchanged
-}
-
-
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 
 

@@ -232,105 +232,8 @@ java.lang.AssertionError: Status expected:<400> but was:<404>
 
 
 
-private static final Pattern CLIENT_ID_PATTERN = Pattern.compile("^\\d{4}$");
-
-@GetMapping("client/report-option/{clientId}")
-public ResponseEntity<List<ClientReportOptionDTO>> getReportsByClientId(@PathVariable String clientId) {
-    if (!CLIENT_ID_PATTERN.matcher(clientId).matches()) {
-        throw new ClientBadRequestException(
-            "Invalid 'clientNumber': must be exactly 4 digits and cannot contain letters"
-        );
-    }
-    return ResponseEntity.ok(service.getAllWithDetailsByClient(clientId));
-}
-
-
-
-package rapid.service.client;
-
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
-import org.mockito.Mockito;
-import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import rapid.client.web.ClientReportOptionController;
-import rapid.dto.client.ClientReportOptionDTO;
-import rapid.service.client.ClientReportOptionService;
-
-import java.util.List;
-
-import static org.hamcrest.Matchers.hasSize;
-import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import  rapid.config.GlobalExceptionHandler;
-
-class ClientReportOptionControllerTest {
-
-    private MockMvc mockMvc;
-    private ClientReportOptionService service;
-
-    private ClientReportOptionDTO dto() {
-        return Mockito.mock(ClientReportOptionDTO.class);
-    }
-
-    @BeforeEach
-    void setup() {
-        service = Mockito.mock(ClientReportOptionService.class);
-        ClientReportOptionController controller = new ClientReportOptionController(service);
-
-        mockMvc = MockMvcBuilders.standaloneSetup(controller).setControllerAdvice(new GlobalExceptionHandler()).build();
-    }
-
-    @Test
-    @DisplayName("GET /api/client/report-option returns 200 with list")
-    void getAllReports_ok() throws Exception {
-        when(service.getAllWithDetails()).thenReturn(List.of(dto(), dto()));
-
-        mockMvc.perform(get("/api/client/report-option").accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$", hasSize(2)));
-
-        verify(service, times(1)).getAllWithDetails();
-        verifyNoMoreInteractions(service);
-    }
-
-    @Test
-    @DisplayName("GET /api/client/report-option/{clientId} returns 200 for 4-digit id and calls service")
-    void getReportsByClient_validId_ok() throws Exception {
-        String clientId = "1234";
-        when(service.getAllWithDetailsByClient(clientId)).thenReturn(List.of(dto()));
-
-        mockMvc.perform(get("/api/client/report-option/{clientId}", clientId)
-                        .accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$", hasSize(1)));
-
-        verify(service, times(1)).getAllWithDetailsByClient(eq(clientId));
-        verifyNoMoreInteractions(service);
-    }
-
-    @ParameterizedTest(name = "Invalid clientId \"{0}\" should return 400 and not call service")
-    @ValueSource(strings = {"123", "12345", "12a4", "ABCD", "", "  ", "000", "12-4"})
-    void getReportsByClient_invalidId_badRequest(String badId) throws Exception {
-        mockMvc.perform(get("/api/client/report-option/{clientId}", badId)
-                        .accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isBadRequest());
-
-        verifyNoInteractions(service);
-    }
-}
-
-
-// --- 无效但可路由：进入方法 -> 抛 ClientBadRequestException -> GlobalExceptionHandler -> 400
-@ParameterizedTest(name = "Bad format (\"{0}\") should return 400 and not call service")
+// ❶ 可路由但格式无效 -> 400
+@ParameterizedTest(name = "Bad format (\"{0}\") -> 400")
 @ValueSource(strings = {"123", "12345", "12a4", "ABCD", "12-4", "000"})
 void getReportsByClient_invalidFormat_badRequest(String badId) throws Exception {
     mockMvc.perform(get("/api/client/report-option/{clientId}", badId)
@@ -340,8 +243,8 @@ void getReportsByClient_invalidFormat_badRequest(String badId) throws Exception 
     verifyNoInteractions(service);
 }
 
-// --- 不可路由：URL 本身不匹配 -> 404（控制器与异常处理都不会触发）
-@ParameterizedTest(name = "Unroutable (\"{0}\") should return 404 and not call service")
+// ❷ 不可路由（空段等）-> 404
+@ParameterizedTest(name = "Unroutable (\"{0}\") -> 404")
 @ValueSource(strings = {"", "  "})
 void getReportsByClient_unroutable_notFound(String badId) throws Exception {
     mockMvc.perform(get("/api/client/report-option/{clientId}", badId)
@@ -350,6 +253,7 @@ void getReportsByClient_unroutable_notFound(String badId) throws Exception {
 
     verifyNoInteractions(service);
 }
+
 
 
 

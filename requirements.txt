@@ -39,3 +39,146 @@ public class ClientController {
         return ResponseEntity.ok(dto);
     }
 }
+
+
+
+
+
+
+package rapid.client.web;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
+import rapid.dto.client.ClientDTO;
+import rapid.exception.ClientNotFoundException;
+import rapid.service.client.ClientService;
+
+import java.util.List;
+import java.util.Optional;
+
+import static org.hamcrest.Matchers.hasSize;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+
+@WebMvcTest(ClientController.class)
+class ClientControllerTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @MockBean
+    private ClientService clientService;
+
+    @Autowired
+    private ObjectMapper objectMapper;
+
+    private ClientDTO mockClient(String id) {
+        // Use a Mockito mock so we don't depend on DTO constructors.
+        ClientDTO dto = Mockito.mock(ClientDTO.class);
+        when(dto.getClientId()).thenReturn(id); // JSON path asserts rely on this getter
+        // If your DTO has other getters you'd like to assert on, stub them here.
+        return dto;
+    }
+
+    @Test
+    @DisplayName("GET /api/allClients returns 200 and list of clients")
+    void getAllClients_ok() throws Exception {
+        ClientDTO c1 = mockClient("CL001");
+        ClientDTO c2 = mockClient("CL002");
+        when(clientService.getAllClients()).thenReturn(List.of(c1, c2));
+
+        mockMvc.perform(get("/api/allClients").accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$", hasSize(2)))
+                .andExpect(jsonPath("$[0].clientId").value("CL001"))
+                .andExpect(jsonPath("$[1].clientId").value("CL002"));
+
+        verify(clientService, times(1)).getAllClients();
+        verifyNoMoreInteractions(clientService);
+    }
+
+    @Test
+    @DisplayName("GET /api/client/page returns 200 and paginated clients; calls service with page/size")
+    void getClientsPaginated_ok() throws Exception {
+        ClientDTO c1 = mockClient("CL010");
+        ClientDTO c2 = mockClient("CL011");
+        when(clientService.fetchClientsWithPagination(2, 5)).thenReturn(List.of(c1, c2));
+
+        mockMvc.perform(get("/api/client/page")
+                        .queryParam("page", "2")
+                        .queryParam("size", "5")
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$", hasSize(2)))
+                .andExpect(jsonPath("$[0].clientId").value("CL010"))
+                .andExpect(jsonPath("$[1].clientId").value("CL011"));
+
+        verify(clientService, times(1)).fetchClientsWithPagination(eq(2), eq(5));
+        verifyNoMoreInteractions(clientService);
+    }
+
+    @Test
+    @DisplayName("GET /api/client/page uses defaults when params omitted")
+    void getClientsPaginated_defaults() throws Exception {
+        when(clientService.fetchClientsWithPagination(anyInt(), anyInt())).thenReturn(List.of());
+
+        mockMvc.perform(get("/api/client/page").accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
+
+        // Defaults in controller: page=0, size=10
+        verify(clientService).fetchClientsWithPagination(0, 10);
+    }
+
+    @Test
+    @DisplayName("GET /api/client/{id} returns 200 when client exists")
+    void getClientById_ok() throws Exception {
+        String id = "CL123";
+        ClientDTO dto = mockClient(id);
+        when(clientService.getClientDetails(id)).thenReturn(Optional.of(dto));
+
+        mockMvc.perform(get("/api/client/{clientId}", id).accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$.clientId").value(id));
+
+        verify(clientService).getClientDetails(id);
+        verifyNoMoreInteractions(clientService);
+    }
+
+    @Test
+    @DisplayName("GET /api/client/{id} returns 404 when client not found")
+    void getClientById_notFound() throws Exception {
+        String id = "NO_SUCH_CLIENT";
+        when(clientService.getClientDetails(id)).thenReturn(Optional.empty());
+
+        // Controller throws new ClientNotFoundException(id)
+        // Ensure your ClientNotFoundException has @ResponseStatus(HttpStatus.NOT_FOUND)
+        // or a global @ControllerAdvice that maps it to 404.
+        mockMvc.perform(get("/api/client/{clientId}", id).accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNotFound());
+
+        verify(clientService).getClientDetails(id);
+        verifyNoMoreInteractions(clientService);
+    }
+}
+
+
+
+
+
+
+
+

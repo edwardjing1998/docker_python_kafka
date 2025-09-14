@@ -1,17 +1,15 @@
 package rapid.service.client;
 
-
-
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.Mockito;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import rapid.client.web.ClientReportOptionController;
 import rapid.dto.client.ClientReportOptionDTO;
 import rapid.service.client.ClientReportOptionService;
 
@@ -23,26 +21,33 @@ import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-import rapid.client.web.ClientReportOptionController;
-
-@WebMvcTest(ClientReportOptionController.class)
 class ClientReportOptionControllerTest {
 
-    @Autowired
     private MockMvc mockMvc;
-
-    @MockBean
     private ClientReportOptionService service;
 
-    private ClientReportOptionDTO mockDto() {
-        // Keep it generic—no field assertions needed
+    // If your DTO has a no-arg constructor, prefer creating a real instance:
+    // private ClientReportOptionDTO dto() { return new ClientReportOptionDTO(); }
+    // Using a mock is fine here since we don't assert fields.
+    private ClientReportOptionDTO dto() {
         return Mockito.mock(ClientReportOptionDTO.class);
+    }
+
+    @BeforeEach
+    void setup() {
+        service = Mockito.mock(ClientReportOptionService.class);
+        ClientReportOptionController controller = new ClientReportOptionController(service);
+
+        mockMvc = MockMvcBuilders.standaloneSetup(controller)
+                // If you have a @ControllerAdvice for errors, add it:
+                // .setControllerAdvice(new GlobalExceptionHandler())
+                .build();
     }
 
     @Test
     @DisplayName("GET /api/client/report-option returns 200 with list")
     void getAllReports_ok() throws Exception {
-        when(service.getAllWithDetails()).thenReturn(List.of(mockDto(), mockDto()));
+        when(service.getAllWithDetails()).thenReturn(List.of(dto(), dto()));
 
         mockMvc.perform(get("/api/client/report-option").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
@@ -57,8 +62,7 @@ class ClientReportOptionControllerTest {
     @DisplayName("GET /api/client/{clientId}/report-option returns 200 for 4-digit id and calls service")
     void getReportsByClient_validId_ok() throws Exception {
         String clientId = "1234";
-        when(service.getAllWithDetailsByClient(clientId))
-                .thenReturn(List.of(mockDto()));
+        when(service.getAllWithDetailsByClient(clientId)).thenReturn(List.of(dto()));
 
         mockMvc.perform(get("/api/client/{clientId}/report-option", clientId)
                         .accept(MediaType.APPLICATION_JSON))
@@ -70,15 +74,13 @@ class ClientReportOptionControllerTest {
         verifyNoMoreInteractions(service);
     }
 
-    @ParameterizedTest(name = "Invalid clientId \"{0}\" should return 400")
+    @ParameterizedTest(name = "Invalid clientId \"{0}\" should return 400 and not call service")
     @ValueSource(strings = {"123", "12345", "12a4", "ABCD", "", "  ", "000", "12-4"})
     void getReportsByClient_invalidId_badRequest(String badId) throws Exception {
         mockMvc.perform(get("/api/client/{clientId}/report-option", badId)
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isBadRequest());
 
-        // Ensure service not called when validation fails
         verifyNoInteractions(service);
     }
 }
-

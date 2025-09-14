@@ -1,3 +1,233 @@
-mockMvc = MockMvcBuilders.standaloneSetup(controller)
-        .setControllerAdvice(new GlobalExceptionHandler())  // <-- add this if you use advice
-        .build();
+package rapid.service.client;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+import org.mockito.Mockito;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import rapid.client.web.ClientReportOptionController;
+import rapid.dto.client.ClientReportOptionDTO;
+import rapid.service.client.ClientReportOptionService;
+
+import java.util.List;
+
+import static org.hamcrest.Matchers.hasSize;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import  rapid.config.GlobalExceptionHandler;
+
+class ClientReportOptionControllerTest {
+
+    private MockMvc mockMvc;
+    private ClientReportOptionService service;
+
+    private ClientReportOptionDTO dto() {
+        return Mockito.mock(ClientReportOptionDTO.class);
+    }
+
+    @BeforeEach
+    void setup() {
+        service = Mockito.mock(ClientReportOptionService.class);
+        ClientReportOptionController controller = new ClientReportOptionController(service);
+
+        mockMvc = MockMvcBuilders.standaloneSetup(controller).setControllerAdvice(new GlobalExceptionHandler()).build();
+    }
+
+    @Test
+    @DisplayName("GET /api/client/report-option returns 200 with list")
+    void getAllReports_ok() throws Exception {
+        when(service.getAllWithDetails()).thenReturn(List.of(dto(), dto()));
+
+        mockMvc.perform(get("/api/client/report-option").accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$", hasSize(2)));
+
+        verify(service, times(1)).getAllWithDetails();
+        verifyNoMoreInteractions(service);
+    }
+
+    @Test
+    @DisplayName("GET /api/client/{clientId}/report-option returns 200 for 4-digit id and calls service")
+    void getReportsByClient_validId_ok() throws Exception {
+        String clientId = "1234";
+        when(service.getAllWithDetailsByClient(clientId)).thenReturn(List.of(dto()));
+
+        mockMvc.perform(get("/api/client/{clientId}/report-option", clientId)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$", hasSize(1)));
+
+        verify(service, times(1)).getAllWithDetailsByClient(eq(clientId));
+        verifyNoMoreInteractions(service);
+    }
+
+    @ParameterizedTest(name = "Invalid clientId \"{0}\" should return 400 and not call service")
+    @ValueSource(strings = {"123", "12345", "12a4", "ABCD", "", "  ", "000", "12-4"})
+    void getReportsByClient_invalidId_badRequest(String badId) throws Exception {
+        mockMvc.perform(get("/api/client/{clientId}/report-option", badId)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isBadRequest());
+
+        verifyNoInteractions(service);
+    }
+}
+
+
+package rapid.config;
+
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+import rapid.dto.error.ApiError;
+import rapid.exception.EntityNotFoundException;
+import rapid.exception.ClientBadRequestException;
+import org.springframework.http.ProblemDetail;
+
+import java.time.Instant;
+
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+
+    @ExceptionHandler(EntityNotFoundException.class)
+    public ResponseEntity<ApiError> handleEntityNotFound(EntityNotFoundException ex,
+                                                         HttpServletRequest request) {
+        ApiError body = new ApiError(
+                Instant.now(),
+                HttpStatus.NOT_FOUND.value(),
+                "Not Found",
+                ex.getMessage(),
+                request.getRequestURI()
+        );
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(body);
+    }
+
+    @ExceptionHandler(ClientBadRequestException.class)
+    public ProblemDetail handleCaseBadRequest(ClientBadRequestException ex) {
+        ProblemDetail pd = ProblemDetail.forStatus(HttpStatus.BAD_REQUEST);
+        pd.setTitle("Invalid clientNumber");
+        pd.setDetail(ex.getMessage()); // "Invalid 'clientNumber': must be exactly 4 digits."
+        return pd;
+    }
+}
+
+
+
+package rapid.client.web;
+
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import rapid.dto.client.ClientReportOptionDTO;
+import rapid.service.client.ClientReportOptionService;
+
+import java.util.List;
+import java.util.regex.Pattern;
+import rapid.exception.ClientBadRequestException;
+
+@RestController
+@RequestMapping("api/")
+@RequiredArgsConstructor
+public class ClientReportOptionController {
+
+     private static final Pattern CLINT_ID_PATTERN = Pattern.compile("^[0-9]{4}$");
+
+    private final ClientReportOptionService service;
+
+    @GetMapping("client/report-option")
+    public ResponseEntity<List<ClientReportOptionDTO>> getAllReports() {
+        List<ClientReportOptionDTO> dtos = service.getAllWithDetails();
+        return ResponseEntity.ok(dtos);
+    }
+
+        @GetMapping("client/{clientId}/report-option")
+    public ResponseEntity<List<ClientReportOptionDTO>> getReportsByClientId(@PathVariable String clientId) {
+
+        if (!CLINT_ID_PATTERN.matcher(clientId).matches()) {
+            throw new ClientBadRequestException("Invalid 'clientNumber': must be exactly 4 digits and can not contains alphabetic characters");
+        }
+
+        return ResponseEntity.ok(service.getAllWithDetailsByClient(clientId));
+    }
+    
+}
+
+
+11:50:45.801 [main] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 1 ms
+[ERROR] Tests run: 10, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 7.612 s <<< FAILURE! -- in rapid.service.client.ClientReportOptionControllerTest
+[ERROR] rapid.service.client.ClientReportOptionControllerTest.getReportsByClient_invalidId_badRequest(String)[5] -- Time elapsed: 0.068 s <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<404>
+        at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
+        at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
+        at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$9(StatusResultMatchers.java:640)
+        at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+        at rapid.service.client.ClientReportOptionControllerTest.getReportsByClient_invalidId_badRequest(ClientReportOptionControllerTest.java:77)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+        at java.base/java.util.Optional.ifPresent(Optional.java:178)
+        at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186)
+        at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+        at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186)
+        at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186)
+        at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+        at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+        at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+        at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+        at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153)
+        at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176)
+        at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+        at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636)
+        at java.base/java.util.stream.ReferencePipeline$7$1FlatMap.accept(ReferencePipeline.java:294)
+        at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1716)
+        at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+        at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+        at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153)
+        at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176)
+        at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+        at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636)
+        at java.base/java.util.stream.ReferencePipeline$7$1FlatMap.accept(ReferencePipeline.java:294)
+        at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+        at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+        at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+        at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1716)
+        at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+        at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+        at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153)
+        at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176)
+        at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+        at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636)
+        at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+        at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
+[INFO] 
+[INFO] Results:
+[INFO]
+[ERROR] Failures: 
+[ERROR]   ClientReportOptionControllerTest.getReportsByClient_invalidId_badRequest:77 Status expected:<400> but was:<404>
+[INFO]
+[ERROR] Tests run: 10, Failures: 1, Errors: 0, Skipped: 0
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  33.759 s
+[INFO] Finished at: 2025-09-14T11:50:46-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.2.2:test (default-test) on project client-sysprin-reader: There are test failures.
+[ERROR]
+[ERROR] Please refer to C:\Users\F2LIPBX\spring_boot\trace-client-sysprin-service\client-sysprin-reader\target\surefire-reports for the individual test results. 
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack tra
+
+
+

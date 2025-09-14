@@ -122,4 +122,6 @@ class ClientReportOptionControllerTest {
 }
 
 
+mvn -Dtest=ClientControllerTest test
+
 

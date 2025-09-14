@@ -152,3 +152,14 @@ class ClientControllerTest {
 [ERROR]
 [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
 [ERROR] Re-run Maven us
+
+
+@WebMvcTest(controllers = ClientController.class)
+@AutoConfigureMockMvc(addFilters = false)
+//@Import(GlobalExceptionHandler.class) // uncomment if you have it
+class ClientControllerTest {
+    @Autowired MockMvc mockMvc;
+    @MockBean ClientService clientService;
+    // rest of the tests unchanged
+}
+

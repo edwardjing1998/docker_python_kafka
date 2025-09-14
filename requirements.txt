@@ -1,56 +1,117 @@
-package rapid.client.web;
+package rapid.service.client;
 
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import rapid.exception.ClientBadRequestException;
-import rapid.exception.ClientEmailNotFoundException;
-import rapid.exception.ClientNotFoundException;
-import rapid.service.client.ClientService;
-import rapid.dto.client.ClientDTO;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+import org.mockito.Mockito;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import rapid.client.web.ClientEmailController;
+import rapid.config.GlobalExceptionHandler;
 import rapid.dto.client.ClientEmailDTO;
-import rapid.dto.client.SysPrinsPrefixDTO;
 import rapid.model.client.Client;
+import rapid.service.client.ClientService;
 
 import java.util.List;
-import java.util.regex.Pattern;
 
-@RestController
-@RequestMapping("/api/")
-@RequiredArgsConstructor
-@Slf4j
-public class ClientEmailController {
+import static org.hamcrest.Matchers.hasSize;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-    private final ClientService clientService;
+class ClientEmailControllerTest {
 
-    private static final Pattern CLINT_ID_PATTERN = Pattern.compile("^[0-9]{4}$");
+    private MockMvc mockMvc;
+    private ClientService clientService;
 
-    private static final Pattern EMAIL_PATTERN = Pattern.compile(
-            "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"
-    );
+    // If ClientEmailDTO has a no-arg ctor, prefer real objects:
+    // private ClientEmailDTO emailDto() { return new ClientEmailDTO(); }
+    // Using mocks is fine if the class isn't final and we don't assert fields.
+    private ClientEmailDTO emailDto() { return Mockito.mock(ClientEmailDTO.class); }
 
-    @GetMapping("email/by-client")
-    public ResponseEntity<List<ClientEmailDTO>> getEmailsByClient(
-            @RequestParam String clientId
-    ) {
-        // 1) validate clientId (same as /email/add & /email/delete)
-        String cid = (clientId == null) ? null : clientId.trim();
-        if (cid == null || !CLINT_ID_PATTERN.matcher(cid).matches()) {
-            throw new ClientBadRequestException(
-                    "Invalid 'clientNumber': must be exactly 4 digits and can not contains alphabetic characters"
-            );
-        }
+    private Client clientEntity() { return Mockito.mock(Client.class); }
 
-        List<Client> clients = clientService.clients(cid);
-        // 2) client existence check
-        if (clients.size() == 0) {
-            log.info("client is not existing ");
-            throw new ClientNotFoundException("Client not found: " + cid);
-        }
+    @BeforeEach
+    void setup() {
+        clientService = Mockito.mock(ClientService.class);
+        ClientEmailController controller = new ClientEmailController(clientService);
 
-        // 3) fetch emails (empty list if none)
-        List<ClientEmailDTO> emails = clientService.findEmailsByClientId(cid);
-        return ResponseEntity.ok(emails);
+        mockMvc = MockMvcBuilders.standaloneSetup(controller)
+                .setControllerAdvice(new GlobalExceptionHandler())
+                .build();
+    }
+
+    @Test
+    @DisplayName("GET /api/email/by-client?clientId=1234 -> 200 and empty list when no emails")
+    void getEmailsByClient_ok_empty() throws Exception {
+        String cid = "1234";
+        when(clientService.clients(cid)).thenReturn(List.of(clientEntity()));
+        when(clientService.findEmailsByClientId(cid)).thenReturn(List.of());
+
+        mockMvc.perform(get("/api/email/by-client").queryParam("clientId", cid)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$", hasSize(0)));
+
+        verify(clientService).clients(eq(cid));
+        verify(clientService).findEmailsByClientId(eq(cid));
+        verifyNoMoreInteractions(clientService);
+    }
+
+    @Test
+    @DisplayName("GET /api/email/by-client?clientId=1234 -> 200 and list when emails exist")
+    void getEmailsByClient_ok_nonEmpty() throws Exception {
+        String cid = "1234";
+        when(clientService.clients(cid)).thenReturn(List.of(clientEntity()));
+        when(clientService.findEmailsByClientId(cid)).thenReturn(List.of(emailDto(), emailDto()));
+
+        mockMvc.perform(get("/api/email/by-client").queryParam("clientId", cid)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$", hasSize(2)));
+
+        verify(clientService).clients(eq(cid));
+        verify(clientService).findEmailsByClientId(eq(cid));
+        verifyNoMoreInteractions(clientService);
+    }
+
+    // Bad formats that still reach the controller (query param present) -> 400
+    @ParameterizedTest(name = "Bad clientId \"{0}\" -> 400 (invalid format)")
+    @ValueSource(strings = {"123", "12345", "12a4", "ABCD", "12-4", "  "})
+    void getEmailsByClient_badFormat_badRequest(String bad) throws Exception {
+        mockMvc.perform(get("/api/email/by-client").queryParam("clientId", bad)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isBadRequest());
+
+        verifyNoInteractions(clientService);
+    }
+
+    @Test
+    @DisplayName("GET /api/email/by-client without clientId -> 400 (missing required param)")
+    void getEmailsByClient_missingParam_badRequest() throws Exception {
+        mockMvc.perform(get("/api/email/by-client").accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isBadRequest());
+
+        verifyNoInteractions(clientService);
+    }
+
+    @Test
+    @DisplayName("GET /api/email/by-client?clientId=9999 -> 404 when client does not exist")
+    void getEmailsByClient_clientNotFound_notFound() throws Exception {
+        String cid = "9999";
+        when(clientService.clients(cid)).thenReturn(List.of()); // no such client
+
+        mockMvc.perform(get("/api/email/by-client").queryParam("clientId", cid)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNotFound());
+
+        verify(clientService).clients(eq(cid));
+        verifyNoMoreInteractions(clientService);
     }
 }

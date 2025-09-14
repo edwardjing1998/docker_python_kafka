@@ -26,9 +26,6 @@ class ClientReportOptionControllerTest {
     private MockMvc mockMvc;
     private ClientReportOptionService service;
 
-    // If your DTO has a no-arg constructor, prefer creating a real instance:
-    // private ClientReportOptionDTO dto() { return new ClientReportOptionDTO(); }
-    // Using a mock is fine here since we don't assert fields.
     private ClientReportOptionDTO dto() {
         return Mockito.mock(ClientReportOptionDTO.class);
     }
@@ -38,10 +35,7 @@ class ClientReportOptionControllerTest {
         service = Mockito.mock(ClientReportOptionService.class);
         ClientReportOptionController controller = new ClientReportOptionController(service);
 
-        mockMvc = MockMvcBuilders.standaloneSetup(controller)
-                // If you have a @ControllerAdvice for errors, add it:
-                // .setControllerAdvice(new GlobalExceptionHandler())
-                .build();
+        mockMvc = MockMvcBuilders.standaloneSetup(controller);
     }
 
     @Test
@@ -84,3 +78,28 @@ class ClientReportOptionControllerTest {
         verifyNoInteractions(service);
     }
 }
+
+
+
+
+
+[INFO] Compiling 4 source files with javac [debug parameters release 21] to target\test-classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR :
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/F2LIPBX/spring_boot/trace-client-sysprin-service/client-sysprin-reader/src/test/java/rapid/service/client/ClientReportOptionControllerTest.java:[38,50] incompatible types: org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder cannot be converted to org.springframework.test.web.servlet.MockMvc
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  28.980 s
+[INFO] Finished at: 2025-09-14T11:39:14-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:testCompile (default-testCompile) on project client-sysprin-reader: Compilation failure
+[ERROR] /C:/Users/F2LIPBX/spring_boot/trace-client-sysprin-service/client-sysprin-reader/src/test/java/rapid/service/client/ClientReportOptionControllerTest.java:[38,50] incompatible types: org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder cannot be converted to org.springframework.test.web.servlet.MockMvc
+[ERROR]
+
+
+
+

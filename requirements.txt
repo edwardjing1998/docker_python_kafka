@@ -1,105 +1,20 @@
-package rapid.service.client;
+        at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
-import org.mockito.Mockito;
-import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import rapid.client.web.ClientReportOptionController;
-import rapid.dto.client.ClientReportOptionDTO;
-import rapid.service.client.ClientReportOptionService;
-
-import java.util.List;
-
-import static org.hamcrest.Matchers.hasSize;
-import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-
-class ClientReportOptionControllerTest {
-
-    private MockMvc mockMvc;
-    private ClientReportOptionService service;
-
-    private ClientReportOptionDTO dto() {
-        return Mockito.mock(ClientReportOptionDTO.class);
-    }
-
-    @BeforeEach
-    void setup() {
-        service = Mockito.mock(ClientReportOptionService.class);
-        ClientReportOptionController controller = new ClientReportOptionController(service);
-
-        mockMvc = MockMvcBuilders.standaloneSetup(controller);
-    }
-
-    @Test
-    @DisplayName("GET /api/client/report-option returns 200 with list")
-    void getAllReports_ok() throws Exception {
-        when(service.getAllWithDetails()).thenReturn(List.of(dto(), dto()));
-
-        mockMvc.perform(get("/api/client/report-option").accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$", hasSize(2)));
-
-        verify(service, times(1)).getAllWithDetails();
-        verifyNoMoreInteractions(service);
-    }
-
-    @Test
-    @DisplayName("GET /api/client/{clientId}/report-option returns 200 for 4-digit id and calls service")
-    void getReportsByClient_validId_ok() throws Exception {
-        String clientId = "1234";
-        when(service.getAllWithDetailsByClient(clientId)).thenReturn(List.of(dto()));
-
-        mockMvc.perform(get("/api/client/{clientId}/report-option", clientId)
-                        .accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$", hasSize(1)));
-
-        verify(service, times(1)).getAllWithDetailsByClient(eq(clientId));
-        verifyNoMoreInteractions(service);
-    }
-
-    @ParameterizedTest(name = "Invalid clientId \"{0}\" should return 400 and not call service")
-    @ValueSource(strings = {"123", "12345", "12a4", "ABCD", "", "  ", "000", "12-4"})
-    void getReportsByClient_invalidId_badRequest(String badId) throws Exception {
-        mockMvc.perform(get("/api/client/{clientId}/report-option", badId)
-                        .accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isBadRequest());
-
-        verifyNoInteractions(service);
-    }
-}
-
-
-
-
-
-[INFO] Compiling 4 source files with javac [debug parameters release 21] to target\test-classes
-[INFO] -------------------------------------------------------------
-[ERROR] COMPILATION ERROR :
-[INFO] -------------------------------------------------------------
-[ERROR] /C:/Users/F2LIPBX/spring_boot/trace-client-sysprin-service/client-sysprin-reader/src/test/java/rapid/service/client/ClientReportOptionControllerTest.java:[38,50] incompatible types: org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder cannot be converted to org.springframework.test.web.servlet.MockMvc
-[INFO] 1 error
-[INFO] -------------------------------------------------------------
+[INFO] 
+[INFO] Results:
+[INFO]
+[ERROR] Failures: 
+[ERROR]   ClientReportOptionControllerTest.getReportsByClient_invalidId_badRequest:76 Status expected:<400> but was:<404>
+[INFO]
+[ERROR] Tests run: 10, Failures: 1, Errors: 0, Skipped: 0
+[INFO]
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  28.980 s
-[INFO] Finished at: 2025-09-14T11:39:14-05:00
+[INFO] Total time:  27.949 s
+[INFO] Finished at: 2025-09-14T11:43:00-05:00
 [INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:testCompile (default-testCompile) on project client-sysprin-reader: Compilation failure
-[ERROR] /C:/Users/F2LIPBX/spring_boot/trace-client-sysprin-service/client-sysprin-reader/src/test/java/rapid/service/client/ClientReportOptionControllerTest.java:[38,50] incompatible types: org.springframework.test.web.servlet.setup.StandaloneMockMvcBuilder cannot be converted to org.springframework.test.web.servlet.MockMvc
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.2.2:test (default-test) on project client-sysprin-reader: There are test failures.
 [ERROR]
-
-
-
-
+[ERROR] Please refer to C:\Users\F2LIPBX\spring_boot\trace-client-sysprin-service\client-sysprin-reader\target\surefire-reports for the individual test results. 
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.

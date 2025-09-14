@@ -231,3 +231,23 @@ java.lang.AssertionError: Status expected:<400> but was:<404>
 
 
 
+
+private static final Pattern CLIENT_ID_PATTERN = Pattern.compile("^\\d{4}$");
+
+@GetMapping("client/report-option/{clientId}")
+public ResponseEntity<List<ClientReportOptionDTO>> getReportsByClientId(@PathVariable String clientId) {
+    if (!CLIENT_ID_PATTERN.matcher(clientId).matches()) {
+        throw new ClientBadRequestException(
+            "Invalid 'clientNumber': must be exactly 4 digits and cannot contain letters"
+        );
+    }
+    return ResponseEntity.ok(service.getAllWithDetailsByClient(clientId));
+}
+
+
+
+
+
+
+
+

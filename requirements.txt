@@ -163,3 +163,7 @@ class ClientControllerTest {
     // rest of the tests unchanged
 }
 
+
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+
+

@@ -114,3 +114,41 @@ class ClientControllerTest {
         verify(clientService).getClientDetails("NO_SUCH");
     }
 }
+
+
+
+
+
+
+
+[ERROR] Errors: 
+[ERROR]   ClientControllerTest ┬╗ IllegalState Found multiple @SpringBootConfiguration annotated classes [Generic bean: class=rapid.ClientSysPrinReaderApplication; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in file [C:\Users\F2LIPBX\spring_boot\trace-client-sysprin-service\client-sysprin-reader\target\classes\rapid\ClientSysPrinReaderApplication.class], Generic bean: class=rapid.CommonServiceApplication; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in URL [jar:file:/C:/Users/F2LIPBX/spring_boot/trace-client-sysprin-service/common-services/target/common-services-0.0.1-SNAPSHOT.jar!/rapid/CommonServiceApplication.class]]
+[INFO]
+[ERROR] Tests run: 10, Failures: 0, Errors: 1, Skipped: 0
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for trace-client-sysprin-service 0.0.1-SNAPSHOT:
+[INFO]
+[INFO] trace-client-sysprin-service ....................... SUCCESS [  0.993 s]
+[INFO] common-model ....................................... SUCCESS [02:10 min]
+[INFO] common-api-dto ..................................... SUCCESS [ 18.108 s]
+[INFO] common-mapper ...................................... SUCCESS [ 23.205 s]
+[INFO] common-services .................................... SUCCESS [ 53.027 s]
+[INFO] client-sysprin-writer .............................. SUCCESS [01:29 min]
+[INFO] client-sysprin-reader .............................. FAILURE [ 58.813 s]
+[INFO] gateway ............................................ SKIPPED
+[INFO] search-integration ................................. SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  06:16 min
+[INFO] Finished at: 2025-09-14T10:24:12-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.2.2:test (default-test) on project client-sysprin-reader: 
+[ERROR]
+[ERROR] Please refer to C:\Users\F2LIPBX\spring_boot\trace-client-sysprin-service\client-sysprin-reader\target\surefire-reports for the individual test results. 
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven us

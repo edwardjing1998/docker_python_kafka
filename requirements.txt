@@ -1,1 +1,41 @@
-ERROR] Failed to execute goal on project trace-gateway: Could not resolve dependencies for project trace-users-hub:trace-gateway:jar:1.0.0-SNAPSHOT: Failed to collect dependencies at trace-users-hub:trace-users-profile:jar:1.0.0-SNAPSHOT: Failed to read artifact descriptor for trace-users-hub:trace-users-profile:jar:1.0.0-SNAPSHOT: The following artifacts could not be resolved: trace-users-hub:trace-users-hub:pom:${revision} (absent): Could not transfer artifact trace-users-hub:trace-users-hub:pom:${revision} from/to Nexus (https://nexus-dev.onefiserv.net/repository/mvn-gl-flume-public-group/): status code: 400, reason phrase: Invalid repository path (400) -> [Help 1]
+package rapid.client.web;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import rapid.dto.client.ClientDTO;
+import rapid.exception.ClientNotFoundException;
+import rapid.service.client.ClientService;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/")
+@RequiredArgsConstructor
+@Slf4j
+public class ClientController {
+
+    private final ClientService clientService;
+
+    @GetMapping("allClients")
+    public ResponseEntity<List<ClientDTO>> getAllClients() {
+        List<ClientDTO> clients = clientService.getAllClients();
+        return ResponseEntity.ok(clients);
+    }
+
+    @GetMapping("client/page")
+    public List<ClientDTO> getClientsPaginated(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
+
+        return clientService.fetchClientsWithPagination(page, size);
+    }
+
+    @GetMapping("client/{clientId}")
+    public ResponseEntity<ClientDTO> getClientByClientId(@PathVariable String clientId) {
+        ClientDTO dto = clientService.getClientDetails(clientId)   // returns Optional<ClientDTO>
+                .orElseThrow(() -> new ClientNotFoundException(clientId));
+        return ResponseEntity.ok(dto);
+    }
+}

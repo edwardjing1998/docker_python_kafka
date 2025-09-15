@@ -1,143 +1,46 @@
-tyManagerFactory for persistence unit 'default'
-2025-09-15T12:00:49.367-05:00  INFO 40476 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-09-15T12:00:49.381-05:00  INFO 40476 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.642 s -- in rapid.model.cases.LiquibaseValidationTest
-[INFO] 
-[INFO] Results:
-[INFO]
-[ERROR] Errors: 
-[ERROR]   DltCaseAddressMappingTest.caseAndAddress_arePersistedAndLinked ┬╗ IllegalState ApplicationContext failure threshold (1) exceeded: skipping repeated attempt to load context for [MergedContextConfiguration@763772bd testClass = rapid.model.cases.DltCaseAddressMappingTest, locations = [], classes = [rapid.CasesModelApplication], contextInitializerClasses = [], activeProfiles = ["test"], propertySourceDescriptors = [], propertySourceProperties = ["spring.jpa.hibernate.ddl-auto=none", "spring.jpa.properties.hibernate.hbm2ddl.auto=none", "spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.H2Dialect", "org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true"], contextCustomizers = [[ImportsContextCustomizer@38b1101c key = [org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration, org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.sql.init.SqlInitializationAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcClientAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@29d80d2b, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@5340477f, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.reactor.netty.DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory$DisableReactorResourceFactoryGlobalResourcesContextCustomizerCustomizer@3e0e1046, org.springframework.boot.test.autoconfigure.OnFailureConditionReportContextCustomizerFactory$OnFailureConditionReportContextCustomizer@508dec2b, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@3dc95b8b, org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@1f, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@34be3d80, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@32c7c4a9, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizer@78452606, org.springframework.test.context.support.DynamicPropertiesContextCustomizer@0, org.springframework.boot.test.context.SpringBootTestAnnotation@a5ec5e4b], contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
-[ERROR]   DltCaseAddressMappingTest.repoMethod_isCovered ┬╗ IllegalState Failed to load ApplicationContext for [MergedContextConfiguration@763772bd testClass = rapid.model.cases.DltCaseAddressMappingTest, locations = [], classes = [rapid.CasesModelApplication], contextInitializerClasses = [], activeProfiles = ["test"], propertySourceDescriptors = [], propertySourceProperties = ["spring.jpa.hibernate.ddl-auto=none", "spring.jpa.properties.hibernate.hbm2ddl.auto=none", "spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.H2Dialect", "org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true"], contextCustomizers = [[ImportsContextCustomizer@38b1101c key = [org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration, org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.sql.init.SqlInitializationAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcClientAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@29d80d2b, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@5340477f, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.reactor.netty.DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory$DisableReactorResourceFactoryGlobalResourcesContextCustomizerCustomizer@3e0e1046, org.springframework.boot.test.autoconfigure.OnFailureConditionReportContextCustomizerFactory$OnFailureConditionReportContextCustomizer@508dec2b, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@3dc95b8b, org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@1f, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@34be3d80, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@32c7c4a9, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizer@78452606, org.springframework.test.context.support.DynamicPropertiesContextCustomizer@0, org.springframework.boot.test.context.SpringBootTestAnnotation@a5ec5e4b], contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
-[INFO]
-[ERROR] Tests run: 5, Failures: 0, Errors: 2, Skipped: 0
-[INFO]
-[INFO] ------------------------------------------------------------------------
-[INFO] Reactor Summary for rapid-case-hub 0.0.1-SNAPSHOT:
-[INFO]
-[INFO] rapid-case-hub ..................................... SUCCESS [  3.538 s]
-[INFO] gateway ............................................ SUCCESS [ 48.173 s]
-[INFO] common-model ....................................... FAILURE [01:37 min]
-[INFO] common-api-dto ..................................... SKIPPED
-[INFO] common-mapper ...................................... SKIPPED
-[INFO] common-service ..................................... SKIPPED
-[INFO] case-reader ........................................ SKIPPED
-[INFO] case-writer ........................................ SKIPPED
-[INFO] search-integration ................................. SKIPPED
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD FAILURE
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  02:35 min
-[INFO] Finished at: 2025-09-15T12:00:51-05:00
-[INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.2.2:test (default-test) on project common-model:
-[ERROR]
-[ERROR] Please refer to C:\Users\F2LIPBX\spring_boot\kalpana\trace-cases\common-model\target\surefire-reports for the individual test results.
-[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
-[ERROR] -> [Help 1]
-[ERROR]
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR] 
-[ERROR] For more inform
-
-
-package rapid.model.cases;
-
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.runner.ApplicationContextRunner;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.test.context.ActiveProfiles;
-
-import static org.assertj.core.api.Assertions.assertThat;
-
-@ActiveProfiles("test")
-class LiquibaseValidationTest {
-
-    private final ApplicationContextRunner contextRunner = new ApplicationContextRunner()
-            .withUserConfiguration(TestApp.class)  // <-- now referencing the extracted class
-            .withPropertyValues(
-                    "spring.datasource.url=jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1",
-                    "spring.datasource.driver-class-name=org.h2.Driver",
-                    "spring.datasource.username=sa",
-                    "spring.datasource.password=",
-                    "spring.liquibase.enabled=true",
-                    "spring.liquibase.change-log=classpath:db/changelog/db.changelog-master.xml"
-            );
-
-    private final String[] expectedTables = {
-            "DELETED_FAILED_TRANS",
-            "DELETED_ACCOUNT_TRANS",
-            "DELETED_ADDRESSES",
-            "DELETED_BULK_CARD",
-            "DELETED_CASES",
-            "DELETED_LABELS",
-            "DELETED_TRANSACTIONS"
-    };
-
-    @Test
-    void liquibaseShouldCreateAllTables() {
-        contextRunner.run(context -> {
-            JdbcTemplate jdbcTemplate = context.getBean(JdbcTemplate.class);
-            for (String table : expectedTables) {
-                Boolean exists = jdbcTemplate.queryForObject(
-                        "SELECT COUNT(*) > 0 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = ?",
-                        Boolean.class,
-                        table
-                );
-                assertThat(exists)
-                        .as("Table " + table + " should exist")
-                        .isTrue();
-            }
-        });
-    }
-}
-
-
-
-
-
-
-
-
-
 package rapid.model.cases;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.test.context.ContextConfiguration;
-import rapid.CasesModelApplication;
+import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.test.context.ActiveProfiles;
+// ⬅️ remove @ContextConfiguration — DataJpaTest will auto-configure what you need
+
 import rapid.model.cases.address.Address;
 import rapid.model.cases.cases.Case;
 import rapid.model.cases.key.AddressId;
 import rapid.repository.cases.address.AddressRepo;
 import rapid.repository.cases.cases.CaseRepo;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
-import org.springframework.test.context.ActiveProfiles;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest(properties = {
-        "spring.jpa.hibernate.ddl-auto=none",
-        "spring.jpa.properties.hibernate.hbm2ddl.auto=none",
-        "spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.H2Dialect"
+    // unique, short-lived H2 DB for THIS test class
+    "spring.datasource.url=jdbc:h2:mem:dltcase-${random.long};MODE=PostgreSQL;DB_CLOSE_DELAY=0;DB_CLOSE_ON_EXIT=TRUE",
+    "spring.datasource.driver-class-name=org.h2.Driver",
+    "spring.datasource.username=sa",
+    "spring.datasource.password=",
+
+    // let Hibernate build/drop schema for mappings
+    "spring.jpa.hibernate.ddl-auto=create-drop",
+    "spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.H2Dialect",
+
+    // very important: keep Liquibase out of this slice
+    "spring.liquibase.enabled=false"
 })
-@ContextConfiguration(classes = CasesModelApplication.class)
 @ActiveProfiles("test")
+@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS) // evict cached context after this class
 class DltCaseAddressMappingTest {
 
-    @Autowired
-    private CaseRepo caseRepo;
-
-    @Autowired
-    AddressRepo addressRepo;
-
+    @Autowired CaseRepo caseRepo;
+    @Autowired AddressRepo addressRepo;
 
     @Test
     void caseAndAddress_arePersistedAndLinked() {
-
-        /* ---------- create the parent entity ---------- */
         Case c = new Case();
         c.setCaseNumber("CASE000001");
         c.setPiId("PI-123");
@@ -145,59 +48,44 @@ class DltCaseAddressMappingTest {
         c.setActive(true);
         c.setInDate(LocalDateTime.now());
 
-        /* ---------- create the child entity ---------- */
-        AddressId addrId = new AddressId("CASE000001", "1"); // (caseNumber, sequence)
-        Address addr   = new Address();
+        AddressId addrId = new AddressId("CASE000001", "1");
+        Address addr = new Address();
         addr.setId(addrId);
         addr.setAddr1("100 Main St.");
         addr.setCity("New York");
         addr.setState("NY");
         addr.setZip("10001");
 
-        /* link both sides of the association */
+        // link both sides
         addr.setCaseEntity(c);
         c.getAddresses().add(addr);
 
-        /* ---------- persist ---------- */
         caseRepo.saveAndFlush(c);
 
-        /* ---------- verify ---------- */
         Case dbCase = caseRepo.findById("CASE000001").orElseThrow();
         assertThat(dbCase.getAddresses()).hasSize(1);
 
         Address dbAddr = dbCase.getAddresses().getFirst();
         assertThat(dbAddr.getCity()).isEqualTo("New York");
-        assertThat(dbAddr.getCaseEntity()).isSameAs(dbCase);  // bidirectional ok
+        assertThat(dbAddr.getCaseEntity()).isSameAs(dbCase);
         assertThat(dbAddr.getAddr1()).isEqualTo("100 Main St.");
-        assertThat(dbAddr.getCity()).isEqualTo("New York");
         assertThat(dbAddr.getZip()).isEqualTo("10001");
         assertThat(dbAddr.getState()).isEqualTo("NY");
     }
 
     @Test
     void repoMethod_isCovered() {
-        Address addr   = new Address();
-        AddressId addrId = new AddressId("CASE000001", "1"); // (caseNumber, sequence)
+        Address addr = new Address();
+        AddressId addrId = new AddressId("CASE000001", "1");
         addr.setId(addrId);
         addr.setAddr1("100 Main St.");
         addr.setCity("New York");
         addr.setState("NY");
         addr.setZip("10001");
 
-        addressRepo.save(addr);                 // create
-        List<Address> found = addressRepo
-                .findByIdCaseNumberIdIn(List.of("CASE000001"));
+        addressRepo.save(addr);
+        List<Address> found =
+            addressRepo.findByIdCaseNumberIdIn(List.of("CASE000001"));
         assertThat(found).hasSize(1);
     }
 }
-
-
-
-
-
-
-
-
-
-
-

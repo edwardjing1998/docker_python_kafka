@@ -1,15 +1,1 @@
- npm start
-
-> @coreui/fiserv-rapid-admin@5.4.0 start
-> vite
-
-'vite' is not recognized as an internal or external command,
-operable program or batch file.
-PS C:\Users\F2LIPBX\react\merge_codes\trace-ui-reactapp> 
-
-
-
-
-npm ls vite
-@coreui/fiserv-rapid-admin@5.4.0 C:\Users\F2LIPBX\react\merge_codes\trace-ui-reactapp
-└── (empty)
+npm i -D vite @vitejs/plugin-react

@@ -1,99 +1,95 @@
-package rapid.model.cases;
+2025-09-15T14:22:03.239-05:00  INFO 40900 --- [case-reader] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-09-15T14:22:03.501-05:00  INFO 40900 --- [case-reader] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-15T14:22:05.731-05:00  INFO 40900 --- [case-reader] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-15T14:22:05.939-05:00  INFO 40900 --- [case-reader] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::loadLibrary has been called by com.microsoft.sqlserver.jdbc.AuthenticationJNI in an unnamed module (file:/C:/Users/F2LIPBX/.m2/repository/com/microsoft/sqlserver/mssql-jdbc/12.10.0.jre11/mssql-jdbc-12.10.0.jre11.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
 
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.context.annotation.Import;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.test.annotation.DirtiesContext;
-import org.springframework.test.context.ActiveProfiles;
-import rapid.model.cases.address.Address;
-import rapid.model.cases.cases.Case;
-import rapid.model.cases.key.AddressId;
-import rapid.repository.cases.address.AddressRepo;
-import rapid.repository.cases.cases.CaseRepo;
+2025-09-15T14:22:12.477-05:00  WARN 40900 --- [case-reader] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 18452, SQLState: S0001
+2025-09-15T14:22:12.479-05:00 ERROR 40900 --- [case-reader] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Login failed. The login is from an untrusted domain and cannot be used with Integrated authentication. ClientConnectionId:70b7a04c-f653-49c9-ad18-6de84cee5b10
+2025-09-15T14:22:12.483-05:00  WARN 40900 --- [case-reader] [           main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
 
-import java.time.LocalDateTime;
-import java.util.List;
+org.hibernate.exception.SQLGrammarException: unable to obtain isolated JDBC connection [Login failed. The login is from an untrusted domain and cannot be used with Integrated authentication. ClientConnectionId:70b7a04c-f653-49c9-ad18-6de84cee5b10] [n/a]
+        at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:91) ~[hibernate-core-6.6.15.Final.jar:6.6.15.Final]
+        at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58) ~[hibernate-core-6.6.15.Final.jar:6.6.15.Final]
+        at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.6.15.Final.jar:6.6.15.Final]
+        at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94) ~[hibernate-core-6.6.15.Final.jar:6.6.15.Final]
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116) ~[hibernate-core-6.6.15.Final.jar:6.6.15.Final]
+        at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:336) ~[hibernate-core-6.6.15.Final.jar:6.6.15.Final]
+        at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.15.Final.jar:6.6.15.Final]
+        at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.15.Final.jar:6.6.15.Final]
+        at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.15.Final.jar:6.6.15.Final]
+        at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.15.Final.jar:6.6.15.Final]
+        at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.15.Final.jar:6.6.15.Final]
+        at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.15.Final.jar:6.6.15.Final]
+        at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.6.15.Final.jar:6.6.15.Final]
+        at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226) ~[hibernate-core-6.6.15.Final.jar:6.6.15.Final]
+        at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194) ~[hibernate-core-6.6.15.Final.jar:6.6.15.Final]
+        at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.6.15.Final.jar:6.6.15.Final]
+        at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.15.Final.jar:6.6.15.Final]
+        at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.15.Final.jar:6.6.15.Final]
+        at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.7.jar:6.2.7]
+        at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.7.jar:6.2.7]
+        at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.7.jar:6.2.7]
+        at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.7.jar:6.2.7]
+        at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.7.jar:6.2.7]
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.7.jar:6.2.7]
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.7.jar:6.2.7]
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.7.jar:6.2.7]
+        at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.7.jar:6.2.7]
+        at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.7.jar:6.2.7]
+        at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.7.jar:6.2.7]
+        at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.7.jar:6.2.7]
+        at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.7.jar:6.2.7]
+        at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.7.jar:6.2.7]
+        at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.7.jar:6.2.7]
+        at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.0.jar:3.5.0]
+        at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.5.0.jar:3.5.0]
+        at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.0.jar:3.5.0]
+        at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.0.jar:3.5.0]
+        at rapid.cases.CaseReaderApplication.main(CaseReaderApplication.java:21) ~[classes/:na]
+Caused by: com.microsoft.sqlserver.jdbc.SQLServerException: Login failed. The login is from an untrusted domain and cannot be used with Integrated authentication. ClientConnectionId:70b7a04c-f653-49c9-ad18-6de84cee5b10
+        at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:276) ~[mssql-jdbc-12.10.0.jre11.jar:na]
+        at com.microsoft.sqlserver.jdbc.TDSTokenHandler.onEOF(tdsparser.java:329) ~[mssql-jdbc-12.10.0.jre11.jar:na]
+        at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:137) ~[mssql-jdbc-12.10.0.jre11.jar:na]
+        at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:42) ~[mssql-jdbc-12.10.0.jre11.jar:na]
+        at com.microsoft.sqlserver.jdbc.SQLServerConnection.sendLogon(SQLServerConnection.java:7199) ~[mssql-jdbc-12.10.0.jre11.jar:na]
+        at com.microsoft.sqlserver.jdbc.SQLServerConnection.logon(SQLServerConnection.java:5743) ~[mssql-jdbc-12.10.0.jre11.jar:na]
+        at com.microsoft.sqlserver.jdbc.SQLServerConnection$LogonCommand.doExecute(SQLServerConnection.java:5675) ~[mssql-jdbc-12.10.0.jre11.jar:na]
+        at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7745) ~[mssql-jdbc-12.10.0.jre11.jar:na]
+        at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4700) ~[mssql-jdbc-12.10.0.jre11.jar:na]
+        at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:4133) ~[mssql-jdbc-12.10.0.jre11.jar:na]
+        at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3690) ~[mssql-jdbc-12.10.0.jre11.jar:na]
+        at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:3499) ~[mssql-jdbc-12.10.0.jre11.jar:na]
+        at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:2207) ~[mssql-jdbc-12.10.0.jre11.jar:na]
+        at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1320) ~[mssql-jdbc-12.10.0.jre11.jar:na]
+        at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:122) ~[HikariCP-6.3.0.jar:na]
+        at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:368) ~[HikariCP-6.3.0.jar:na]
+        at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:205) ~[HikariCP-6.3.0.jar:na]
+        at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:483) ~[HikariCP-6.3.0.jar:na]
+        at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:571) ~[HikariCP-6.3.0.jar:na]
+        at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:101) ~[HikariCP-6.3.0.jar:na]
+        at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-6.3.0.jar:na]
+        at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126) ~[hibernate-core-6.6.15.Final.jar:6.6.15.Final]
+        at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:483) ~[hibernate-core-6.6.15.Final.jar:6.6.15.Final]
+        at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61) ~[hibernate-core-6.6.15.Final.jar:6.6.15.Final]
+        ... 33 common frames omitted
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-@DataJpaTest(properties = {
-        // 用唯一的 H2 内存库，避免和别的测试冲突
-        "spring.datasource.url=jdbc:h2:mem:dltcase-${random.long};MODE=PostgreSQL;DB_CLOSE_DELAY=0;DB_CLOSE_ON_EXIT=TRUE",
-        "spring.datasource.driver-class-name=org.h2.Driver",
-        "spring.datasource.username=sa",
-        "spring.datasource.password=",
-
-        // 让 Hibernate 自建/清理表；此测试不跑 Liquibase
-        "spring.jpa.hibernate.ddl-auto=create-drop",
-        "spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.H2Dialect",
-        "spring.liquibase.enabled=false"
-})
-@ActiveProfiles("test")
-// 👇 显式指定扫描仓库与实体所在包
-@EnableJpaRepositories(basePackages = "rapid.repository")
-@EntityScan(basePackages = "rapid.model")
-// 测试结束后丢弃缓存的上下文，进一步隔离
-@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
-class DltCaseAddressMappingTest {
-
-    @Autowired
-    private CaseRepo caseRepo;
-
-    @Autowired
-    private AddressRepo addressRepo;
-
-    @Test
-    void caseAndAddress_arePersistedAndLinked() {
-        // parent
-        Case c = new Case();
-        c.setCaseNumber("CASE000001");
-        c.setPiId("PI-123");
-        c.setAccount("1234567890123456");
-        c.setActive(true);
-        c.setInDate(LocalDateTime.now());
-
-        // child
-        AddressId addrId = new AddressId("CASE000001", "1");
-        Address addr = new Address();
-        addr.setId(addrId);
-        addr.setAddr1("100 Main St.");
-        addr.setCity("New York");
-        addr.setState("NY");
-        addr.setZip("10001");
-
-        // link
-        addr.setCaseEntity(c);
-        c.getAddresses().add(addr);
-
-        caseRepo.saveAndFlush(c);
-
-        Case dbCase = caseRepo.findById("CASE000001").orElseThrow();
-        assertThat(dbCase.getAddresses()).hasSize(1);
-
-        Address dbAddr = dbCase.getAddresses().getFirst();
-        assertThat(dbAddr.getCaseEntity()).isSameAs(dbCase);
-        assertThat(dbAddr.getAddr1()).isEqualTo("100 Main St.");
-        assertThat(dbAddr.getCity()).isEqualTo("New York");
-        assertThat(dbAddr.getState()).isEqualTo("NY");
-        assertThat(dbAddr.getZip()).isEqualTo("10001");
-    }
-
-    @Test
-    void repoMethod_isCovered() {
-        Address addr = new Address();
-        AddressId addrId = new AddressId("CASE000001", "1");
-        addr.setId(addrId);
-        addr.setAddr1("100 Main St.");
-        addr.setCity("New York");
-        addr.setState("NY");
-        addr.setZip("10001");
-
-        addressRepo.save(addr);
-        List<Address> found =
-                addressRepo.findByIdCaseNumberIdIn(List.of("CASE000001"));
-        assertThat(found).hasSize(1);
-    }
-}
+2025-09-15T14:22:12.648-05:00  WARN 40900 --- [case-reader] [           main] org.hibernate.orm.deprecation            : HHH90000025: SQLServerDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-15T14:22:12.714-05:00  INFO 40900 --- [case-reader] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+        Database JDBC URL [Connecting through datasource 'HikariDataSource (null)']
+        Database driver: undefined/unknown
+        Database version: 11.0
+        Autocommit mode: undefined/unknown
+        Isolation level: undefined/unknown
+        Minimum pool size: undefined/unknown
+        Maximum pool size: undefined/unknown
+2025-09-15T14:22:22.639-05:00  INFO 40900 --- [case-reader] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-15T14:22:22.664-05:00  INFO 40900 --- [case-reader] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-15T14:22:24.894-05:00  INFO 40900 --- [case-reader] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-15T14:22:31.368-05:00  WARN 40900 --- [case-reader] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-15T14:22:34.206-05:00  INFO 40900 --- [case-reader] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-09-15T14:22:34.763-05:00  INFO 40900 --- [case-reader] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-09-15T14:22:34.840-05:00  INFO 40900 --- [case-reader] [           main] rapid.cases.CaseReaderApplication        : Started CaseReaderApplication in 49.28 seconds (process running for 51.811)

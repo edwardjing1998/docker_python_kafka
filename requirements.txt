@@ -1,7 +1,17 @@
-/* center header text & icons in all columns */
-.ag-theme-quartz .ag-header-center .ag-header-cell-label {
-  justify-content: center;   /* center horizontally */
+/* center any cells that have this class */
+.ag-theme-quartz .ag-cell.ag-cell-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* for plain text */
 }
-.ag-theme-quartz .ag-header-center .ag-header-cell-text {
-  text-align: center;        /* align multiline text */
+
+/* optional: make the inner wrapper span full cell (if you use it) */
+.ag-theme-quartz .action-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
 }

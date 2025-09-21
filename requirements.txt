@@ -1,1 +1,3 @@
-  <div style={{ display: 'flex', justifyContent: 'center' }}>
+.ag-theme-quartz .ag-header-bold .ag-header-cell-text {
+  font-weight: 700;
+}

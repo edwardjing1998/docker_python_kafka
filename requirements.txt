@@ -1,197 +1,291 @@
-@mixin flex-styles($display, $align, $justify, $wrap) {
-  display: $display;
-  align-items: $align;
-  justify-content: $justify;
-  flex-wrap: $wrap;
-}
-
-@mixin properties-styles($margin, $width, $padding) {
-  margin: $margin;
-  width: $width;
-  padding: $padding;
-}
-
-html {
-  overflow: hidden;
-}
-
-:root {
-  --page-withoutmenu: 1336px;
-}
-
-.header {
-  @include flex-styles(flex, center, space-between, none);
-  height: 64px;
-  width: 100%;
-  padding: 8px 16px;
-  background: #096cd4;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1100;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-
-.leftSection {
-  @include flex-styles(flex, center, none, none);
-  @include properties-styles(0px, 315.35px, 0);
-  height: 40px;
-  gap: 5px;
-}
-
-.fiservLogo img,
-.stroke img,
-.r-img img {
-  height: 40px;
-  width: auto;
-  display: block;
-}
-
-.rapid-layout { display: flex; align-items: center; }
-
-.hamburgerbutton {
-  @include flex-styles(flex, center, center, none);
-  padding: 10px;
-  border-radius: 2px;
-  background: #096cd4;
-}
-
-.hamburger {
-  @include properties-styles(0px, 20px, 0);
-}
-
-.fiservLogo {
-  @include flex-styles(flex, center, center, none);
-  gap: 9.408px;
-  margin-right: 16px;
-
-}
-
-.stroke {
-  @include properties-styles(0px, 0px, 0);
-  stroke-width: 1px;
-  stroke: #f8f8f8;
-  margin: 0 8px;
-}
-
-.rapid-layout {
-  width: 69px;
-  height: 29px;
-  left: 39.9px;
-  margin-left: 12px;
-
-}
-
-.rapid {
-  font-family: 'Baumans';
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  text-transform: lowercase;
-  color: #FFFFFF;
+import React, { useState, useEffect } from 'react'
+import { Dialog, DialogTitle, DialogContent, DialogActions, Button } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
+import { CFormInput, CFormSelect } from '@coreui/react';
+import { fetchAllStates, fetchZipCodeDetails, addZipCode, updateZipCode, deleteZipCode } from '../../../services/AdminEditService/ZipCodeTableService';
+import { Zipcode, CloseIcon } from '../../../assets/brand/svg-constants';
+import '../../../scss/zipCodeTable.scss';
+import CustomSnackbar from '../../../components/CustomSnackbar';
 
 
-}
 
-.admin {
-  font-family: 'Open Sans';
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 0px;
-  letter-spacing: 0%;
-  vertical-align: middle;
-  color: #FFFFFF;
-  margin-left: 12px;
+const ZipcodeTableDialog = ({ open, onClose }) => {
+  const [formData, setFormData] = useState({
+    zip: '',
+    city: '',
+    state: '',
+  })
+  const [originalData, setOriginalData] = useState({
+    zip: '',
+    city: '',
+    state: '',
+  });
+  const [stateList, setStateList] = useState([]);
+  const [isNewZipCode, setIsNewZipCode] = useState(false);
+  const [enableDelete, setEnableDelete] = useState(false);
+  // snackbarType: 'none', 'delete', 'success', 'add', 'edit'
+  const [snackbarType, setSnackbarType] = useState('none');
 
-}
+  /**
+   * Effect to fetch all states when the dialog is opened.
+   */
+  useEffect(() => {
+    if (open) {
+      getAllStates();
+    }
+  }, [open]);
 
-.r-img {
-  width: 22.904277801513672;
-  height: 26;
-  top: 6px;
-  left: 1px;
-  border-radius: 2.74px;
-  border-width: 2px;
-
-}
-
-.rightSection {
-  @include flex-styles(flex, center, flex-end, none);
-  width: 274px;
-  height: 48px;
-  gap: 4px;
-  display: flex;
-  align-items: center;
-}
-
-.icon1 {
-  @include flex-styles(flex, center, center, none);
-  border-radius: 2px;
-  background: #096cd4;
-  margin: 0 8px;
-}
-
-.stroke1 {
-  @include properties-styles(1px, 0px, 0);
-  margin: 0 8px;
-}
-
-@media (max-width: 991.98px) {
-  .header {
-    padding: 0 8px;
-    height: 50px;
-    display: flex;
-    flex-wrap: nowrap;
+  /**
+   * Handles input changes for all form fields.
+   * Updates the formData state with the new value.
+   * @param {object} e - The input change event.
+   */
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  .leftSection .fiservLogo,
-  .leftSection .stroke,
-  .leftSection .r-img,
-  .leftSection .rapid-layout,
-  .leftSection .admin {
-    display: none;
-  }
+  /**
+   * Fetches the list of all states from the API and updates stateList.
+   * Called when the dialog is opened.
+   */
+  const getAllStates = async () => {
+    try {
+      const response = await fetchAllStates();
+      setStateList(response?.response?.deliveryAreaList || []);
+    } catch (error) {
+    }
+  };
 
-  .leftSection {
-    width: auto !important; 
-    min-width: 0;
-    flex: 1 1 0%;
-  }
+  /**
+   * Fetches details for the entered zip code from the API.
+   * If found, populates the form with the data and enables delete.
+   * If not found (404), prepares the form for a new zip code entry.
+   */
+  const getZipCodeDetails = async () => {
+    if (formData.zip) {
+      try {
+        const response = await fetchZipCodeDetails(formData.zip);
+        setIsNewZipCode(false);
+        setFormData(response?.response?.ZipCode[0]);
+        setOriginalData(response?.response?.ZipCode[0]);
+        setEnableDelete(true);
+      } catch (error) {
+        if (error.response && error.response.status === 404) {
+          setFormData({
+            zip: formData.zip,
+            city: '',
+            state: '',
+          });
+          setOriginalData({
+            zip: formData.zip,
+            city: '',
+            state: '',
+          });
+          setIsNewZipCode(true);
+          setEnableDelete(false);
+        } else {
+          // Handle other errors
+          console.error('Error fetching zip code details:', error);
+        }
+      }
+    }
+  };
 
-  .rightSection {
-    width: auto !important; 
-    min-width: 0;
-    flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
+  /**
+   * Opens the delete confirmation snackbar.
+   */
+  const handleDelete = () => {
+    setSnackbarType('delete');
+  };
 
-  .rightSection .stroke1 {
-    display: none;
-  }
+  /**
+   * Handles the OK action in the delete confirmation snackbar.
+   * Calls the delete API, clears the form, and shows the success snackbar.
+   */
+  const handleSnackbarOk = async () => {
+    setSnackbarType('none');
+    try {
+      await deleteZipCode(formData.zip, formData.city);
+      clearFormData();
+      setSnackbarType('delete-confirmation');
+    } catch (error) {
+    }
+  };
 
-  .icon1 {
-    margin: 0 4px;
-  }
+  /**
+   * Handles the Cancel/Close action for any snackbar.
+   * Resets the snackbarType to 'none'.
+   */
+  const handleSnackbarCancel = () => {
+    setSnackbarType('none');
+  };
 
-  .hamburgerbutton {
-    margin-right: 0;
-  }
+  /**
+   * Handles the Save button click.
+   * Calls handleAdd for new zip codes, or handleUpdate for existing ones.
+   */
+  const handleSave = async () => {
+    if (isNewZipCode) {
+      await handleAdd();
+    } else {
+      await handleUpdate();
+    }
+  };
+
+  /**
+   * Calls the add API to add a new zip code.
+   * Shows the add success snackbar and clears the form on success.
+   */
+  const handleAdd = async () => {
+    try {
+      const response = await addZipCode(formData);
+      setSnackbarType('add');
+      clearFormData();
+    } catch (error) {
+    }
+  };
+
+  /**
+   * Calls the update API to update an existing zip code.
+   * Shows the edit success snackbar and clears the form on success.
+   */
+  const handleUpdate = async () => {
+    try {
+      const response = await updateZipCode(formData);
+      setSnackbarType('update');
+      clearFormData();
+    } catch (error) {
+    }
+  };
+
+  /**
+   * Handles closing the dialog.
+   * Prevents closing on backdrop click or escape key.
+   * Clears the form and calls the parent onClose.
+   * @param {object} event - The close event.
+   * @param {string} reason - The reason for closing.
+   */
+  const handleClose = (event, reason) => {
+    if (reason === 'backdropClick' || reason === 'escapeKeyDown') {
+      return;
+    }
+    clearFormData();
+    onClose();
+  };
+
+  /**
+   * Clears the form data and resets formData and originalData to initial values.
+   */
+  const clearFormData = () => {
+    setFormData({
+      zip: '',
+      city: '',
+      state: '',
+    });
+    setOriginalData({
+      zip: '',
+      city: '',
+      state: '',
+    });
+  };
+
+
+  // For new zip code, enable Save only if all fields are filled and zip code length is 5
+  const allFieldsFilled =
+    /^\d{5}$/.test(formData.zip) &&
+    formData.city.trim() !== '' &&
+    formData.state.trim() !== '';
+
+  // Check if formData is different from originalData
+  const isChanged = (
+    formData.zip !== originalData.zip ||
+    formData.city !== originalData.city ||
+    formData.state !== originalData.state
+  );
+
+  let enableSave = false;
+  enableSave = isNewZipCode ? allFieldsFilled : isChanged;
+
+  return (
+    <Dialog open={open}
+      onClose={handleClose} PaperProps={{ className: 'zip-code-table-dialog' }}
+    >
+      <DialogTitle> <div className='zip-code-icon'><Zipcode /></div> Zip Code Edit</DialogTitle>
+      <IconButton
+        aria-label="close"
+        onClick={handleClose}
+      >
+        <CloseIcon />
+      </IconButton>
+      <DialogContent dividers>
+        <div className='zipcode-dialog-content'>
+          <div className='first-row'>
+            <div className='details'>
+              <span className='zipcode-content-text'>Zip Code</span>
+              <CFormInput
+                name="zip"
+                value={formData.zip}
+                onChange={handleChange}
+                onBlur={getZipCodeDetails}
+                onKeyDown={(e) => { if (e.key === 'Enter') { getZipCodeDetails(); } }}
+                className='zipcode-textbox'
+              />
+            </div>
+            <div className='details'>
+              <span className='zipcode-content-text'>City</span>
+              <CFormInput name="city" value={formData.city} onChange={handleChange} className='zipcode-textbox' />
+            </div>
+          </div>
+          <div className='details'>
+            <span className='zipcode-content-text'>State</span>
+            <CFormSelect name="state" value={formData.state} onChange={handleChange} className='zipcode-textbox'>
+              <option value="" disabled>Select State</option>
+              {stateList.map((state) => (
+                <option key={state.area} value={state.area}>
+                  {state.name}
+                </option>
+              ))}
+            </CFormSelect>
+          </div>
+        </div>
+      </DialogContent>
+      <DialogActions>
+        <div className='zipcode-button-container'>
+          <Button variant="outlined" size="small" onClick={handleClose}>Cancel</Button>
+          <Button variant="outlined" size="small" disabled={!enableDelete} onClick={handleDelete}>Delete</Button>
+          <Button variant="contained" size="small" onClick={handleSave} disabled={!enableSave}>Save</Button>
+        </div>
+      </DialogActions>
+      <CustomSnackbar
+        open={snackbarType === 'delete'}
+        onClose={handleSnackbarCancel}
+        handleOk={handleSnackbarOk}
+        title="Confirm Delete"
+        body="Are you sure you want to delete?"
+        type="delete"
+      />
+      {(snackbarType === 'add' || snackbarType === 'update' || snackbarType === 'delete-confirmation') && (
+        <CustomSnackbar
+          type={snackbarType}
+          open={snackbarType !== 'none'}
+          handleOk={handleSnackbarCancel}
+          onClose={handleSnackbarCancel}
+          title="Zip Code Table"
+          body={
+            snackbarType === 'add'
+              ? 'You have successfully Added a new zip code'
+              : snackbarType === 'update'
+                ? 'You have successfully Updated a zip code'
+                : snackbarType === 'delete-confirmation'
+                  ? 'You have successfully Deleted a zip code'
+                  : ''
+          }
+        />
+      )}
+    </Dialog >
+
+  )
 }
 
-@media (max-width: 575.98px) {
-  .header {
-    height: 44px;
-    padding: 0 4px;
-  }
-
-  .icon1 svg {
-    width: 18px;
-    height: 18px;
-  }
-  .rightSection .stroke1 {
-    display: none;
-  }
-}
+export default ZipcodeTableDialog

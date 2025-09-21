@@ -1,3 +1,14 @@
-.ag-theme-quartz .ag-header-bold .ag-header-cell-text {
-  font-weight: 700;
+/* Center ONLY body cells that use our class */
+.ag-theme-quartz .ag-cell.ag-cell-center {
+  display: flex;               /* lets us use flex centering */
+  align-items: center;         /* vertical center */
+  justify-content: center;     /* horizontal center */
+  text-align: center;          /* helps for multi-line text */
+}
+
+/* Keep headers left-aligned (Quartz default). If you previously changed it, undo here: */
+.ag-theme-quartz .ag-header-cell .ag-header-cell-text,
+.ag-theme-quartz .ag-header-group-cell .ag-header-group-text {
+  text-align: left;
+  justify-content: flex-start; /* if you had used flex on header text */
 }

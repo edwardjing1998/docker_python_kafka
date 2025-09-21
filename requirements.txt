@@ -1,26 +1,127 @@
-// src/views/rapid-admin-edit/daily-activity/ActionCell.jsx
-import React from 'react'
-import { IconButton } from '@mui/material'
-import EditOutlinedIcon from '@mui/icons-material/EditOutlined'
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline'
-import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined'
+// File: src/views/rapid-admin-edit/daily-activity/ZipCodeConfig.jsx
+import React, { useEffect, useMemo, useState, useRef } from 'react'
+import { CCard, CCardBody } from '@coreui/react'
+import { AllCommunityModule, ModuleRegistry } from 'ag-grid-community'
+import { AgGridReact } from 'ag-grid-react'
 
-const ActionCell = (props) => {
-  const row = props.data || {}
-  const { onEdit, onCreate, onDelete } = props // <- passed in via cellRendererParams
+import './ZipCodeConfig.scss'
+import { zipCodeTable, usStates } from './data.js'
+import ActionCell from './ActionCell'              // ⬅️ add
+import ZipcodeTableDialog from '../zipCodeTable/zipcodeTable' // ⬅️ ensure correct path/case
+
+ModuleRegistry.registerModules([AllCommunityModule])
+
+const ZipCodeConfig = () => {
+  const [rowData, setRowData] = useState([])
+  const [selectedKey, setSelectedKey] = useState(null)
+  const gridApiRef = useRef(null)
+
+  // dialog state
+  const [zipDialogOpen, setZipDialogOpen] = useState(false)
+  const [zipDialogInitial, setZipDialogInitial] = useState(null)
+
+  // Build map "TX" -> "Texas"
+  const stateMap = useMemo(() => {
+    const map = new Map()
+    usStates.forEach(({ acronym, stateName }) => map.set(acronym.toUpperCase(), stateName))
+    return map
+  }, [])
+
+  useEffect(() => {
+    const allRows = Array.isArray(zipCodeTable) ? zipCodeTable : Object.values(zipCodeTable).flat()
+    setRowData(allRows)
+  }, [])
+
+  const formatState = (abbr) => {
+    if (!abbr) return ''
+    const up = String(abbr).toUpperCase().trim()
+    const name = stateMap.get(up)
+    return name ? `${name} - ${up}` : `Unknown - ${up}`
+  }
+
+  // ——— callbacks used by ActionCell ———
+  const openZipDialogWithRow = (row) => {
+    setZipDialogInitial({
+      zip: String(row?.zipCode ?? ''),
+      city: row?.city ?? '',
+      state: row?.state ?? '',
+    })
+    setZipDialogOpen(true)    // ⬅️ this flips Dialog open
+  }
+  const openZipDialogCreate = (row) => {
+    setZipDialogInitial({
+      zip: row?.zipCode ? String(row.zipCode) : '',
+      city: '',
+      state: '',
+    })
+    setZipDialogOpen(true)
+  }
+  const onDelete = (row) => {
+    alert(`Delete clicked for Zip: ${row.zipCode ?? '(n/a)'} | City: ${row.city ?? '(n/a)'}`)
+  }
+
+  const [colDefs] = useState([
+    { field: 'zipCode', headerName: 'Zip Code', flex: 20, minWidth: 120 },
+    { field: 'city', headerName: 'City', flex: 20, minWidth: 120 },
+    {
+      headerName: 'State',
+      field: 'state',
+      flex: 30,
+      minWidth: 160,
+      valueGetter: (p) => formatState(p.data?.state),
+      comparator: (a, b) => a.localeCompare(b),
+    },
+    {
+      headerName: 'Action',
+      field: 'action',
+      flex: 30,
+      minWidth: 200,
+      sortable: false,
+      filter: false,
+      cellClass: 'action-cell',
+      cellRenderer: ActionCell,                // ⬅️ use React component
+      cellRendererParams: {                    // ⬅️ pass stable callbacks
+        onEdit: openZipDialogWithRow,
+        onCreate: openZipDialogCreate,
+        onDelete,
+      },
+    },
+  ])
+
+  const defaultColDef = { filter: true, floatingFilter: false, sortable: true, resizable: true }
+
   return (
-    <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-      <IconButton size="small" onClick={() => onEdit(row)}>
-        <EditOutlinedIcon fontSize="inherit" />
-      </IconButton>
-      <IconButton size="small" onClick={() => onCreate(row)}>
-        <AddCircleOutlineIcon fontSize="inherit" />
-      </IconButton>
-      <IconButton size="small" onClick={() => onDelete(row)}>
-        <DeleteOutlineOutlinedIcon fontSize="inherit" />
-      </IconButton>
+    <div className="daily-activity-wrapper">
+      <CCard>
+        <CCardBody>
+          <div className="ag-grid-container ag-theme-quartz custom-compact no-vertical-borders" style={{ height: 600 }}>
+            <AgGridReact
+              rowData={rowData}
+              columnDefs={colDefs}
+              defaultColDef={defaultColDef}
+              pagination
+              paginationPageSize={15}
+              getRowId={({ data }) => String(data.zipCode)}
+              rowSelection="single"
+              rowClassRules={{
+                'row-selected-persist': (params) =>
+                  selectedKey != null && String(params.data?.zipCode) === String(selectedKey),
+              }}
+              onRowClicked={(e) => setSelectedKey(String(e.data?.zipCode))}
+              onGridReady={(e) => { gridApiRef.current = e.api }}
+            />
+          </div>
+        </CCardBody>
+      </CCard>
+
+      {/* Mount the dialog here */}
+      <ZipcodeTableDialog
+        open={zipDialogOpen}
+        onClose={() => setZipDialogOpen(false)}
+        initialData={zipDialogInitial}
+      />
     </div>
   )
 }
 
-export default ActionCell
+export default ZipCodeConfig
